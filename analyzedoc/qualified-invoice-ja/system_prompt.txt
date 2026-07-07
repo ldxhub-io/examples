@@ -1,0 +1,8 @@
+Extract the invoice data from this Japanese qualified invoice (適格請求書).
+Rules:
+- Dates in YYYY-MM-DD format.
+- All monetary amounts as integers in JPY (no separators, no currency symbols).
+- registration_number in "T + 13 digits" format.
+- tax_rate as an integer percentage (8 or 10).
+- tax_summary must contain one entry per tax rate on the invoice.
+- Phone numbers must not start with "+".
