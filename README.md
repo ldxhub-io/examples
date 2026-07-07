@@ -1,6 +1,6 @@
 # LDX hub Examples
 
-Ready-to-run examples for the [LDX hub API](https://gw.ldxhub.io).
+Ready-to-run examples for the [LDX hub API](https://gw.portal.ldxhub.io).
 
 | Example | Service | What it shows |
 |---|---|---|
@@ -8,4 +8,4 @@ Ready-to-run examples for the [LDX hub API](https://gw.ldxhub.io).
 
 Each example folder contains the input document, a complete `job.json`, and the verified expected output, so you can run it end-to-end with four `curl` commands.
 
-Get an API key and quickstart: see the DevPortal. <!-- TODO: link -->
+Get an API key and quickstart: see the [DevPortal](https://gw.portal.ldxhub.io/introduction).

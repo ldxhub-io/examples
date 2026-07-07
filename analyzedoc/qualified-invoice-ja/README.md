@@ -41,4 +41,4 @@ Compare against `expected_output.json`. All amounts are integers (JPY has no dec
 - **Example values differ from the document** on purpose (otherwise you can't tell reading from copying).
 - `tax_summary` is an array: one entry per tax rate on the invoice.
 
-Write-ups: <!-- TODO: article links (Hatena / dev.to) -->
+Write-ups: [Hatena (JA)](https://hidekimori.hatenablog.com/entry/the-example-is-the-schema-extracting-japanese-qualified-invoices-to-json-4eg1) · [dev.to (EN)](https://dev.to/hidekimori/the-example-is-the-schema-extracting-japanese-qualified-invoices-to-json-4eg1)
