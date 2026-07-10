@@ -1,0 +1,256 @@
+openai/gpt-5.5@low                 invoice_ja_clean     r1  OK                       reason='The document title prominently reads 「請求書」, which means invo'
+openai/gpt-5.5@low                 quotation_ja_clean   r1  OK                       reason='The document title reads「御見積書」, which means quotation/estima'
+openai/gpt-5.5@low                 po_ja_clean          r1  OK                       reason='The document title is 「注文書」, which indicates a purchase orde'
+openai/gpt-5.5@low                 invoice_ja_scan      r1  OK                       reason='文書中央のタイトルに「請求書」と明記されており、明細、合計金額、消費税、支払期限が記載されているため。'
+openai/gpt-5.5@low                 invoice_ja_tilt      r1  OK                       reason='文書タイトルに「請求書」と明記されており、請求番号・発行日・品目別金額・合計金額・支払期限が記載されているため。'
+openai/gpt-5.5@low                 invoice_ja_jpeg25    r1  OK                       reason='The document title is 「請求書」 (invoice) and includes invoice-s'
+openai/gpt-5.5@low                 quotation_ja_scan    r1  OK                       reason='The document title reads「御見積書」, which means quotation/estima'
+openai/gpt-5.6-sol@low             invoice_ja_clean     r1  OK                       reason='文書タイトルに「請求書」と明記され、合計金額および支払期限が記載されているため。'
+openai/gpt-5.6-sol@low             quotation_ja_clean   r1  OK                       reason='文書タイトルに「御見積書」と明記され、見積有効期限も記載されています。'
+openai/gpt-5.6-sol@low             po_ja_clean          r1  OK                       reason='文書タイトルが「注文書」と明記されています。'
+openai/gpt-5.6-sol@low             invoice_ja_scan      r1  OK                       reason='文書中央のタイトルが「請求書」で、請求明細、合計金額、お支払期限が記載されています。'
+openai/gpt-5.6-sol@low             invoice_ja_tilt      r1  OK                       reason='文書タイトルに「請求書」と明記され、請求明細、合計金額、支払期限が記載されています。'
+openai/gpt-5.6-sol@low             invoice_ja_jpeg25    r1  OK                       reason='文書中央のタイトルが「請求書」で、明細、合計金額、お支払期限が記載されています。'
+openai/gpt-5.6-sol@low             quotation_ja_scan    r1  OK                       reason='文書タイトルに「御見積書」と明記され、見積有効期限も記載されています。'
+openai/gpt-5.6-terra@low           invoice_ja_clean     r1  OK                       reason='Document title is 「請求書」 and it includes billing details, tot'
+openai/gpt-5.6-terra@low           quotation_ja_clean   r1  OK                       reason='Document title is 「御見積書」, indicating a quotation.'
+openai/gpt-5.6-terra@low           po_ja_clean          r1  OK                       reason='The document title is 「注文書」, indicating a purchase order.'
+openai/gpt-5.6-terra@low           invoice_ja_scan      r1  OK                       reason='文書タイトルが「請求書」であり、請求金額・支払期限・消費税が記載されているため。'
+openai/gpt-5.6-terra@low           invoice_ja_tilt      r1  OK                       reason='文書タイトルが「請求書」であり、請求金額・消費税・支払期限が記載されています。'
+openai/gpt-5.6-terra@low           invoice_ja_jpeg25    r1  OK                       reason='The document title is 「請求書」, and it includes invoice details'
+openai/gpt-5.6-terra@low           quotation_ja_scan    r1  OK                       reason='Document title is「御見積書」, indicating a quotation.'
+openai/gpt-5.6-luna@low            invoice_ja_clean     r1  OK                       reason='文書タイトルが「請求書」で、支払期限や請求合計金額が記載されています。'
+openai/gpt-5.6-luna@low            quotation_ja_clean   r1  OK                       reason='文書タイトルが「御見積書」で、見積金額・消費税・見積有効期限が記載されているため。'
+openai/gpt-5.6-luna@low            po_ja_clean          r1  OK                       reason='文書タイトルが「注文書」で、品名・数量・単価・納品希望日など発注内容が記載されています。'
+openai/gpt-5.6-luna@low            invoice_ja_scan      r1  OK                       reason='書類タイトルが「請求書」で、請求金額・消費税・合計および支払期限が記載されているため。'
+openai/gpt-5.6-luna@low            invoice_ja_tilt      r1  OK                       reason='文書タイトルが「請求書」で、請求金額・消費税・合計および支払期限が記載されているため。'
+openai/gpt-5.6-luna@low            invoice_ja_jpeg25    r1  OK                       reason='文書のタイトルが「請求書」で、明細・小計・消費税・合計金額および支払期限が記載されています。'
+openai/gpt-5.6-luna@low            quotation_ja_scan    r1  OK                       reason='文書タイトルが「御見積書」で、見積有効期限や小計・消費税・合計が記載されているため。'
+azure/gpt-5.6-sol@low              invoice_ja_clean     r1  OK                       reason='文書タイトルに「請求書」と明記され、請求金額の合計および支払期限が記載されています。'
+azure/gpt-5.6-sol@low              quotation_ja_clean   r1  OK                       reason='文書タイトルに「御見積書」と明記され、見積有効期限も記載されています。'
+azure/gpt-5.6-sol@low              po_ja_clean          r1  OK                       reason='文書のタイトルが「注文書」であり、品名・数量・単価・金額・納品希望日が記載されているため。'
+azure/gpt-5.6-sol@low              invoice_ja_scan      r1  OK                       reason='文書タイトルに「請求書」と明記され、合計金額および支払期限が記載されています。'
+azure/gpt-5.6-sol@low              invoice_ja_tilt      r1  OK                       reason='文書タイトルに「請求書」と明記され、請求金額、消費税、合計、お支払期限が記載されています。'
+azure/gpt-5.6-sol@low              invoice_ja_jpeg25    r1  OK                       reason='文書中央のタイトルが「請求書」で、請求明細、合計金額、お支払期限が記載されています。'
+azure/gpt-5.6-sol@low              quotation_ja_scan    r1  OK                       reason='文書タイトルに「御見積書」と明記され、見積有効期限も記載されています。'
+azure/gpt-5.6-terra@low            invoice_ja_clean     r1  OK                       reason='Document title is 「請求書」 and it includes billed items, subtot'
+azure/gpt-5.6-terra@low            quotation_ja_clean   r1  OK                       reason='Document title is 「御見積書」 and it includes quotation validity '
+azure/gpt-5.6-terra@low            po_ja_clean          r1  OK                       reason='文書タイトルが「注文書」であり、宛先・品目・数量・単価・金額・納品希望日が記載されているため。'
+azure/gpt-5.6-terra@low            invoice_ja_scan      r1  OK                       reason='文書タイトルが「請求書」であり、合計金額、消費税、お支払期限が記載されているため。'
+azure/gpt-5.6-terra@low            invoice_ja_tilt      r1  OK                       reason='Document title is 「請求書」, which means invoice.'
+azure/gpt-5.6-terra@low            invoice_ja_jpeg25    r1  OK                       reason='文書タイトルが「請求書」であり、請求金額・消費税・支払期限が記載されているため。'
+azure/gpt-5.6-terra@low            quotation_ja_scan    r1  OK                       reason='Document title is 「御見積書」, which indicates a quotation.'
+azure/gpt-5.6-luna@low             invoice_ja_clean     r1  OK                       reason='文書タイトルが「請求書」で、請求金額や支払期限が記載されているため。'
+azure/gpt-5.6-luna@low             quotation_ja_clean   r1  OK                       reason='文書のタイトルが「御見積書」で、見積有効期限や見積金額が記載されているため。'
+azure/gpt-5.6-luna@low             po_ja_clean          r1  OK                       reason='文書タイトルが「注文書」で、商品名・数量・単価・金額および納品希望日が記載されています。'
+azure/gpt-5.6-luna@low             invoice_ja_scan      r1  OK                       reason='文書タイトルが「請求書」で、請求金額・消費税・合計および支払期限が記載されているため。'
+azure/gpt-5.6-luna@low             invoice_ja_tilt      r1  OK                       reason='文書タイトルが「請求書」で、請求金額や支払期限が記載されています。'
+azure/gpt-5.6-luna@low             invoice_ja_jpeg25    r1  OK                       reason='文書のタイトルが「請求書」で、請求金額や支払期限が記載されています。'
+azure/gpt-5.6-luna@low             quotation_ja_scan    r1  OK                       reason='文書タイトルが「御見積書」で、見積有効期限や小計・消費税・合計金額が記載されているため。'
+google/gemini-3.5-flash@low        invoice_ja_clean     r1  OK                       reason="The document is clearly titled '請求書' (Invoice) at the top ce"
+google/gemini-3.5-flash@low        quotation_ja_clean   r1  OK                       reason="The document is clearly titled '御見積書' (Estimate/Quotation) a"
+google/gemini-3.5-flash@low        po_ja_clean          r1  OK                       reason="The document is clearly titled '注文書' (Purchase Order) at the"
+google/gemini-3.5-flash@low        invoice_ja_scan      r1  OK                       reason="The document is clearly titled '請求書' (Invoice) at the top ce"
+google/gemini-3.5-flash@low        invoice_ja_tilt      r1  OK                       reason="The document is clearly titled '請求書' (Invoice) at the top ce"
+google/gemini-3.5-flash@low        invoice_ja_jpeg25    r1  OK                       reason="The document is clearly titled '請求書' (Invoice) at the top ce"
+google/gemini-3.5-flash@low        quotation_ja_scan    r1  OK                       reason="The document is clearly titled '御見積書' (Quotation) at the top"
+openai/gpt-5.6-sol@high            invoice_ja_clean     r1  OK                       reason='文書タイトルに「請求書」と明記され、請求明細、合計金額、お支払期限が記載されているため。'
+openai/gpt-5.6-sol@high            quotation_ja_clean   r1  OK                       reason='文書タイトルが「御見積書」で、見積有効期限も記載されているため。'
+openai/gpt-5.6-sol@high            po_ja_clean          r1  OK                       reason='文書タイトルに「注文書」と明記されています。'
+openai/gpt-5.6-sol@high            invoice_ja_scan      r1  OK                       reason='文書タイトルが「請求書」で、請求金額、消費税、合計額、お支払期限が記載されています。'
+openai/gpt-5.6-sol@high            invoice_ja_tilt      r1  OK                       reason='文書タイトルが「請求書」で、請求金額、消費税、合計額、お支払期限が記載されています。'
+openai/gpt-5.6-sol@high            invoice_ja_jpeg25    r1  OK                       reason='文書タイトルが「請求書」で、請求金額および支払期限が記載されています。'
+openai/gpt-5.6-sol@high            quotation_ja_scan    r1  OK                       reason='文書タイトルが「御見積書」であり、見積有効期限も記載されています。'
+openai/gpt-5.5@low                 invoice_ja_clean     r2  OK                       reason='The document title is 「請求書」, which means invoice, and it inc'
+openai/gpt-5.5@low                 quotation_ja_clean   r2  OK                       reason='The document title is 「御見積書」, which identifies it as a quota'
+openai/gpt-5.5@low                 po_ja_clean          r2  OK                       reason='文書タイトルに「注文書」と明記されているため、注文書/発注書に分類されます。'
+openai/gpt-5.5@low                 invoice_ja_scan      r2  OK                       reason='文書中央のタイトルに「請求書」と明記されており、請求先、品目・数量・単価・金額、合計金額、支払期限が記載されているため。'
+openai/gpt-5.5@low                 invoice_ja_tilt      r2  OK                       reason='文書のタイトルに「請求書」と明記されており、合計金額や支払期限が記載されているため。'
+openai/gpt-5.5@low                 invoice_ja_jpeg25    r2  OK                       reason='The document title is 「請求書」, which means invoice, and it inc'
+openai/gpt-5.5@low                 quotation_ja_scan    r2  OK                       reason='The document title reads「御見積書」and includes quotation-specifi'
+openai/gpt-5.6-sol@low             invoice_ja_clean     r2  OK                       reason='文書タイトルに「請求書」と明記され、請求明細、合計金額、お支払期限が記載されています。'
+openai/gpt-5.6-sol@low             quotation_ja_clean   r2  OK                       reason='文書タイトルに「御見積書」と記載され、見積有効期限も示されているため。'
+openai/gpt-5.6-sol@low             po_ja_clean          r2  OK                       reason='文書タイトルが「注文書」であり、品名・数量・単価・金額・納品希望日が記載されているため。'
+openai/gpt-5.6-sol@low             invoice_ja_scan      r2  OK                       reason='文書中央のタイトルが「請求書」で、請求金額、消費税、合計、お支払期限が記載されています。'
+openai/gpt-5.6-sol@low             invoice_ja_tilt      r2  OK                       reason='文書中央のタイトルが「請求書」で、請求明細、消費税、合計金額、お支払期限が記載されています。'
+openai/gpt-5.6-sol@low             invoice_ja_jpeg25    r2  OK                       reason='文書中央のタイトルが「請求書」で、明細、合計金額、消費税、お支払期限が記載されています。'
+openai/gpt-5.6-sol@low             quotation_ja_scan    r2  OK                       reason='文書タイトルに「御見積書」とあり、見積有効期限や品名・数量・単価・金額が記載されているため。'
+openai/gpt-5.6-terra@low           invoice_ja_clean     r2  OK                       reason='タイトルが「請求書」であり、請求金額・消費税・お支払期限が記載されているため。'
+openai/gpt-5.6-terra@low           quotation_ja_clean   r2  OK                       reason='Document title is 「御見積書」, indicating a quotation.'
+openai/gpt-5.6-terra@low           po_ja_clean          r2  OK                       reason='Document title is 「注文書」, indicating a purchase order.'
+openai/gpt-5.6-terra@low           invoice_ja_scan      r2  OK                       reason='Document title is 「請求書」 and it includes billing totals, cons'
+openai/gpt-5.6-terra@low           invoice_ja_tilt      r2  OK                       reason='文書タイトルが「請求書」であり、品目・数量・単価・金額、消費税、合計金額、支払期限が記載されているため。'
+openai/gpt-5.6-terra@low           invoice_ja_jpeg25    r2  OK                       reason='文書タイトルが「請求書」であり、合計金額と支払期限が記載されているため。'
+openai/gpt-5.6-terra@low           quotation_ja_scan    r2  OK                       reason='Document title is 「御見積書」, indicating a quotation/estimate.'
+openai/gpt-5.6-luna@low            invoice_ja_clean     r2  OK                       reason='文書タイトルが「請求書」で、請求金額・支払期限・合計金額が記載されています。'
+openai/gpt-5.6-luna@low            quotation_ja_clean   r2  OK                       reason='文書のタイトルが「御見積書」で、見積有効期限や小計・消費税・合計金額が記載されているため。'
+openai/gpt-5.6-luna@low            po_ja_clean          r2  OK                       reason='文書タイトルが「注文書」で、品名・数量・単価・金額および納品希望日が記載されているため。'
+openai/gpt-5.6-luna@low            invoice_ja_scan      r2  OK                       reason='文書タイトルが「請求書」で、請求金額・消費税・合計および支払期限が記載されているため。'
+openai/gpt-5.6-luna@low            invoice_ja_tilt      r2  OK                       reason='文書タイトルが「請求書」で、請求金額や支払期限が記載されています。'
+openai/gpt-5.6-luna@low            invoice_ja_jpeg25    r2  OK                       reason='書類タイトルが「請求書」で、請求金額の小計・消費税・合計および支払期限が記載されているため。'
+openai/gpt-5.6-luna@low            quotation_ja_scan    r2  OK                       reason='The document title is 「御見積書」 and it includes quotation valid'
+azure/gpt-5.6-sol@low              invoice_ja_clean     r2  OK                       reason='文書タイトルが「請求書」で、請求金額、消費税、合計、お支払期限が記載されています。'
+azure/gpt-5.6-sol@low              quotation_ja_clean   r2  OK                       reason='文書タイトルが「御見積書」で、見積有効期限の記載もあるため。'
+azure/gpt-5.6-sol@low              po_ja_clean          r2  OK                       reason='文書タイトルが「注文書」と明記されています。'
+azure/gpt-5.6-sol@low              invoice_ja_scan      r2  OK                       reason='文書中央のタイトルに「請求書」と明記され、合計金額と支払期限が記載されているため。'
+azure/gpt-5.6-sol@low              invoice_ja_tilt      r2  OK                       reason='文書中央のタイトルに「請求書」と明記され、請求金額、消費税、合計、お支払期限が記載されています。'
+azure/gpt-5.6-sol@low              invoice_ja_jpeg25    r2  OK                       reason='文書中央のタイトルに「請求書」と明記され、請求金額の合計および支払期限が記載されています。'
+azure/gpt-5.6-sol@low              quotation_ja_scan    r2  OK                       reason='文書タイトルに「御見積書」と明記され、見積有効期限も記載されているため。'
+azure/gpt-5.6-terra@low            invoice_ja_clean     r2  OK                       reason='文書タイトルが「請求書」であり、請求金額・消費税・お支払期限が記載されています。'
+azure/gpt-5.6-terra@low            quotation_ja_clean   r2  OK                       reason='文書タイトルが「御見積書」であり、見積有効期限の記載もあるため。'
+azure/gpt-5.6-terra@low            po_ja_clean          r2  OK                       reason='文書タイトルが「注文書」であり、注文品目・数量・単価・金額、納品希望日が記載されているため。'
+azure/gpt-5.6-terra@low            invoice_ja_scan      r2  OK                       reason='文書タイトルが「請求書」で、合計金額・消費税・お支払期限が記載されているため。'
+azure/gpt-5.6-terra@low            invoice_ja_tilt      r2  OK                       reason='文書タイトルが「請求書」であり、合計金額・消費税・支払期限が記載されているため。'
+azure/gpt-5.6-terra@low            invoice_ja_jpeg25    r2  OK                       reason='文書タイトルが「請求書」で、合計金額および支払期限が記載されているため。'
+azure/gpt-5.6-terra@low            quotation_ja_scan    r2  OK                       reason='文書タイトルが「御見積書」であり、見積有効期限の記載もあるため。'
+azure/gpt-5.6-luna@low             invoice_ja_clean     r2  OK                       reason='文書のタイトルが「請求書」で、請求金額や支払期限が記載されています。'
+azure/gpt-5.6-luna@low             quotation_ja_clean   r2  OK                       reason='文書タイトルが「御見積書」で、見積有効期限や見積金額が記載されているため。'
+azure/gpt-5.6-luna@low             po_ja_clean          r2  OK                       reason='書類のタイトルが「注文書」で、品名・数量・単価・金額および納品希望日が記載されているためです。'
+azure/gpt-5.6-luna@low             invoice_ja_scan      r2  OK                       reason='文書タイトルが「請求書」で、請求金額・消費税・合計および支払期限が記載されています。'
+azure/gpt-5.6-luna@low             invoice_ja_tilt      r2  OK                       reason='文書タイトルが「請求書」で、請求金額・支払期限・小計・消費税・合計が記載されています。'
+azure/gpt-5.6-luna@low             invoice_ja_jpeg25    r2  OK                       reason='文書タイトルが「請求書」で、請求金額や支払期限が記載されています。'
+azure/gpt-5.6-luna@low             quotation_ja_scan    r2  OK                       reason='文書タイトルが「御見積書」で、見積有効期限や小計・消費税・合計の記載があるため。'
+google/gemini-3.5-flash@low        invoice_ja_clean     r2  OK                       reason="The document is clearly titled '請求書' (Invoice) at the top ce"
+google/gemini-3.5-flash@low        quotation_ja_clean   r2  OK                       reason="The document is clearly titled '御見積書' (Estimate/Quotation) a"
+google/gemini-3.5-flash@low        po_ja_clean          r2  OK                       reason="The document is clearly titled '注文書' (Purchase Order) at the"
+google/gemini-3.5-flash@low        invoice_ja_scan      r2  OK                       reason="The document is clearly titled '請求書' (Invoice) at the top ce"
+google/gemini-3.5-flash@low        invoice_ja_tilt      r2  OK                       reason="The document is clearly titled '請求書' (Invoice) at the top ce"
+google/gemini-3.5-flash@low        invoice_ja_jpeg25    r2  OK                       reason="The document is clearly titled '請求書' (Invoice) at the top ce"
+google/gemini-3.5-flash@low        quotation_ja_scan    r2  OK                       reason="The document is clearly titled '御見積書' (Quotation) at the top"
+openai/gpt-5.6-sol@high            invoice_ja_clean     r2  OK                       reason='文書タイトルに「請求書」と明記され、請求金額、消費税、合計額、お支払期限が記載されています。'
+openai/gpt-5.6-sol@high            quotation_ja_clean   r2  OK                       reason='文書タイトルが「御見積書」で、見積有効期限も記載されているため。'
+openai/gpt-5.6-sol@high            po_ja_clean          r2  OK                       reason='文書タイトルが「注文書」であるため。'
+openai/gpt-5.6-sol@high            invoice_ja_scan      r2  OK                       reason='文書タイトルが「請求書」で、請求金額、消費税、合計額、お支払期限が記載されています。'
+openai/gpt-5.6-sol@high            invoice_ja_tilt      r2  OK                       reason='文書タイトルに「請求書」と明記され、請求金額と支払期限が記載されています。'
+openai/gpt-5.6-sol@high            invoice_ja_jpeg25    r2  OK                       reason='文書タイトルが「請求書」で、請求金額、消費税、合計額、お支払期限が記載されています。'
+openai/gpt-5.6-sol@high            quotation_ja_scan    r2  OK                       reason='文書タイトルが「御見積書」であり、見積有効期限の記載もあるため。'
+openai/gpt-5.5@low                 invoice_ja_clean     r3  OK                       reason='文書中央のタイトルに「請求書」と明記されており、請求番号・発行日、品目ごとの金額、合計金額、支払期限が記載されているため'
+openai/gpt-5.5@low                 quotation_ja_clean   r3  OK                       reason='The document title is 「御見積書」, which indicates a quotation/es'
+openai/gpt-5.5@low                 po_ja_clean          r3  OK                       reason='文書タイトルが「注文書」であり、品名・数量・単価・金額、納品希望日など発注内容が記載されているため。'
+openai/gpt-5.5@low                 invoice_ja_scan      r3  OK                       reason='The document title is 「請求書」, which means invoice, and it inc'
+openai/gpt-5.5@low                 invoice_ja_tilt      r3  OK                       reason='The document title reads "請求書" (invoice) and includes billin'
+openai/gpt-5.5@low                 invoice_ja_jpeg25    r3  OK                       reason='文書の中央タイトルに「請求書」と明記されており、請求金額やお支払期限が記載されているため。'
+openai/gpt-5.5@low                 quotation_ja_scan    r3  OK                       reason='The document title clearly reads「御見積書」(quotation/estimate), '
+openai/gpt-5.6-sol@low             invoice_ja_clean     r3  OK                       reason='文書中央のタイトルが「請求書」であり、請求金額、消費税、合計、お支払期限が記載されています。'
+openai/gpt-5.6-sol@low             quotation_ja_clean   r3  OK                       reason='文書タイトルに「御見積書」と明記され、見積有効期限や品目・数量・単価・金額が記載されているため。'
+openai/gpt-5.6-sol@low             po_ja_clean          r3  OK                       reason='文書タイトルが「注文書」であり、品名・数量・単価・金額・納品希望日が記載されているため。'
+openai/gpt-5.6-sol@low             invoice_ja_scan      r3  OK                       reason='文書中央のタイトルが「請求書」で、請求金額、消費税、合計、お支払期限が記載されています。'
+openai/gpt-5.6-sol@low             invoice_ja_tilt      r3  OK                       reason='文書タイトルに「請求書」と明記され、請求金額、消費税、合計額、お支払期限が記載されています。'
+openai/gpt-5.6-sol@low             invoice_ja_jpeg25    r3  OK                       reason='文書中央のタイトルが「請求書」で、明細、合計金額、お支払期限が記載されているため。'
+openai/gpt-5.6-sol@low             quotation_ja_scan    r3  OK                       reason='文書タイトルに「御見積書」とあり、見積有効期限や品名・数量・単価・金額が記載されているため。'
+openai/gpt-5.6-terra@low           invoice_ja_clean     r3  OK                       reason='Document title is「請求書」and it includes an issue date, payment'
+openai/gpt-5.6-terra@low           quotation_ja_clean   r3  OK                       reason='Document title is 「御見積書」, indicating a quotation.'
+openai/gpt-5.6-terra@low           po_ja_clean          r3  OK                       reason='Document title is 「注文書」, indicating a purchase order.'
+openai/gpt-5.6-terra@low           invoice_ja_scan      r3  OK                       reason='Document title is 「請求書」, and it includes billing details suc'
+openai/gpt-5.6-terra@low           invoice_ja_tilt      r3  OK                       reason='Document title is 「請求書」, and it includes invoice number, iss'
+openai/gpt-5.6-terra@low           invoice_ja_jpeg25    r3  OK                       reason='Document title is 「請求書」 and it includes invoice details such'
+openai/gpt-5.6-terra@low           quotation_ja_scan    r3  OK                       reason='Document title is 「御見積書」, indicating a quotation.'
+openai/gpt-5.6-luna@low            invoice_ja_clean     r3  OK                       reason='文書タイトルが「請求書」で、請求金額や支払期限が記載されています。'
+openai/gpt-5.6-luna@low            quotation_ja_clean   r3  OK                       reason='文書タイトルが「御見積書」で、見積有効期限や見積金額が記載されているため。'
+openai/gpt-5.6-luna@low            po_ja_clean          r3  OK                       reason='文書タイトルが「注文書」で、品名・数量・単価・金額および納品希望日が記載されているため。'
+openai/gpt-5.6-luna@low            invoice_ja_scan      r3  OK                       reason='書類のタイトルが「請求書」で、請求金額・消費税・合計および支払期限が記載されています。'
+openai/gpt-5.6-luna@low            invoice_ja_tilt      r3  OK                       reason='文書タイトルが「請求書」で、請求金額・消費税・合計および支払期限が記載されています。'
+openai/gpt-5.6-luna@low            invoice_ja_jpeg25    r3  OK                       reason='文書のタイトルが「請求書」で、支払期限や合計金額が記載されているため。'
+openai/gpt-5.6-luna@low            quotation_ja_scan    r3  OK                       reason='書類タイトルが「御見積書」で、見積金額・小計・消費税・合計および見積有効期限が記載されています。'
+azure/gpt-5.6-sol@low              invoice_ja_clean     r3  OK                       reason='文書タイトルに「請求書」と明記され、合計金額および支払期限が記載されています。'
+azure/gpt-5.6-sol@low              quotation_ja_clean   r3  OK                       reason='文書タイトルが「御見積書」で、見積有効期限の記載があるため。'
+azure/gpt-5.6-sol@low              po_ja_clean          r3  OK                       reason='文書タイトルが「注文書」で、品名・数量・単価・金額および納品希望日が記載されています。'
+azure/gpt-5.6-sol@low              invoice_ja_scan      r3  OK                       reason='文書中央のタイトルが「請求書」で、合計金額と支払期限が記載されています。'
+azure/gpt-5.6-sol@low              invoice_ja_tilt      r3  OK                       reason='文書中央に「請求書」と明記され、請求金額、消費税、合計、お支払期限が記載されています。'
+azure/gpt-5.6-sol@low              invoice_ja_jpeg25    r3  OK                       reason='文書上部のタイトルが「請求書」であり、明細、合計金額、お支払期限が記載されています。'
+azure/gpt-5.6-sol@low              quotation_ja_scan    r3  OK                       reason='文書タイトルが「御見積書」で、見積有効期限の記載があるため。'
+azure/gpt-5.6-terra@low            invoice_ja_clean     r3  OK                       reason='Document title is 「請求書」, and it includes billed line items, '
+azure/gpt-5.6-terra@low            quotation_ja_clean   r3  OK                       reason='Document title is 「御見積書」, which identifies it as a quotation'
+azure/gpt-5.6-terra@low            po_ja_clean          r3  OK                       reason='書類タイトルが「注文書」であり、品目・数量・単価・金額および納品希望日が記載されているため。'
+azure/gpt-5.6-terra@low            invoice_ja_scan      r3  OK                       reason='文書タイトルが「請求書」であり、請求金額、消費税、お支払期限が記載されているため。'
+azure/gpt-5.6-terra@low            invoice_ja_tilt      r3  OK                       reason='Document title is 「請求書」, which means invoice.'
+azure/gpt-5.6-terra@low            invoice_ja_jpeg25    r3  OK                       reason='文書タイトルが「請求書」で、合計金額および支払期限が記載されているため。'
+azure/gpt-5.6-terra@low            quotation_ja_scan    r3  OK                       reason='Document title is 「御見積書」, indicating a quotation.'
+azure/gpt-5.6-luna@low             invoice_ja_clean     r3  OK                       reason='文書タイトルが「請求書」で、請求金額・支払期限・合計金額が記載されているため。'
+azure/gpt-5.6-luna@low             quotation_ja_clean   r3  OK                       reason='文書タイトルが「御見積書」で、見積有効期限や見積金額が記載されています。'
+azure/gpt-5.6-luna@low             po_ja_clean          r3  OK                       reason='文書タイトルが「注文書」であり、品名・数量・単価・金額と納品希望日が記載されているため。'
+azure/gpt-5.6-luna@low             invoice_ja_scan      r3  OK                       reason='文書タイトルが「請求書」で、請求金額・消費税・合計および支払期限が記載されています。'
+azure/gpt-5.6-luna@low             invoice_ja_tilt      r3  OK                       reason='文書タイトルが「請求書」で、請求金額・消費税・合計および支払期限が記載されています。'
+azure/gpt-5.6-luna@low             invoice_ja_jpeg25    r3  OK                       reason='文書タイトルが「請求書」で、請求金額の小計・消費税・合計および支払期限が記載されています。'
+azure/gpt-5.6-luna@low             quotation_ja_scan    r3  OK                       reason='書類のタイトルが「御見積書」で、見積有効期限や小計・消費税・合計金額が記載されているため。'
+google/gemini-3.5-flash@low        invoice_ja_clean     r3  OK                       reason="The document is clearly titled '請求書' (Invoice) at the top ce"
+google/gemini-3.5-flash@low        quotation_ja_clean   r3  OK                       reason="The document is clearly titled '御見積書' (Estimate/Quotation) a"
+google/gemini-3.5-flash@low        po_ja_clean          r3  OK                       reason="The document is clearly titled '注文書' (Purchase Order) at the"
+google/gemini-3.5-flash@low        invoice_ja_scan      r3  OK                       reason="The document is clearly titled '請求書' (Invoice) at the top ce"
+google/gemini-3.5-flash@low        invoice_ja_tilt      r3  OK                       reason="The document is clearly titled '請求書' (Invoice) at the top ce"
+google/gemini-3.5-flash@low        invoice_ja_jpeg25    r3  OK                       reason="The document is clearly titled '請求書' (Invoice) at the top ce"
+google/gemini-3.5-flash@low        quotation_ja_scan    r3  OK                       reason="The document is clearly titled '御見積書' (Quotation) at the top"
+openai/gpt-5.6-sol@high            invoice_ja_clean     r3  OK                       reason='文書タイトルが「請求書」で、請求金額、消費税、合計、お支払期限が記載されています。'
+openai/gpt-5.6-sol@high            quotation_ja_clean   r3  OK                       reason='文書タイトルが「御見積書」で、見積有効期限の記載もあるため。'
+openai/gpt-5.6-sol@high            po_ja_clean          r3  OK                       reason='文書タイトルが「注文書」であり、品名・数量・単価・金額および納品希望日が記載されています。'
+openai/gpt-5.6-sol@high            invoice_ja_scan      r3  OK                       reason='文書タイトルに「請求書」と明記され、請求合計額および支払期限が記載されています。'
+openai/gpt-5.6-sol@high            invoice_ja_tilt      r3  OK                       reason='文書タイトルが「請求書」で、請求金額、消費税、合計額、支払期限が記載されています。'
+openai/gpt-5.6-sol@high            invoice_ja_jpeg25    r3  OK                       reason='文書タイトルに「請求書」と明記され、合計金額と支払期限が記載されています。'
+openai/gpt-5.6-sol@high            quotation_ja_scan    r3  OK                       reason='文書タイトルに「御見積書」と明記され、見積有効期限も記載されているため。'
+
+========================================================================
+SUMMARY  (env=https://gw.ldxhub.io, repeats=3, 20260710_222157)
+========================================================================
+azure/gpt-5.6-luna@low             invoice_ja_clean      OKx3
+azure/gpt-5.6-luna@low             invoice_ja_jpeg25     OKx3
+azure/gpt-5.6-luna@low             invoice_ja_scan       OKx3
+azure/gpt-5.6-luna@low             invoice_ja_tilt       OKx3
+azure/gpt-5.6-luna@low             po_ja_clean           OKx3
+azure/gpt-5.6-luna@low             quotation_ja_clean    OKx3
+azure/gpt-5.6-luna@low             quotation_ja_scan     OKx3
+azure/gpt-5.6-sol@low              invoice_ja_clean      OKx3
+azure/gpt-5.6-sol@low              invoice_ja_jpeg25     OKx3
+azure/gpt-5.6-sol@low              invoice_ja_scan       OKx3
+azure/gpt-5.6-sol@low              invoice_ja_tilt       OKx3
+azure/gpt-5.6-sol@low              po_ja_clean           OKx3
+azure/gpt-5.6-sol@low              quotation_ja_clean    OKx3
+azure/gpt-5.6-sol@low              quotation_ja_scan     OKx3
+azure/gpt-5.6-terra@low            invoice_ja_clean      OKx3
+azure/gpt-5.6-terra@low            invoice_ja_jpeg25     OKx3
+azure/gpt-5.6-terra@low            invoice_ja_scan       OKx3
+azure/gpt-5.6-terra@low            invoice_ja_tilt       OKx3
+azure/gpt-5.6-terra@low            po_ja_clean           OKx3
+azure/gpt-5.6-terra@low            quotation_ja_clean    OKx3
+azure/gpt-5.6-terra@low            quotation_ja_scan     OKx3
+google/gemini-3.5-flash@low        invoice_ja_clean      OKx3
+google/gemini-3.5-flash@low        invoice_ja_jpeg25     OKx3
+google/gemini-3.5-flash@low        invoice_ja_scan       OKx3
+google/gemini-3.5-flash@low        invoice_ja_tilt       OKx3
+google/gemini-3.5-flash@low        po_ja_clean           OKx3
+google/gemini-3.5-flash@low        quotation_ja_clean    OKx3
+google/gemini-3.5-flash@low        quotation_ja_scan     OKx3
+openai/gpt-5.5@low                 invoice_ja_clean      OKx3
+openai/gpt-5.5@low                 invoice_ja_jpeg25     OKx3
+openai/gpt-5.5@low                 invoice_ja_scan       OKx3
+openai/gpt-5.5@low                 invoice_ja_tilt       OKx3
+openai/gpt-5.5@low                 po_ja_clean           OKx3
+openai/gpt-5.5@low                 quotation_ja_clean    OKx3
+openai/gpt-5.5@low                 quotation_ja_scan     OKx3
+openai/gpt-5.6-luna@low            invoice_ja_clean      OKx3
+openai/gpt-5.6-luna@low            invoice_ja_jpeg25     OKx3
+openai/gpt-5.6-luna@low            invoice_ja_scan       OKx3
+openai/gpt-5.6-luna@low            invoice_ja_tilt       OKx3
+openai/gpt-5.6-luna@low            po_ja_clean           OKx3
+openai/gpt-5.6-luna@low            quotation_ja_clean    OKx3
+openai/gpt-5.6-luna@low            quotation_ja_scan     OKx3
+openai/gpt-5.6-sol@high            invoice_ja_clean      OKx3
+openai/gpt-5.6-sol@high            invoice_ja_jpeg25     OKx3
+openai/gpt-5.6-sol@high            invoice_ja_scan       OKx3
+openai/gpt-5.6-sol@high            invoice_ja_tilt       OKx3
+openai/gpt-5.6-sol@high            po_ja_clean           OKx3
+openai/gpt-5.6-sol@high            quotation_ja_clean    OKx3
+openai/gpt-5.6-sol@high            quotation_ja_scan     OKx3
+openai/gpt-5.6-sol@low             invoice_ja_clean      OKx3
+openai/gpt-5.6-sol@low             invoice_ja_jpeg25     OKx3
+openai/gpt-5.6-sol@low             invoice_ja_scan       OKx3
+openai/gpt-5.6-sol@low             invoice_ja_tilt       OKx3
+openai/gpt-5.6-sol@low             po_ja_clean           OKx3
+openai/gpt-5.6-sol@low             quotation_ja_clean    OKx3
+openai/gpt-5.6-sol@low             quotation_ja_scan     OKx3
+openai/gpt-5.6-terra@low           invoice_ja_clean      OKx3
+openai/gpt-5.6-terra@low           invoice_ja_jpeg25     OKx3
+openai/gpt-5.6-terra@low           invoice_ja_scan       OKx3
+openai/gpt-5.6-terra@low           invoice_ja_tilt       OKx3
+openai/gpt-5.6-terra@low           po_ja_clean           OKx3
+openai/gpt-5.6-terra@low           quotation_ja_clean    OKx3
+openai/gpt-5.6-terra@low           quotation_ja_scan     OKx3

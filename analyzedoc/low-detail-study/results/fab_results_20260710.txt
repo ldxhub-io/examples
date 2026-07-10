@@ -1,0 +1,136 @@
+openai/gpt-5.5@low                 jpg  r1  PARTIAL(1/4)   total=833.25 inv=INV-2025-0731 vendor='K Nothwind Trading Ltd'
+openai/gpt-5.5@low                 png  r1  PARTIAL(2/4)   total=833.25 inv=INV-2025-07-31 vendor='K Northwind Trading Ltd'
+openai/gpt-5.6-sol@low             jpg  r1  PARTIAL(2/4)   total=833.25 inv=INV-2025-0731 vendor='K Northwind Trading Ltd'
+openai/gpt-5.6-sol@low             png  r1  PARTIAL(2/4)   total=833.25 inv=INV-2025-0731 vendor='K Northwind Trading Ltd'
+openai/gpt-5.6-terra@low           jpg  r1  PARTIAL(1/4)   total=833.25 inv=INV-2025-0731 vendor='Northwind Trading Ltd.'
+openai/gpt-5.6-terra@low           png  r1  PARTIAL(1/4)   total=833.25 inv=INV-2025-0731 vendor='Northwind Trading Ltd'
+openai/gpt-5.6-luna@low            jpg  r1  PARTIAL(1/4)   total=833.25 inv=INV-2025-0731 vendor='Kothiwari Trading Ltd.'
+openai/gpt-5.6-luna@low            png  r1  PARTIAL(1/4)   total=833.25 inv=INV-2025-0731 vendor='K Northfield Trading Ltd.'
+azure/gpt-5.6-sol@low              jpg  r1  PARTIAL(2/4)   total=833.25 inv=INV-2025-0731 vendor='K Northwind Trading Ltd'
+azure/gpt-5.6-sol@low              png  r1  PARTIAL(1/4)   total=833.25 inv=INV-2025-0731 vendor='K Northfield Trading Ltd'
+azure/gpt-5.6-terra@low            jpg  r1  PARTIAL(2/4)   total=833.25 inv=INV-2025-0731 vendor='K Northwind Trading Ltd.'
+azure/gpt-5.6-terra@low            png  r1  PARTIAL(3/4)   total=833.25 inv=INV-2025-0731 vendor='K Northwind Trading Ltd\n18 &'
+azure/gpt-5.6-luna@low             jpg  r1  PARTIAL(1/4)   total=833.25 inv=INV-2025-0731 vendor='K Northern Trading Ltd.'
+azure/gpt-5.6-luna@low             png  r1  PARTIAL(1/4)   total=833.25 inv=INV-2025-0731 vendor='K Northwall Trading Ltd.'
+azure/gpt-5.4@low                  jpg  r1  PARTIAL(3/4)   total=833.25 inv=INV-2026-0731 vendor='KNorthwind Trading Ltd.'
+azure/gpt-5.4@low                  png  r1  OK             total=833.25 inv=INV-2026-0731 vendor='K Northwind Trading Ltd.'
+azure/gpt-5.4-mini@low             jpg  r1  OK             total=833.25 inv=INV-2026-0731 vendor='K Northwind Trading Ltd.'
+azure/gpt-5.4-mini@low             png  r1  OK             total=833.25 inv=INV-2026-0731 vendor='K Northwind Trading Ltd.'
+google/gemini-3.5-flash@low        jpg  r1  OK             total=833.25 inv=INV-2026-0731 vendor='K Northwind Trading Ltd.'
+google/gemini-3.5-flash@low        png  r1  OK             total=833.25 inv=INV-2026-0731 vendor='K Northwind Trading Ltd.'
+openai/gpt-5.6-sol@high            jpg  r1  OK             total=833.25 inv=INV-2026-0731 vendor='K Northwind Trading Ltd.\n3-8'
+openai/gpt-5.6-sol@high            png  r1  OK             total=833.25 inv=INV-2026-0731 vendor='K Northwind Trading Ltd.\n3-8'
+openai/gpt-5.5@low                 jpg  r2  PARTIAL(2/4)   total=833.25 inv=INV-2025-0731 vendor='K Northwind Trading Ltd'
+openai/gpt-5.5@low                 png  r2  PARTIAL(2/4)   total=833.25 inv=INV-2025-0731 vendor='K Northwind Trading Ltd\n318 '
+openai/gpt-5.6-sol@low             jpg  r2  PARTIAL(2/4)   total=833.25 inv=INV-2025-0731 vendor='K Northwind Trading Ltd'
+openai/gpt-5.6-sol@low             png  r2  PARTIAL(2/4)   total=833.25 inv=INV-2025-0731 vendor='K Northwind Trading Ltd'
+openai/gpt-5.6-terra@low           jpg  r2  PARTIAL(2/4)   total=833.25 inv=INV-2025-0731 vendor='K Northwind Trading Ltd'
+openai/gpt-5.6-terra@low           png  r2  PARTIAL(2/4)   total=833.25 inv=INV-2025-0731 vendor='Northwind Trading Ltd\n81 Lak'
+openai/gpt-5.6-luna@low            jpg  r2  PARTIAL(1/4)   total=833.25 inv=INV-2025-0731 vendor='Kobayashi Trading Ltd.'
+openai/gpt-5.6-luna@low            png  r2  PARTIAL(2/4)   total=833.25 inv=INV-2025-0731 vendor='K Northwind Trading Ltd.'
+azure/gpt-5.6-sol@low              jpg  r2  PARTIAL(1/4)   total=833.25 inv=INV-2025-0731 vendor='K Northfield Trading Ltd'
+azure/gpt-5.6-sol@low              png  r2  PARTIAL(2/4)   total=833.25 inv=INV-2025-0731 vendor='K Northwind Trading Ltd.'
+azure/gpt-5.6-terra@low            jpg  r2  PARTIAL(2/4)   total=833.25 inv=INV-2025-0731 vendor='K Northwind Trading Ltd.'
+azure/gpt-5.6-terra@low            png  r2  PARTIAL(2/4)   total=833.25 inv=INV-2025-0731 vendor='Northwind Trading Ltd\n45 Sta'
+azure/gpt-5.6-luna@low             jpg  r2  PARTIAL(1/4)   total=833.25 inv=INV-2025-0731 vendor='K Northern Trading Ltd.'
+azure/gpt-5.6-luna@low             png  r2  PARTIAL(2/4)   total=833.25 inv=INV-2025-0731 vendor='K Nishitani Trading Ltd.'
+azure/gpt-5.4@low                  jpg  r2  OK             total=833.25 inv=INV-2026-0731 vendor='K Northwind Trading Ltd.'
+azure/gpt-5.4@low                  png  r2  OK             total=833.25 inv=INV-2026-0731 vendor='K Northwind Trading Ltd.'
+azure/gpt-5.4-mini@low             jpg  r2  OK             total=833.25 inv=INV-2026-0731 vendor='K Northwind Trading Ltd.'
+azure/gpt-5.4-mini@low             png  r2  OK             total=833.25 inv=INV-2026-0731 vendor='K Northwind Trading Ltd.'
+google/gemini-3.5-flash@low        jpg  r2  OK             total=833.25 inv=INV-2026-0731 vendor='K Northwind Trading Ltd.'
+google/gemini-3.5-flash@low        png  r2  OK             total=833.25 inv=INV-2026-0731 vendor='K Northwind Trading Ltd.'
+openai/gpt-5.6-sol@high            jpg  r2  OK             total=833.25 inv=INV-2026-0731 vendor='K Northwind Trading Ltd., 3-'
+openai/gpt-5.6-sol@high            png  r2  OK             total=833.25 inv=INV-2026-0731 vendor='K Northwind Trading Ltd.\n3-8'
+openai/gpt-5.5@low                 jpg  r3  PARTIAL(2/4)   total=833.25 inv=INV-2025-0731 vendor='K Northwind Trading Ltd\n56 V'
+openai/gpt-5.5@low                 png  r3  PARTIAL(2/4)   total=833.25 inv=INV-2025-07-31 vendor='K Northwind Trading Ltd\n58 1'
+openai/gpt-5.6-sol@low             jpg  r3  PARTIAL(2/4)   total=833.25 inv=INV-2025-0731 vendor='K Northwind Trading Ltd'
+openai/gpt-5.6-sol@low             png  r3  PARTIAL(2/4)   total=833.25 inv=INV-2025-0731 vendor='K Northwind Trading Ltd.'
+openai/gpt-5.6-terra@low           jpg  r3  PARTIAL(2/4)   total=833.25 inv=INV-2025-0731 vendor='K Northwind Trading Ltd'
+openai/gpt-5.6-terra@low           png  r3  PARTIAL(1/4)   total=833.25 inv=INV-2025-0731 vendor='Northwind Trading Ltd'
+openai/gpt-5.6-luna@low            jpg  r3  PARTIAL(1/4)   total=833.25 inv=INV-2025-0731 vendor='Kirthan Holdings Ltd.'
+openai/gpt-5.6-luna@low            png  r3  PARTIAL(1/4)   total=833.25 inv=INV-2025-0731 vendor='K Northwell Trading Ltd.'
+azure/gpt-5.6-sol@low              jpg  r3  PARTIAL(2/4)   total=833.25 inv=INV-2025-0731 vendor='K Northwind Trading Ltd'
+azure/gpt-5.6-sol@low              png  r3  PARTIAL(1/4)   total=833.25 inv=INV-2025-0731 vendor='K Northfield Trading Ltd'
+azure/gpt-5.6-terra@low            jpg  r3  PARTIAL(2/4)   total=833.25 inv=INV-2025-0731 vendor='K Northwind Trading Ltd.'
+azure/gpt-5.6-terra@low            png  r3  PARTIAL(3/4)   total=833.25 inv=INV-2025-0731 vendor='K Northwind Trading Ltd\n8 & '
+azure/gpt-5.6-luna@low             jpg  r3  PARTIAL(1/4)   total=833.25 inv=INV-2025-0731 vendor='K Northern Trading Ltd.'
+azure/gpt-5.6-luna@low             png  r3  PARTIAL(2/4)   total=833.25 inv=INV-2025-0731 vendor='K Northern Trading Ltd.'
+azure/gpt-5.4@low                  jpg  r3  OK             total=833.25 inv=INV-2026-0731 vendor='K Northwind Trading Ltd.'
+azure/gpt-5.4@low                  png  r3  OK             total=833.25 inv=INV-2026-0731 vendor='K Northwind Trading Ltd.'
+azure/gpt-5.4-mini@low             jpg  r3  OK             total=833.25 inv=INV-2026-0731 vendor='K Northwind Trading Ltd.'
+azure/gpt-5.4-mini@low             png  r3  OK             total=833.25 inv=INV-2026-0731 vendor='K Northwind Trading Ltd.'
+google/gemini-3.5-flash@low        jpg  r3  OK             total=833.25 inv=INV-2026-0731 vendor='K Northwind Trading Ltd.'
+google/gemini-3.5-flash@low        png  r3  OK             total=833.25 inv=INV-2026-0731 vendor='K Northwind Trading Ltd.'
+openai/gpt-5.6-sol@high            jpg  r3  OK             total=833.25 inv=INV-2026-0731 vendor='K Northwind Trading Ltd., 3-'
+openai/gpt-5.6-sol@high            png  r3  OK             total=833.25 inv=INV-2026-0731 vendor='K Northwind Trading Ltd.\n3-8'
+openai/gpt-5.5@low                 jpg  r4  PARTIAL(1/4)   total=858.25 inv=INV-2025-0731 vendor='K Northwind Trading Ltd\n58 Y'
+openai/gpt-5.5@low                 png  r4  PARTIAL(2/4)   total=833.25 inv=INV-2025-0731 vendor='K Northwind Trading Ltd'
+openai/gpt-5.6-sol@low             jpg  r4  PARTIAL(2/4)   total=833.25 inv=INV-2025-0731 vendor='K Northwind Trading Ltd'
+openai/gpt-5.6-sol@low             png  r4  PARTIAL(1/4)   total=833.25 inv=INV-2025-0731 vendor='K Northfield Trading Ltd'
+openai/gpt-5.6-terra@low           jpg  r4  PARTIAL(2/4)   total=833.25 inv=INV-2025-0731 vendor='K Northwind Trading Ltd'
+openai/gpt-5.6-terra@low           png  r4  PARTIAL(2/4)   total=833.25 inv=INV-2025-0731 vendor='K Northwind Trading Ltd\n8 1s'
+openai/gpt-5.6-luna@low            jpg  r4  PARTIAL(1/4)   total=833.25 inv=INV-2025-0731 vendor='Kobunshi Trading Ltd.'
+openai/gpt-5.6-luna@low            png  r4  PARTIAL(2/4)   total=833.25 inv=INV-2025-0731 vendor='K Northwind Trading Ltd.'
+azure/gpt-5.6-sol@low              jpg  r4  PARTIAL(1/4)   total=833.25 inv=INV-2025-0731 vendor='K Northfield Trading Ltd'
+azure/gpt-5.6-sol@low              png  r4  PARTIAL(1/4)   total=833.25 inv=INV-2025-0731 vendor='K Northfield Trading Ltd'
+azure/gpt-5.6-terra@low            jpg  r4  PARTIAL(2/4)   total=833.25 inv=INV-2025-0731 vendor='K Northwind Trading Ltd.'
+azure/gpt-5.6-terra@low            png  r4  PARTIAL(1/4)   total=833.25 inv=INV-2025-0731 vendor='Northwind Trading Ltd\n85 Lak'
+azure/gpt-5.6-luna@low             jpg  r4  PARTIAL(1/4)   total=833.25 inv=INV-2025-0731 vendor='K Northern Trading Ltd.'
+azure/gpt-5.6-luna@low             png  r4  PARTIAL(1/4)   total=833.25 inv=INV-2025-0731 vendor='K Northern Trading Ltd.'
+azure/gpt-5.4@low                  jpg  r4  OK             total=833.25 inv=INV-2026-0731 vendor='K Northwind Trading Ltd.'
+azure/gpt-5.4@low                  png  r4  OK             total=833.25 inv=INV-2026-0731 vendor='K Northwind Trading Ltd.'
+azure/gpt-5.4-mini@low             jpg  r4  OK             total=833.25 inv=INV-2026-0731 vendor='K Northwind Trading Ltd.'
+azure/gpt-5.4-mini@low             png  r4  OK             total=833.25 inv=INV-2026-0731 vendor='K Northwind Trading Ltd.'
+google/gemini-3.5-flash@low        jpg  r4  OK             total=833.25 inv=INV-2026-0731 vendor='K Northwind Trading Ltd.'
+google/gemini-3.5-flash@low        png  r4  OK             total=833.25 inv=INV-2026-0731 vendor='K Northwind Trading Ltd.'
+openai/gpt-5.6-sol@high            jpg  r4  OK             total=833.25 inv=INV-2026-0731 vendor='K Northwind Trading Ltd., 3-'
+openai/gpt-5.6-sol@high            png  r4  OK             total=833.25 inv=INV-2026-0731 vendor='K Northwind Trading Ltd.\n3-8'
+openai/gpt-5.5@low                 jpg  r5  PARTIAL(2/4)   total=833.25 inv=INV-2025-0731 vendor='K Northwind Trading Ltd\n815 '
+openai/gpt-5.5@low                 png  r5  PARTIAL(2/4)   total=833.25 inv=INV-2025-0731 vendor='K Northwind Trading Ltd\n3-8-'
+openai/gpt-5.6-sol@low             jpg  r5  PARTIAL(2/4)   total=833.25 inv=INV-2025-0731 vendor='K Northwind Trading Ltd'
+openai/gpt-5.6-sol@low             png  r5  PARTIAL(1/4)   total=833.25 inv=INV-2025-0731 vendor='K Northfield Trading Ltd'
+openai/gpt-5.6-terra@low           jpg  r5  PARTIAL(2/4)   total=833.25 inv=INV-2025-0731 vendor='K Northwind Trading Ltd'
+openai/gpt-5.6-terra@low           png  r5  PARTIAL(1/4)   total=833.25 inv=INV-2025-0731 vendor='Northwind Trading Ltd'
+openai/gpt-5.6-luna@low            jpg  r5  FABRICATED     total=1575 inv=INV-2025-0731 vendor='Katherine Trading Ltd.'
+openai/gpt-5.6-luna@low            png  r5  PARTIAL(1/4)   total=833.25 inv=INV-2025-0731 vendor='K Northwell Trading Ltd.'
+azure/gpt-5.6-sol@low              jpg  r5  PARTIAL(2/4)   total=833.25 inv=INV-2025-0731 vendor='K Northwind Trading Ltd'
+azure/gpt-5.6-sol@low              png  r5  PARTIAL(1/4)   total=833.25 inv=INV-2025-0731 vendor='K Northfield Trading Ltd'
+azure/gpt-5.6-terra@low            jpg  r5  PARTIAL(2/4)   total=833.25 inv=INV-2025-0731 vendor='K Northwind Trading Ltd'
+azure/gpt-5.6-terra@low            png  r5  PARTIAL(1/4)   total=833.25 inv=INV-2025-0731 vendor='Northwind Trading Ltd\n18 St '
+azure/gpt-5.6-luna@low             jpg  r5  FABRICATED     total=863.25 inv=INV-2025-0731 vendor='K Northern Trading Ltd.'
+azure/gpt-5.6-luna@low             png  r5  PARTIAL(2/4)   total=833.25 inv=INV-2025-0731 vendor='K Northwind Trading Ltd.'
+azure/gpt-5.4@low                  jpg  r5  PARTIAL(3/4)   total=833.25 inv=INV-2026-0731 vendor='KNorthwind Trading Ltd.'
+azure/gpt-5.4@low                  png  r5  OK             total=833.25 inv=INV-2026-0731 vendor='K Northwind Trading Ltd.'
+azure/gpt-5.4-mini@low             jpg  r5  OK             total=833.25 inv=INV-2026-0731 vendor='K Northwind Trading Ltd.'
+azure/gpt-5.4-mini@low             png  r5  OK             total=833.25 inv=INV-2026-0731 vendor='K Northwind Trading Ltd.'
+google/gemini-3.5-flash@low        jpg  r5  OK             total=833.25 inv=INV-2026-0731 vendor='K Northwind Trading Ltd.'
+google/gemini-3.5-flash@low        png  r5  OK             total=833.25 inv=INV-2026-0731 vendor='K Northwind Trading Ltd.'
+openai/gpt-5.6-sol@high            jpg  r5  OK             total=833.25 inv=INV-2026-0731 vendor='K Northwind Trading Ltd.\n3-8'
+openai/gpt-5.6-sol@high            png  r5  OK             total=833.25 inv=INV-2026-0731 vendor='K Northwind Trading Ltd.\n3-8'
+
+========================================================================
+SUMMARY  (env=https://gw.ldxhub.io, repeats=5, 20260710_224944)
+========================================================================
+azure/gpt-5.4-mini@low             jpg   OKx5
+azure/gpt-5.4-mini@low             png   OKx5
+azure/gpt-5.4@low                  jpg   OKx3  PARTIAL(3/4)x2
+azure/gpt-5.4@low                  png   OKx5
+azure/gpt-5.6-luna@low             jpg   FABRICATEDx1  PARTIAL(1/4)x4
+azure/gpt-5.6-luna@low             png   PARTIAL(1/4)x2  PARTIAL(2/4)x3
+azure/gpt-5.6-sol@low              jpg   PARTIAL(1/4)x2  PARTIAL(2/4)x3
+azure/gpt-5.6-sol@low              png   PARTIAL(1/4)x4  PARTIAL(2/4)x1
+azure/gpt-5.6-terra@low            jpg   PARTIAL(2/4)x5
+azure/gpt-5.6-terra@low            png   PARTIAL(1/4)x2  PARTIAL(2/4)x1  PARTIAL(3/4)x2
+google/gemini-3.5-flash@low        jpg   OKx5
+google/gemini-3.5-flash@low        png   OKx5
+openai/gpt-5.5@low                 jpg   PARTIAL(1/4)x2  PARTIAL(2/4)x3
+openai/gpt-5.5@low                 png   PARTIAL(2/4)x5
+openai/gpt-5.6-luna@low            jpg   FABRICATEDx1  PARTIAL(1/4)x4
+openai/gpt-5.6-luna@low            png   PARTIAL(1/4)x3  PARTIAL(2/4)x2
+openai/gpt-5.6-sol@high            jpg   OKx5
+openai/gpt-5.6-sol@high            png   OKx5
+openai/gpt-5.6-sol@low             jpg   PARTIAL(2/4)x5
+openai/gpt-5.6-sol@low             png   PARTIAL(1/4)x2  PARTIAL(2/4)x3
+openai/gpt-5.6-terra@low           jpg   PARTIAL(1/4)x1  PARTIAL(2/4)x4
+openai/gpt-5.6-terra@low           png   PARTIAL(1/4)x3  PARTIAL(2/4)x2

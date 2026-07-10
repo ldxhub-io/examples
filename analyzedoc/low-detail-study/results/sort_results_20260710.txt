@@ -1,0 +1,184 @@
+openai/gpt-5.5@low                 invoice        r1  OK                     reason="The page has a prominent 'INVOICE' title, billing details, i"
+openai/gpt-5.5@low                 receipt        r1  OK                     reason='The image shows a retail purchase slip with store name, addr'
+openai/gpt-5.5@low                 business_card  r1  OK                     reason='The image shows a company name, individual name, job title, '
+openai/gpt-5.5@low                 contract       r1  OK                     reason="The page is titled 'SERVICE AGREEMENT' and contains structur"
+openai/gpt-5.5@low                 blank          r1  OK                     reason='The image is an entirely blank white page with no visible te'
+openai/gpt-5.6-sol@low             invoice        r1  OK                     reason='The page is explicitly titled "INVOICE" and includes billing'
+openai/gpt-5.6-sol@low             receipt        r1  OK                     reason='The page has a store name, itemized purchases with prices, a'
+openai/gpt-5.6-sol@low             business_card  r1  OK                     reason='The image shows a company name, individual name, job title, '
+openai/gpt-5.6-sol@low             contract       r1  OK                     reason='The page is titled "SERVICE AGREEMENT" and contains numbered'
+openai/gpt-5.6-sol@low             blank          r1  OK                     reason='The page is entirely blank with no visible text, graphics, o'
+openai/gpt-5.6-terra@low           invoice        r1  OK                     reason='The page is headed “INVOICE” and contains billing informatio'
+openai/gpt-5.6-terra@low           receipt        r1  OK                     reason='The document is a retail purchase receipt with a store name,'
+openai/gpt-5.6-terra@low           business_card  r1  OK                     reason='The page has a compact contact-card layout with company name'
+openai/gpt-5.6-terra@low           contract       r1  OK                     reason='The page is titled “SERVICE AGREEMENT” and contains numbered'
+openai/gpt-5.6-terra@low           blank          r1  OK                     reason='The image is entirely blank white with no visible text, mark'
+openai/gpt-5.6-luna@low            invoice        r1  OK                     reason='The page is clearly labeled “INVOICE” and contains structure'
+openai/gpt-5.6-luna@low            receipt        r1  OK                     reason='The document has a retail store header, itemized purchases w'
+openai/gpt-5.6-luna@low            business_card  r1  OK                     reason='The document has the layout and content of a business card, '
+openai/gpt-5.6-luna@low            contract       r1  OK                     reason='The page is titled “SERVICE AGREEMENT” and contains numbered'
+openai/gpt-5.6-luna@low            blank          r1  OK                     reason='The page is completely blank with no visible text, marks, or'
+azure/gpt-5.6-sol@low              invoice        r1  OK                     reason='The page is explicitly titled "INVOICE" and includes billing'
+azure/gpt-5.6-sol@low              receipt        r1  OK                     reason='The page has a store header, an itemized list of purchases w'
+azure/gpt-5.6-sol@low              business_card  r1  OK                     reason="The image shows a person's name, job title, company name, ph"
+azure/gpt-5.6-sol@low              contract       r1  OK                     reason='The page is titled "SERVICE AGREEMENT" and contains numbered'
+azure/gpt-5.6-sol@low              blank          r1  OK                     reason='The image is an empty white page with no visible text, graph'
+azure/gpt-5.6-terra@low            invoice        r1  OK                     reason="The document has a prominent 'INVOICE' title, billing and in"
+azure/gpt-5.6-terra@low            receipt        r1  OK                     reason='The document shows a grocery store header, a list of purchas'
+azure/gpt-5.6-terra@low            business_card  r1  OK                     reason='The image has a compact professional contact layout with com'
+azure/gpt-5.6-terra@low            contract       r1  OK                     reason='The page is titled “SERVICE AGREEMENT” and is structured wit'
+azure/gpt-5.6-terra@low            blank          r1  OK                     reason='The image is entirely blank with no visible text, layout, or'
+azure/gpt-5.6-luna@low             invoice        r1  OK                     reason='The page is explicitly titled “INVOICE” and contains itemize'
+azure/gpt-5.6-luna@low             receipt        r1  OK                     reason='The document shows a retail store name, itemized purchases w'
+azure/gpt-5.6-luna@low             business_card  r1  OK                     reason='The document has the compact layout and contact information '
+azure/gpt-5.6-luna@low             contract       r1  OK                     reason='The document is titled "SERVICE AGREEMENT" and contains numb'
+azure/gpt-5.6-luna@low             blank          r1  OK                     reason='The image is an entirely blank white page with no visible te'
+google/gemini-3.5-flash@low        invoice        r1  OK                     reason="The document is clearly labeled with the word 'INVOICE' at t"
+google/gemini-3.5-flash@low        receipt        r1  OK                     reason="The document contains a store name 'GREEN MART' at the top, "
+google/gemini-3.5-flash@low        business_card  r1  OK                     reason="The document contains a company name, an individual's name, "
+google/gemini-3.5-flash@low        contract       r1  OK                     reason="The document is titled 'SERVICE AGREEMENT' and contains stru"
+google/gemini-3.5-flash@low        blank          r1  OK                     reason='The image is completely white and contains no text, lines, o'
+openai/gpt-5.6-sol@high            invoice        r1  OK                     reason='The page is explicitly titled INVOICE and includes billing d'
+openai/gpt-5.6-sol@high            receipt        r1  OK                     reason='The page has a store header, itemized purchases with prices,'
+openai/gpt-5.6-sol@high            business_card  r1  OK                     reason="The page shows a company name, an individual's name and job "
+openai/gpt-5.6-sol@high            contract       r1  OK                     reason='The page is titled "SERVICE AGREEMENT" and contains numbered'
+openai/gpt-5.6-sol@high            blank          r1  OK                     reason='The page is entirely blank with no visible text, graphics, o'
+openai/gpt-5.5@low                 invoice        r2  OK                     reason="The page has a prominent 'INVOICE' title, billing and invoic"
+openai/gpt-5.5@low                 receipt        r2  OK                     reason='The page shows a store name and address, itemized purchases '
+openai/gpt-5.5@low                 business_card  r2  OK                     reason='The image shows a compact card-like layout with a company na'
+openai/gpt-5.5@low                 contract       r2  OK                     reason='The page is titled "SERVICE AGREEMENT" and contains structur'
+openai/gpt-5.5@low                 blank          r2  OK                     reason='The image appears to be an entirely blank white page with no'
+openai/gpt-5.6-sol@low             invoice        r2  OK                     reason='The page is explicitly titled "INVOICE" and includes billing'
+openai/gpt-5.6-sol@low             receipt        r2  OK                     reason='The document has a store header, itemized purchases with pri'
+openai/gpt-5.6-sol@low             business_card  r2  OK                     reason="The image shows a company name, person's name, job title, ph"
+openai/gpt-5.6-sol@low             contract       r2  OK                     reason='The page is titled "SERVICE AGREEMENT" and contains numbered'
+openai/gpt-5.6-sol@low             blank          r2  OK                     reason='The image is an empty white page with no visible text, graph'
+openai/gpt-5.6-terra@low           invoice        r2  OK                     reason='The document is headed “INVOICE” and contains billing detail'
+openai/gpt-5.6-terra@low           receipt        r2  OK                     reason='The document lists purchased grocery items with prices, show'
+openai/gpt-5.6-terra@low           business_card  r2  OK                     reason='The image has a compact professional contact layout with com'
+openai/gpt-5.6-terra@low           contract       r2  OK                     reason='The page is titled “SERVICE AGREEMENT” and contains numbered'
+openai/gpt-5.6-terra@low           blank          r2  OK                     reason='The image is entirely blank with no visible text, fields, lo'
+openai/gpt-5.6-luna@low            invoice        r2  OK                     reason='The page is clearly labeled “INVOICE” and contains invoice m'
+openai/gpt-5.6-luna@low            receipt        r2  OK                     reason='The document has a store name, address and phone number, an '
+openai/gpt-5.6-luna@low            business_card  r2  OK                     reason='The document has the layout and content of a business card, '
+openai/gpt-5.6-luna@low            contract       r2  OK                     reason='The page is structured as a service agreement with numbered '
+openai/gpt-5.6-luna@low            blank          r2  OK                     reason='The page is entirely blank with no visible text, markings, o'
+azure/gpt-5.6-sol@low              invoice        r2  OK                     reason='The page is explicitly titled "INVOICE" and includes billing'
+azure/gpt-5.6-sol@low              receipt        r2  OK                     reason='The page shows a store name, itemized purchases with prices,'
+azure/gpt-5.6-sol@low              business_card  r2  OK                     reason="The image shows a company name, an individual's name and tit"
+azure/gpt-5.6-sol@low              contract       r2  OK                     reason='The page is titled "SERVICE AGREEMENT" and contains numbered'
+azure/gpt-5.6-sol@low              blank          r2  OK                     reason='The page is entirely blank with no visible text, graphics, o'
+azure/gpt-5.6-terra@low            invoice        r2  OK                     reason='The document is headed “INVOICE” and contains billing detail'
+azure/gpt-5.6-terra@low            receipt        r2  OK                     reason='The document has a store name and address, an itemized list '
+azure/gpt-5.6-terra@low            business_card  r2  OK                     reason='The page has a compact professional contact layout with comp'
+azure/gpt-5.6-terra@low            contract       r2  OK                     reason='The page is titled “SERVICE AGREEMENT” and contains numbered'
+azure/gpt-5.6-terra@low            blank          r2  OK                     reason='The image is entirely blank with no visible text, layout, or'
+azure/gpt-5.6-luna@low             invoice        r2  OK                     reason="The page is clearly structured as an invoice, with an 'INVOI"
+azure/gpt-5.6-luna@low             receipt        r2  OK                     reason='The document has a store name, address and phone number, an '
+azure/gpt-5.6-luna@low             business_card  r2  OK                     reason='The document has the compact layout and contact information '
+azure/gpt-5.6-luna@low             contract       r2  OK                     reason='The document is titled "SERVICE AGREEMENT" and contains numb'
+azure/gpt-5.6-luna@low             blank          r2  OK                     reason='The page is entirely blank with no visible text, graphics, o'
+google/gemini-3.5-flash@low        invoice        r2  OK                     reason="The document is clearly labeled with the word 'INVOICE' at t"
+google/gemini-3.5-flash@low        receipt        r2  OK                     reason='The document contains a store name (GREEN MART), address, te'
+google/gemini-3.5-flash@low        business_card  r2  OK                     reason="The document contains a company name, an individual's name, "
+google/gemini-3.5-flash@low        contract       r2  OK                     reason="The document is titled 'SERVICE AGREEMENT' and contains stru"
+google/gemini-3.5-flash@low        blank          r2  OK                     reason='The image is completely white and contains no text, lines, o'
+openai/gpt-5.6-sol@high            invoice        r2  OK                     reason='The page is explicitly titled "INVOICE" and contains billing'
+openai/gpt-5.6-sol@high            receipt        r2  OK                     reason='The page has a store header, an itemized list of purchases w'
+openai/gpt-5.6-sol@high            business_card  r2  OK                     reason='The page presents a company name, individual name, job title'
+openai/gpt-5.6-sol@high            contract       r2  OK                     reason='The page is titled "SERVICE AGREEMENT" and contains numbered'
+openai/gpt-5.6-sol@high            blank          r2  OK                     reason='The page is entirely blank with no visible text, graphics, o'
+openai/gpt-5.5@low                 invoice        r3  OK                     reason="The page has a clear 'INVOICE' title, billing and invoice de"
+openai/gpt-5.5@low                 receipt        r3  OK                     reason='The image shows a retail purchase slip with store name and c'
+openai/gpt-5.5@low                 business_card  r3  OK                     reason='The image has a business card layout with a company name, pe'
+openai/gpt-5.5@low                 contract       r3  OK                     reason='The page is titled "SERVICE AGREEMENT" and contains structur'
+openai/gpt-5.5@low                 blank          r3  OK                     reason='The image shows an entirely blank white page with no visible'
+openai/gpt-5.6-sol@low             invoice        r3  OK                     reason='The page is labeled "INVOICE" and includes billing details, '
+openai/gpt-5.6-sol@low             receipt        r3  OK                     reason='The page shows a store name, address, itemized purchases wit'
+openai/gpt-5.6-sol@low             business_card  r3  OK                     reason="The page shows a company name, an individual's name and job "
+openai/gpt-5.6-sol@low             contract       r3  OK                     reason='The page is titled "SERVICE AGREEMENT" and contains numbered'
+openai/gpt-5.6-sol@low             blank          r3  OK                     reason='The page is entirely blank with no visible text, graphics, o'
+openai/gpt-5.6-terra@low           invoice        r3  OK                     reason='The page is headed “INVOICE” and contains billing details, a'
+openai/gpt-5.6-terra@low           receipt        r3  OK                     reason='The document shows a retail store header, itemized purchased'
+openai/gpt-5.6-terra@low           business_card  r3  OK                     reason='The page has a compact contact-card layout with company name'
+openai/gpt-5.6-terra@low           contract       r3  OK                     reason='The page is titled “SERVICE AGREEMENT” and contains numbered'
+openai/gpt-5.6-terra@low           blank          r3  OK                     reason='The image is entirely blank with no visible text, fields, lo'
+openai/gpt-5.6-luna@low            invoice        r3  OK                     reason='The page is clearly labeled “INVOICE” and contains billing d'
+openai/gpt-5.6-luna@low            receipt        r3  OK                     reason='The document has a retail store name, itemized purchases wit'
+openai/gpt-5.6-luna@low            business_card  r3  OK                     reason='The image has the layout and contact details of a business c'
+openai/gpt-5.6-luna@low            contract       r3  OK                     reason='The document is titled "SERVICE AGREEMENT" and contains numb'
+openai/gpt-5.6-luna@low            blank          r3  OK                     reason='The page is entirely blank with no visible text, graphics, o'
+azure/gpt-5.6-sol@low              invoice        r3  OK                     reason='The page is explicitly titled "INVOICE" and includes billing'
+azure/gpt-5.6-sol@low              receipt        r3  OK                     reason='The page shows a store name, itemized purchases with prices,'
+azure/gpt-5.6-sol@low              business_card  r3  OK                     reason="The page shows a company name, an individual's name and titl"
+azure/gpt-5.6-sol@low              contract       r3  OK                     reason='The page is titled "SERVICE AGREEMENT" and contains numbered'
+azure/gpt-5.6-sol@low              blank          r3  OK                     reason='The image is an empty white page with no visible text, graph'
+azure/gpt-5.6-terra@low            invoice        r3  OK                     reason='The document is titled “INVOICE” and contains billing detail'
+azure/gpt-5.6-terra@low            receipt        r3  OK                     reason='The document shows a grocery store header, itemized purchase'
+azure/gpt-5.6-terra@low            business_card  r3  OK                     reason='The image has a compact professional contact layout with com'
+azure/gpt-5.6-terra@low            contract       r3  OK                     reason='The page is titled “SERVICE AGREEMENT” and contains numbered'
+azure/gpt-5.6-terra@low            blank          r3  OK                     reason='The image is an entirely blank white page with no visible te'
+azure/gpt-5.6-luna@low             invoice        r3  OK                     reason='The page is clearly labeled “INVOICE” and contains billing d'
+azure/gpt-5.6-luna@low             receipt        r3  OK                     reason='The document shows a store name, address and phone number, a'
+azure/gpt-5.6-luna@low             business_card  r3  OK                     reason='The document has a business card layout with a company name,'
+azure/gpt-5.6-luna@low             contract       r3  OK                     reason='The document is titled "SERVICE AGREEMENT" and contains numb'
+azure/gpt-5.6-luna@low             blank          r3  OK                     reason='The page is completely blank with no visible text, graphics,'
+google/gemini-3.5-flash@low        invoice        r3  OK                     reason="The document is clearly labeled with the word 'INVOICE' at t"
+google/gemini-3.5-flash@low        receipt        r3  OK                     reason="The document contains a store name 'GREEN MART' at the top, "
+google/gemini-3.5-flash@low        business_card  r3  OK                     reason="The document contains a company name, an individual's name, "
+google/gemini-3.5-flash@low        contract       r3  OK                     reason="The document is titled 'SERVICE AGREEMENT' and contains stru"
+google/gemini-3.5-flash@low        blank          r3  OK                     reason='The image is completely white and contains no text, lines, o'
+openai/gpt-5.6-sol@high            invoice        r3  OK                     reason='The page is labeled INVOICE and includes billing details, an'
+openai/gpt-5.6-sol@high            receipt        r3  OK                     reason='The page has a retail store header, an itemized list with pr'
+openai/gpt-5.6-sol@high            business_card  r3  OK                     reason="The page shows a company name, an individual's name and job "
+openai/gpt-5.6-sol@high            contract       r3  OK                     reason='The page is titled "SERVICE AGREEMENT" and contains numbered'
+openai/gpt-5.6-sol@high            blank          r3  OK                     reason='The page is entirely blank with no visible text, graphics, o'
+
+========================================================================
+SUMMARY  (env=https://gw.ldxhub.io, repeats=3, 20260710_212504)
+========================================================================
+azure/gpt-5.6-luna@low             blank           OKx3
+azure/gpt-5.6-luna@low             business_card   OKx3
+azure/gpt-5.6-luna@low             contract        OKx3
+azure/gpt-5.6-luna@low             invoice         OKx3
+azure/gpt-5.6-luna@low             receipt         OKx3
+azure/gpt-5.6-sol@low              blank           OKx3
+azure/gpt-5.6-sol@low              business_card   OKx3
+azure/gpt-5.6-sol@low              contract        OKx3
+azure/gpt-5.6-sol@low              invoice         OKx3
+azure/gpt-5.6-sol@low              receipt         OKx3
+azure/gpt-5.6-terra@low            blank           OKx3
+azure/gpt-5.6-terra@low            business_card   OKx3
+azure/gpt-5.6-terra@low            contract        OKx3
+azure/gpt-5.6-terra@low            invoice         OKx3
+azure/gpt-5.6-terra@low            receipt         OKx3
+google/gemini-3.5-flash@low        blank           OKx3
+google/gemini-3.5-flash@low        business_card   OKx3
+google/gemini-3.5-flash@low        contract        OKx3
+google/gemini-3.5-flash@low        invoice         OKx3
+google/gemini-3.5-flash@low        receipt         OKx3
+openai/gpt-5.5@low                 blank           OKx3
+openai/gpt-5.5@low                 business_card   OKx3
+openai/gpt-5.5@low                 contract        OKx3
+openai/gpt-5.5@low                 invoice         OKx3
+openai/gpt-5.5@low                 receipt         OKx3
+openai/gpt-5.6-luna@low            blank           OKx3
+openai/gpt-5.6-luna@low            business_card   OKx3
+openai/gpt-5.6-luna@low            contract        OKx3
+openai/gpt-5.6-luna@low            invoice         OKx3
+openai/gpt-5.6-luna@low            receipt         OKx3
+openai/gpt-5.6-sol@high            blank           OKx3
+openai/gpt-5.6-sol@high            business_card   OKx3
+openai/gpt-5.6-sol@high            contract        OKx3
+openai/gpt-5.6-sol@high            invoice         OKx3
+openai/gpt-5.6-sol@high            receipt         OKx3
+openai/gpt-5.6-sol@low             blank           OKx3
+openai/gpt-5.6-sol@low             business_card   OKx3
+openai/gpt-5.6-sol@low             contract        OKx3
+openai/gpt-5.6-sol@low             invoice         OKx3
+openai/gpt-5.6-sol@low             receipt         OKx3
+openai/gpt-5.6-terra@low           blank           OKx3
+openai/gpt-5.6-terra@low           business_card   OKx3
+openai/gpt-5.6-terra@low           contract        OKx3
+openai/gpt-5.6-terra@low           invoice         OKx3
+openai/gpt-5.6-terra@low           receipt         OKx3
