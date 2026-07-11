@@ -1,0 +1,544 @@
+{
+  "data": [
+    {
+      "display_name": "OpenAI GPT-5.6 Sol @high",
+      "description": "OpenAI's flagship model in the GPT-5.6 generation. High-resolution reading for the most accurate extraction from dense layouts, small fonts, and numeric tables — best when accuracy justifies premium per-page cost.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "openai/gpt-5.6-sol@high",
+      "provider": "openai"
+    },
+    {
+      "display_name": "OpenAI GPT-5.6 Sol @low",
+      "description": "OpenAI's flagship model in the GPT-5.6 generation. Low-resolution mode for fast, economical PDF extraction and document classification; text read from JPEG/PNG images is unreliable at this resolution.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "openai/gpt-5.6-sol@low",
+      "provider": "openai"
+    },
+    {
+      "display_name": "OpenAI GPT-5.6 Terra @high",
+      "description": "OpenAI's balanced GPT-5.6 model. High-resolution reading with GPT-5.5-class accuracy on dense layouts at roughly half the per-page cost.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "openai/gpt-5.6-terra@high",
+      "provider": "openai"
+    },
+    {
+      "display_name": "OpenAI GPT-5.6 Terra @low",
+      "description": "OpenAI's balanced GPT-5.6 model. Low-resolution mode for fast, economical PDF extraction and document classification; text read from JPEG/PNG images is unreliable at this resolution.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "openai/gpt-5.6-terra@low",
+      "provider": "openai"
+    },
+    {
+      "display_name": "OpenAI GPT-5.6 Luna @high",
+      "description": "OpenAI's fast, lightweight GPT-5.6 model. High-resolution reading for accurate extraction from dense layouts at low per-page cost.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "openai/gpt-5.6-luna@high",
+      "provider": "openai"
+    },
+    {
+      "display_name": "OpenAI GPT-5.6 Luna @low",
+      "description": "OpenAI's fast, lightweight GPT-5.6 model. Lowest-cost OpenAI option for high-volume PDF processing and document classification; text read from JPEG/PNG images is unreliable at this resolution.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "openai/gpt-5.6-luna@low",
+      "provider": "openai"
+    },
+    {
+      "display_name": "OpenAI GPT-5.5 @high",
+      "description": "OpenAI's flagship model of the GPT-5.5 generation. High-resolution reading for the most accurate extraction from dense layouts, small fonts, and numeric tables — best when accuracy justifies premium per-page cost.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "openai/gpt-5.5@high",
+      "provider": "openai"
+    },
+    {
+      "display_name": "OpenAI GPT-5.5 @low",
+      "description": "OpenAI's flagship model of the GPT-5.5 generation. Low-resolution mode for fast, economical PDF extraction and document classification; text read from JPEG/PNG images is unreliable at this resolution.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "openai/gpt-5.5@low",
+      "provider": "openai"
+    },
+    {
+      "display_name": "OpenAI GPT-5.4 @high",
+      "description": "OpenAI's flagship model of the GPT-5.4 generation. High-resolution reading with strong accuracy on complex documents at a more accessible price than GPT-5.5.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "openai/gpt-5.4@high",
+      "provider": "openai"
+    },
+    {
+      "display_name": "OpenAI GPT-5.4 mini @high",
+      "description": "OpenAI's compact, cost-efficient model. High-resolution reading with a solid balance of accuracy and cost for everyday document extraction.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "openai/gpt-5.4-mini@high",
+      "provider": "openai"
+    },
+    {
+      "display_name": "Azure OpenAI GPT-5.6 Sol @high",
+      "description": "GPT-5.6 Sol hosted on Microsoft Azure. High-resolution reading for enterprise use requiring data residency and Azure compliance.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "azure/gpt-5.6-sol@high",
+      "provider": "azure"
+    },
+    {
+      "display_name": "Azure OpenAI GPT-5.6 Sol @low",
+      "description": "GPT-5.6 Sol hosted on Microsoft Azure. Low-resolution mode for fast, low-cost PDF extraction and document classification with Azure compliance; text read from JPEG/PNG images is unreliable at this resolution.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "azure/gpt-5.6-sol@low",
+      "provider": "azure"
+    },
+    {
+      "display_name": "Azure OpenAI GPT-5.6 Terra @high",
+      "description": "GPT-5.6 Terra hosted on Microsoft Azure. High-resolution reading balancing accuracy and cost, with Azure compliance for enterprise workflows.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "azure/gpt-5.6-terra@high",
+      "provider": "azure"
+    },
+    {
+      "display_name": "Azure OpenAI GPT-5.6 Terra @low",
+      "description": "GPT-5.6 Terra hosted on Microsoft Azure. Low-resolution mode for fast, low-cost PDF extraction and document classification with Azure compliance; text read from JPEG/PNG images is unreliable at this resolution.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "azure/gpt-5.6-terra@low",
+      "provider": "azure"
+    },
+    {
+      "display_name": "Azure OpenAI GPT-5.6 Luna @high",
+      "description": "GPT-5.6 Luna hosted on Microsoft Azure. Affordable high-resolution extraction with Azure compliance for enterprise use.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "azure/gpt-5.6-luna@high",
+      "provider": "azure"
+    },
+    {
+      "display_name": "Azure OpenAI GPT-5.6 Luna @low",
+      "description": "GPT-5.6 Luna hosted on Microsoft Azure. Fast, low-cost PDF processing and document classification with Azure compliance; text read from JPEG/PNG images is unreliable at this resolution.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "azure/gpt-5.6-luna@low",
+      "provider": "azure"
+    },
+    {
+      "display_name": "Azure OpenAI GPT-5.4 @high",
+      "description": "GPT-5.4 hosted on Microsoft Azure. High-resolution reading for enterprise use requiring data residency and Azure compliance.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "azure/gpt-5.4@high",
+      "provider": "azure"
+    },
+    {
+      "display_name": "Azure OpenAI GPT-5.4 @low",
+      "description": "GPT-5.4 hosted on Microsoft Azure. Low-resolution reading for fast, low-cost extraction from clean, large-text documents, with Azure compliance.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "azure/gpt-5.4@low",
+      "provider": "azure"
+    },
+    {
+      "display_name": "Azure OpenAI GPT-5.4 mini @high",
+      "description": "GPT-5.4 mini hosted on Microsoft Azure. Affordable high-resolution extraction with Azure compliance for enterprise use.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "azure/gpt-5.4-mini@high",
+      "provider": "azure"
+    },
+    {
+      "display_name": "Azure OpenAI GPT-5.4 mini @low",
+      "description": "GPT-5.4 mini hosted on Microsoft Azure. Fast, low-cost extraction from clean, large-text documents, with Azure compliance.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "azure/gpt-5.4-mini@low",
+      "provider": "azure"
+    },
+    {
+      "display_name": "Google Gemini 3.5 Flash @high",
+      "description": "Google's fast, cost-efficient model. High-resolution reading for accurate extraction from images and dense layouts at low cost.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "google/gemini-3.5-flash@high",
+      "provider": "google"
+    },
+    {
+      "display_name": "Google Gemini 3.5 Flash @medium",
+      "description": "Google's fast, cost-efficient model. Balanced resolution for a good mix of accuracy and cost on everyday documents.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "google/gemini-3.5-flash@medium",
+      "provider": "google"
+    },
+    {
+      "display_name": "Google Gemini 3.5 Flash @low",
+      "description": "Google's fast, cost-efficient model. Lowest-cost reading for clean, large-text documents at high volume.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "google/gemini-3.5-flash@low",
+      "provider": "google"
+    },
+    {
+      "display_name": "Claude Fable 5",
+      "description": "Anthropic's Mythos-class model, a tier above Opus. Maximum reasoning depth for complex, nuanced document analysis.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "anthropic/claude-fable-5",
+      "provider": "anthropic"
+    },
+    {
+      "display_name": "Claude Sonnet 5",
+      "description": "Anthropic's Sonnet-tier model, a major upgrade over Sonnet 4.6. Strong schema adherence for demanding document extraction at Sonnet-tier cost.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "anthropic/claude-sonnet-5",
+      "provider": "anthropic"
+    },
+    {
+      "display_name": "Claude Opus 4.8",
+      "description": "Anthropic's flagship-tier Opus model. Deep reasoning and nuanced schema interpretation for demanding document extraction.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "anthropic/claude-opus-4-8",
+      "provider": "anthropic"
+    },
+    {
+      "display_name": "Amazon Nova 2 Lite (Bedrock)",
+      "description": "Amazon's lightweight model via Bedrock. Cost-effective option for straightforward document extraction at scale.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "bedrock/global.amazon.nova-2-lite-v1:0",
+      "provider": "bedrock"
+    }
+  ]
+}

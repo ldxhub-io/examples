@@ -1,0 +1,147 @@
+{
+ "canvas": [
+  2480,
+  3508
+ ],
+ "ladder_dpi": [
+  300,
+  150,
+  100,
+  70,
+  50,
+  35,
+  25
+ ],
+ "t1": {
+  "A": {
+   "doc_title": {
+    "printed": "御 請 求 書",
+    "norm": "御請求書",
+    "tier": "title"
+   },
+   "total": {
+    "printed": "¥503,800 −",
+    "norm": "503800",
+    "tier": "large"
+   },
+   "invoice_no": {
+    "printed": "INV-2026-0630-018",
+    "norm": "INV-2026-0630-018",
+    "tier": "large"
+   },
+   "counterparty_name": {
+    "printed": "株式会社アオバ物流",
+    "norm": "株式会社アオバ物流",
+    "tier": "body"
+   },
+   "issue_date": {
+    "printed": "2026年6月30日",
+    "norm": "2026-06-30",
+    "tier": "body"
+   },
+   "due_date": {
+    "printed": "2026年7月31日",
+    "norm": "2026-07-31",
+    "tier": "body"
+   },
+   "subtotal": {
+    "printed": "¥458,000",
+    "norm": "458000",
+    "tier": "body"
+   },
+   "tax": {
+    "printed": "¥45,800",
+    "norm": "45800",
+    "tier": "body"
+   },
+   "bank_name": {
+    "printed": "みずなら銀行",
+    "norm": "みずなら銀行",
+    "tier": "fine"
+   },
+   "bank_branch": {
+    "printed": "青葉台支店",
+    "norm": "青葉台支店",
+    "tier": "fine"
+   },
+   "account_number": {
+    "printed": "3482716",
+    "norm": "3482716",
+    "tier": "fine"
+   },
+   "issuer_tel": {
+    "printed": "03-6845-2217",
+    "norm": "0368452217",
+    "tier": "fine"
+   }
+  },
+  "B": {
+   "doc_title": {
+    "printed": "御 請 求 書",
+    "norm": "御請求書",
+    "tier": "title"
+   },
+   "total": {
+    "printed": "¥1,361,250 −",
+    "norm": "1361250",
+    "tier": "large"
+   },
+   "invoice_no": {
+    "printed": "INV-2026-0630-024",
+    "norm": "INV-2026-0630-024",
+    "tier": "large"
+   },
+   "counterparty_name": {
+    "printed": "有限会社ミナト設計",
+    "norm": "有限会社ミナト設計",
+    "tier": "body"
+   },
+   "issue_date": {
+    "printed": "2026年6月28日",
+    "norm": "2026-06-28",
+    "tier": "body"
+   },
+   "due_date": {
+    "printed": "2026年7月31日",
+    "norm": "2026-07-31",
+    "tier": "body"
+   },
+   "subtotal": {
+    "printed": "¥1,237,500",
+    "norm": "1237500",
+    "tier": "body"
+   },
+   "tax": {
+    "printed": "¥123,750",
+    "norm": "123750",
+    "tier": "body"
+   },
+   "bank_name": {
+    "printed": "ほしかげ信用金庫",
+    "norm": "ほしかげ信用金庫",
+    "tier": "fine"
+   },
+   "bank_branch": {
+    "printed": "本店営業部",
+    "norm": "本店営業部",
+    "tier": "fine"
+   },
+   "account_number": {
+    "printed": "0091553",
+    "norm": "0091553",
+    "tier": "fine"
+   },
+   "issuer_tel": {
+    "printed": "03-6845-2217",
+    "norm": "0368452217",
+    "tier": "fine"
+   }
+  }
+ },
+ "t2": {
+  "t2_invoice": "invoice",
+  "t2_receipt": "receipt",
+  "t2_card": "business_card",
+  "t2_minutes": "meeting_minutes"
+ }
+}

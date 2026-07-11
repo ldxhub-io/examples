@@ -1,0 +1,29 @@
+| model | frontier (title/large/body/fine) | body fab@L6 | T2 acc |
+|---|---|---|---|
+| openai/gpt-5.6-sol@high | L6 / L5 / L5 / L2 | 60% | 84/84 |
+| openai/gpt-5.6-sol@low | L6 / × / × / × | 64% | 84/84 |
+| openai/gpt-5.6-terra@high | L6 / L5 / L4 / L3 | 4% | 84/84 |
+| openai/gpt-5.6-terra@low | L6 / × / × / × | 42% | 84/84 |
+| openai/gpt-5.6-luna@high | L6 / L5 / L4 / L2 | 96% | 84/84 |
+| openai/gpt-5.6-luna@low | L6 / × / × / × | 80% | 81/84 |
+| openai/gpt-5.5@high | L6 / L5 / L4 / L2 | 86% | 84/84 |
+| openai/gpt-5.5@low | L6 / × / × / × | 62% | 84/84 |
+| openai/gpt-5.4@high | L6 / L5 / L4 / L2 | 46% | 84/84 |
+| openai/gpt-5.4-mini@high | L6 / L5 / L4 / L0 | 78% | 84/84 |
+| azure/gpt-5.6-sol@high | L6 / L5 / L5 / L0 | 90% | 84/84 |
+| azure/gpt-5.6-sol@low | L6 / × / × / × | 76% | 84/84 |
+| azure/gpt-5.6-terra@high | L6 / L5 / L4 / × | 56% | 84/84 |
+| azure/gpt-5.6-terra@low | L6 / × / × / × | 50% | 84/84 |
+| azure/gpt-5.6-luna@high | L6 / L5 / L4 / × | 98% | 84/84 |
+| azure/gpt-5.6-luna@low | L6 / × / × / × | 80% | 84/84 |
+| azure/gpt-5.4@high | L6 / L5 / L4 / × | 98% | 84/84 |
+| azure/gpt-5.4@low | L6 / L5 / × / × | 58% | 84/84 |
+| azure/gpt-5.4-mini@high | L6 / L5 / L4 / × | 88% | 84/84 |
+| azure/gpt-5.4-mini@low | L6 / L5 / × / × | 54% | 84/84 |
+| google/gemini-3.5-flash@high | L6 / L6 / L6 / × | 10% | 84/84 |
+| google/gemini-3.5-flash@medium | L6 / L6 / L6 / L5 | 10% | 84/84 |
+| google/gemini-3.5-flash@low | L6 / L6 / L6 / L0 | 0% | 84/84 |
+| anthropic/claude-fable-5 | L6 / L6 / L6 / L4 | 10% | 84/84 |
+| anthropic/claude-sonnet-5 | L6 / L6 / L5 / L4 | 26% | 84/84 |
+| anthropic/claude-opus-4-8 | L6 / L6 / L5 / L4 | 26% | 84/84 |
+| bedrock/global.amazon.nova-2-lite-v1:0 | × / L5 / × / × | 80% | 63/84 |
