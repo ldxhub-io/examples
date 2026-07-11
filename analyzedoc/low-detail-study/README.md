@@ -1,6 +1,6 @@
 # AnalyzeDoc Low-Detail Study
 
-Measurement harnesses behind the blog post *"When AI Can't Read, It Invents — But It Still Sees the Shape"* (link TBD), plus the recorded results from the July 10, 2026 runs.
+Measurement harnesses behind the blog post [*"When AI can't read, it invents — but it still sees the shape"*](https://dev.to/hidekimori/when-ai-cant-read-it-invents-but-it-still-sees-the-shape-18ac), plus the recorded results from the July 10, 2026 runs.
 
 **Question:** at low image-detail settings (roughly 300 tokens per page), what do vision models actually do with document images?
 
