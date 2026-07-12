@@ -137,7 +137,9 @@ def done_keys(out_path):
 def estimate(jobs):
     return sum(RATES[j["model"]][0] + j["out_chars"] * RATES[j["model"]][1] / 1000 for j in jobs)
 
-PROVIDER_LIMITS = {"anthropic": 2}   # upstream 429 pressure control (semaphore per provider)
+# Optional client-side cap on concurrent jobs per provider, e.g. {"anthropic": 2}.
+# Normally unnecessary: the gateway rate-shapes provider file APIs server-side.
+PROVIDER_LIMITS = {}
 _provider_sems = {}
 
 def _sem_for(model):
