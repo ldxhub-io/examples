@@ -146,4 +146,6 @@ New AnalyzeDoc models are benchmarked by running only the new entries (resume-sa
 and appending to a dated `results/` directory. The catalog snapshot for each run lives
 next to its results (`models_snapshot.json`).
 
-<!-- add link to the companion dev.to article after 2026-07-14 -->
+## Write-ups
+
+- [When AI can't read, it invents — but it still sees the shape](https://dev.to/hidekimori/when-ai-cant-read-it-invents-but-it-still-sees-the-shape-18ac) — the low-detail fabrication finding that motivated this benchmark (2026-07-14)
