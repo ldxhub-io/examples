@@ -149,4 +149,5 @@ next to its results (`models_snapshot.json`).
 ## Write-ups
 
 - [Where vision models stop reading — and start inventing](https://dev.to/hidekimori/where-vision-models-stop-reading-and-start-inventing-5567) — the full map: methodology, heatmap, and all six findings (2026-07-15)
+- [The model corrected reality](https://dev.to/hidekimori/the-model-corrected-reality-fob) — deep dive on finding 5: prior capture at full legibility (2026-07-21)
 - [When AI can't read, it invents — but it still sees the shape](https://dev.to/hidekimori/when-ai-cant-read-it-invents-but-it-still-sees-the-shape-18ac) — the low-detail fabrication finding that motivated this benchmark (2026-07-14)
