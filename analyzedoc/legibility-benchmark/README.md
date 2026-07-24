@@ -2,8 +2,8 @@
 
 One Japanese invoice, rendered on a fixed 2480×3508 canvas, degraded through seven
 simulated scan resolutions (300 → 25 dpi). Twelve fields across four font tiers
-(28 pt title down to 7.5 pt fine print). **27 vision model variants, 5 repeats each,
-4,158 jobs — final state: 4,158 completed, 0 unparseable outputs.**
+(28 pt title down to 7.5 pt fine print). **33 vision model variants, 5 repeats each,
+5,082 jobs — final state: 5,082 completed, 0 unparseable outputs.**
 
 The question is not *which model is best*. It is **where each model stops reading —
 and what it does after that: leave the field blank, or fabricate a plausible value.**
@@ -34,9 +34,16 @@ and what it does after that: leave the field blank, or fabricate a plausible val
    48 times across Gemini variants — **at 300 dpi, on perfectly legible text**. The
    fictional credit union with no real-world neighbor was read correctly under the same
    conditions. Language priors can override vision even when reading is easy.
-6. **Classification survives reading loss.** 25 of 27 variants classified all 84
+6. **Classification survives reading loss.** 31 of 33 variants classified all 84
    documents correctly at every degradation step — models that cannot read a document
    can still tell what kind of document it is.
+
+> **Update 2026-07-24:** Gemini 3.6 Flash and Gemini 3.5 Flash-Lite added (33 variants).
+> `gemini-3.6-flash@high` holds the 7.5 pt fine tier to L5 (35 dpi) — a step
+> `gemini-3.5-flash@high` never clears. `gemini-3.6-flash@medium` and `@low` show **zero**
+> body-tier fabrication even at 25 dpi. And `gemini-3.5-flash-lite@low` — the cheapest
+> cell in the catalog at 4 credits/page — holds the 10.5 pt body tier through L6 with 2%
+> fabrication.
 
 ## Results
 
@@ -66,9 +73,15 @@ L3=70, L4=50, L5=35, L6=25 dpi.
 | `azure/gpt-5.4@low` | L6 | L5 | × | × | 58% | 84/84 |
 | `azure/gpt-5.4-mini@high` | L6 | L5 | L4 | × | 88% | 84/84 |
 | `azure/gpt-5.4-mini@low` | L6 | L5 | × | × | 54% | 84/84 |
+| `google/gemini-3.6-flash@high` | L6 | L6 | L6 | L5 | 4% | 84/84 |
+| `google/gemini-3.6-flash@medium` | L6 | L6 | L6 | L4 | 0% | 84/84 |
+| `google/gemini-3.6-flash@low` | L6 | L6 | L6 | L0 | 0% | 84/84 |
 | `google/gemini-3.5-flash@high` | L6 | L6 | L6 | × | 10% | 84/84 |
 | `google/gemini-3.5-flash@medium` | L6 | L6 | L6 | L5 | 10% | 84/84 |
 | `google/gemini-3.5-flash@low` | L6 | L6 | L6 | L0 | 0% | 84/84 |
+| `google/gemini-3.5-flash-lite@high` | L6 | L6 | L6 | L3 | 6% | 84/84 |
+| `google/gemini-3.5-flash-lite@medium` | L6 | L6 | L6 | L4 | 8% | 84/84 |
+| `google/gemini-3.5-flash-lite@low` | L6 | L6 | L6 | × | 2% | 84/84 |
 | `anthropic/claude-fable-5` | L6 | L6 | L6 | L4 | 10% | 84/84 |
 | `anthropic/claude-sonnet-5` | L6 | L6 | L5 | L4 | 26% | 84/84 |
 | `anthropic/claude-opus-4-8` | L6 | L6 | L5 | L4 | 26% | 84/84 |
@@ -115,7 +128,7 @@ python3 run_benchmark.py --models ume --t1-instances A --t1-reps 3 --t2-reps 1 -
 python3 score_results.py && python3 report.py
 ```
 
-**Full matrix** (27 variants, 4,158 jobs, ≈1.41M credits ≈ $141 list):
+**Full matrix** (33 variants, 5,082 jobs, ≈1.45M credits ≈ $145 list):
 
 ```bash
 python3 run_benchmark.py --models all --yes
@@ -128,6 +141,10 @@ are retried with backoff inside the run; Anthropic-bound jobs are capped at 2 co
 Because raw model outputs are stored in `results.jsonl`, you can change the scoring
 rules and re-score **without re-running a single job**.
 
+(The raw log contains 5,086 records; four are duplicate resubmissions after a
+network interruption during the July run. The scorer processes all records, so
+re-scoring this exact file reproduces the published tables.)
+
 ## Caveats
 
 - Degradation is synthetic resampling, not real scanner noise. Claims are limited to
@@ -138,7 +155,7 @@ rules and re-score **without re-running a single job**.
 - Azure results reflect the Azure OpenAI pipeline (lower observed effective resolution),
   not a different model.
 - LDX hub is the harness here, not a subject — it builds no models. One API key across
-  OpenAI, Azure, Google, Anthropic and AWS is what makes a 27-variant matrix practical.
+  OpenAI, Azure, Google, Anthropic and AWS is what makes a 33-variant matrix practical.
 
 ## Maintenance
 

@@ -401,6 +401,66 @@
       "provider": "azure"
     },
     {
+      "display_name": "Google Gemini 3.6 Flash @high",
+      "description": "Google's Flash-tier model of the Gemini 3.6 generation. High-resolution reading for accurate extraction from images and dense layouts at low cost.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "google/gemini-3.6-flash@high",
+      "provider": "google"
+    },
+    {
+      "display_name": "Google Gemini 3.6 Flash @medium",
+      "description": "Google's Flash-tier model of the Gemini 3.6 generation. Balanced resolution for a good mix of accuracy and cost on everyday documents.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "google/gemini-3.6-flash@medium",
+      "provider": "google"
+    },
+    {
+      "display_name": "Google Gemini 3.6 Flash @low",
+      "description": "Google's Flash-tier model of the Gemini 3.6 generation. Low-cost reading for clean, large-text documents at high volume.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "google/gemini-3.6-flash@low",
+      "provider": "google"
+    },
+    {
       "display_name": "Google Gemini 3.5 Flash @high",
       "description": "Google's fast, cost-efficient model. High-resolution reading for accurate extraction from images and dense layouts at low cost.",
       "supported_conversions": [
@@ -442,7 +502,7 @@
     },
     {
       "display_name": "Google Gemini 3.5 Flash @low",
-      "description": "Google's fast, cost-efficient model. Lowest-cost reading for clean, large-text documents at high volume.",
+      "description": "Google's fast, cost-efficient model. Low-cost reading for clean, large-text documents at high volume.",
       "supported_conversions": [
         {
           "from": "pdf",
@@ -458,6 +518,66 @@
         }
       ],
       "id": "google/gemini-3.5-flash@low",
+      "provider": "google"
+    },
+    {
+      "display_name": "Google Gemini 3.5 Flash-Lite @high",
+      "description": "Google's Lite-tier model of the Gemini 3.5 generation. High-resolution reading for high-volume extraction at a lower page cost than Gemini 3.5 Flash.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "google/gemini-3.5-flash-lite@high",
+      "provider": "google"
+    },
+    {
+      "display_name": "Google Gemini 3.5 Flash-Lite @medium",
+      "description": "Google's Lite-tier model of the Gemini 3.5 generation. Balanced resolution for straightforward everyday documents at minimal cost.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "google/gemini-3.5-flash-lite@medium",
+      "provider": "google"
+    },
+    {
+      "display_name": "Google Gemini 3.5 Flash-Lite @low",
+      "description": "Google's Lite-tier model of the Gemini 3.5 generation. Lowest-cost Google option for clean, large-text documents at high volume.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "google/gemini-3.5-flash-lite@low",
       "provider": "google"
     },
     {

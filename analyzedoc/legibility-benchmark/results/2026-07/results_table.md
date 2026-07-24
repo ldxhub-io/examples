@@ -20,9 +20,15 @@
 | azure/gpt-5.4@low | L6 / L5 / × / × | 58% | 84/84 |
 | azure/gpt-5.4-mini@high | L6 / L5 / L4 / × | 88% | 84/84 |
 | azure/gpt-5.4-mini@low | L6 / L5 / × / × | 54% | 84/84 |
+| google/gemini-3.6-flash@high | L6 / L6 / L6 / L5 | 4% | 84/84 |
+| google/gemini-3.6-flash@medium | L6 / L6 / L6 / L4 | 0% | 84/84 |
+| google/gemini-3.6-flash@low | L6 / L6 / L6 / L0 | 0% | 84/84 |
 | google/gemini-3.5-flash@high | L6 / L6 / L6 / × | 10% | 84/84 |
 | google/gemini-3.5-flash@medium | L6 / L6 / L6 / L5 | 10% | 84/84 |
 | google/gemini-3.5-flash@low | L6 / L6 / L6 / L0 | 0% | 84/84 |
+| google/gemini-3.5-flash-lite@high | L6 / L6 / L6 / L3 | 6% | 84/84 |
+| google/gemini-3.5-flash-lite@medium | L6 / L6 / L6 / L4 | 8% | 84/84 |
+| google/gemini-3.5-flash-lite@low | L6 / L6 / L6 / × | 2% | 84/84 |
 | anthropic/claude-fable-5 | L6 / L6 / L6 / L4 | 10% | 84/84 |
 | anthropic/claude-sonnet-5 | L6 / L6 / L5 / L4 | 26% | 84/84 |
 | anthropic/claude-opus-4-8 | L6 / L6 / L5 / L4 | 26% | 84/84 |

@@ -1,7 +1,7 @@
 fonts/
 materials/
 uploads.json
-results.jsonl
+/results.jsonl
 scores.jsonl
 venv/
 __pycache__/
