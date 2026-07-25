@@ -25,7 +25,7 @@ T2_DOCS = {"t2_invoice": "invoice", "t2_receipt": "receipt",
 T1_OUT_CHARS, T2_OUT_CHARS = 350, 25               # cost-estimate assumptions
 UPLOAD_TTL_H = 24
 
-MODELS = [  # canonical order (provider-grouped) — 33 entries, AnalyzeDoc catalog 2026-07-24
+MODELS = [  # canonical order (provider-grouped) — 34 entries, AnalyzeDoc catalog 2026-07-25
  "openai/gpt-5.6-sol@high","openai/gpt-5.6-sol@low","openai/gpt-5.6-terra@high","openai/gpt-5.6-terra@low",
  "openai/gpt-5.6-luna@high","openai/gpt-5.6-luna@low","openai/gpt-5.5@high","openai/gpt-5.5@low",
  "openai/gpt-5.4@high","openai/gpt-5.4-mini@high",
@@ -35,7 +35,7 @@ MODELS = [  # canonical order (provider-grouped) — 33 entries, AnalyzeDoc cata
  "google/gemini-3.6-flash@high","google/gemini-3.6-flash@medium","google/gemini-3.6-flash@low",
  "google/gemini-3.5-flash@high","google/gemini-3.5-flash@medium","google/gemini-3.5-flash@low",
  "google/gemini-3.5-flash-lite@high","google/gemini-3.5-flash-lite@medium","google/gemini-3.5-flash-lite@low",
- "anthropic/claude-fable-5","anthropic/claude-sonnet-5","anthropic/claude-opus-4-8",
+ "anthropic/claude-fable-5","anthropic/claude-opus-5","anthropic/claude-sonnet-5","anthropic/claude-opus-4-8",
  "bedrock/global.amazon.nova-2-lite-v1:0",
 ]
 RATES = {  # (page_rate, output_rate/1000 chars) — billing.json 2026-07-24
@@ -52,7 +52,7 @@ RATES = {  # (page_rate, output_rate/1000 chars) — billing.json 2026-07-24
  "google/gemini-3.6-flash@high":(66,225),"google/gemini-3.6-flash@medium":(32,225),"google/gemini-3.6-flash@low":(16,225),
  "google/gemini-3.5-flash@high":(66,270),"google/gemini-3.5-flash@medium":(32,270),"google/gemini-3.5-flash@low":(16,270),
  "google/gemini-3.5-flash-lite@high":(14,75),"google/gemini-3.5-flash-lite@medium":(7,75),"google/gemini-3.5-flash-lite@low":(4,75),
- "anthropic/claude-fable-5":(1909,1500),"anthropic/claude-sonnet-5":(573,450),"anthropic/claude-opus-4-8":(955,750),
+ "anthropic/claude-fable-5":(1909,1500),"anthropic/claude-opus-5":(955,750),"anthropic/claude-sonnet-5":(573,450),"anthropic/claude-opus-4-8":(955,750),
  "bedrock/global.amazon.nova-2-lite-v1:0":(4,75),
 }
 PILOT = ["google/gemini-3.5-flash@high","openai/gpt-5.5@low","anthropic/claude-fable-5"]

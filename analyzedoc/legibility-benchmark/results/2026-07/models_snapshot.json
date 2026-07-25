@@ -601,6 +601,26 @@
       "provider": "anthropic"
     },
     {
+      "display_name": "Claude Opus 5",
+      "description": "Anthropic's Opus-tier model of the Claude 5 generation. Claude Fable 5-class reading and reasoning for demanding document extraction at half the per-page cost.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "anthropic/claude-opus-5",
+      "provider": "anthropic"
+    },
+    {
       "display_name": "Claude Sonnet 5",
       "description": "Anthropic's Sonnet-tier model, a major upgrade over Sonnet 4.6. Strong schema adherence for demanding document extraction at Sonnet-tier cost.",
       "supported_conversions": [

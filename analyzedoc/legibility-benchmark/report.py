@@ -37,6 +37,7 @@ DEFAULT_ORDER = [
  "google/gemini-3.5-flash-lite@medium",
  "google/gemini-3.5-flash-lite@low",
  "anthropic/claude-fable-5",
+ "anthropic/claude-opus-5",
  "anthropic/claude-sonnet-5",
  "anthropic/claude-opus-4-8",
  "bedrock/global.amazon.nova-2-lite-v1:0"

@@ -30,6 +30,7 @@
 | google/gemini-3.5-flash-lite@medium | L6 / L6 / L6 / L4 | 8% | 84/84 |
 | google/gemini-3.5-flash-lite@low | L6 / L6 / L6 / × | 2% | 84/84 |
 | anthropic/claude-fable-5 | L6 / L6 / L6 / L4 | 10% | 84/84 |
+| anthropic/claude-opus-5 | L6 / L6 / L5 / L4 | 14% | 84/84 |
 | anthropic/claude-sonnet-5 | L6 / L6 / L5 / L4 | 26% | 84/84 |
 | anthropic/claude-opus-4-8 | L6 / L6 / L5 / L4 | 26% | 84/84 |
 | bedrock/global.amazon.nova-2-lite-v1:0 | × / L5 / × / × | 80% | 63/84 |

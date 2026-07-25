@@ -2,8 +2,8 @@
 
 One Japanese invoice, rendered on a fixed 2480×3508 canvas, degraded through seven
 simulated scan resolutions (300 → 25 dpi). Twelve fields across four font tiers
-(28 pt title down to 7.5 pt fine print). **33 vision model variants, 5 repeats each,
-5,082 jobs — final state: 5,082 completed, 0 unparseable outputs.**
+(28 pt title down to 7.5 pt fine print). **34 vision model variants, 5 repeats each,
+5,236 jobs — final state: 5,236 completed, 0 unparseable outputs.**
 
 The question is not *which model is best*. It is **where each model stops reading —
 and what it does after that: leave the field blank, or fabricate a plausible value.**
@@ -34,7 +34,7 @@ and what it does after that: leave the field blank, or fabricate a plausible val
    48 times across Gemini variants — **at 300 dpi, on perfectly legible text**. The
    fictional credit union with no real-world neighbor was read correctly under the same
    conditions. Language priors can override vision even when reading is easy.
-6. **Classification survives reading loss.** 31 of 33 variants classified all 84
+6. **Classification survives reading loss.** 32 of 34 variants classified all 84
    documents correctly at every degradation step — models that cannot read a document
    can still tell what kind of document it is.
 
@@ -44,6 +44,11 @@ and what it does after that: leave the field blank, or fabricate a plausible val
 > body-tier fabrication even at 25 dpi. And `gemini-3.5-flash-lite@low` — the cheapest
 > cell in the catalog at 4 credits/page — holds the 10.5 pt body tier through L6 with 2%
 > fabrication.
+
+> **Update 2026-07-25:** Claude Opus 5 added (34 variants), same-day. Its frontier
+> matches `claude-sonnet-5` and `claude-opus-4-8` (body tier to L5) — among Anthropic
+> models only `claude-fable-5` holds body at L6 — but after collapse it fabricates
+> less: 14% at 25 dpi versus 26% for both Opus 4.8 and Sonnet 5.
 
 ## Results
 
@@ -83,6 +88,7 @@ L3=70, L4=50, L5=35, L6=25 dpi.
 | `google/gemini-3.5-flash-lite@medium` | L6 | L6 | L6 | L4 | 8% | 84/84 |
 | `google/gemini-3.5-flash-lite@low` | L6 | L6 | L6 | × | 2% | 84/84 |
 | `anthropic/claude-fable-5` | L6 | L6 | L6 | L4 | 10% | 84/84 |
+| `anthropic/claude-opus-5` | L6 | L6 | L5 | L4 | 14% | 84/84 |
 | `anthropic/claude-sonnet-5` | L6 | L6 | L5 | L4 | 26% | 84/84 |
 | `anthropic/claude-opus-4-8` | L6 | L6 | L5 | L4 | 26% | 84/84 |
 | `bedrock/global.amazon.nova-2-lite-v1:0` | × | L5 | × | × | 80% | 63/84 |
@@ -128,7 +134,7 @@ python3 run_benchmark.py --models ume --t1-instances A --t1-reps 3 --t2-reps 1 -
 python3 score_results.py && python3 report.py
 ```
 
-**Full matrix** (33 variants, 5,082 jobs, ≈1.45M credits ≈ $145 list):
+**Full matrix** (34 variants, 5,236 jobs, ≈1.61M credits ≈ $161 list):
 
 ```bash
 python3 run_benchmark.py --models all --yes
@@ -141,7 +147,7 @@ are retried with backoff inside the run; Anthropic-bound jobs are capped at 2 co
 Because raw model outputs are stored in `results.jsonl`, you can change the scoring
 rules and re-score **without re-running a single job**.
 
-(The raw log contains 5,086 records; four are duplicate resubmissions after a
+(The raw log contains 5,240 records; four are duplicate resubmissions after a
 network interruption during the July run. The scorer processes all records, so
 re-scoring this exact file reproduces the published tables.)
 
@@ -155,7 +161,7 @@ re-scoring this exact file reproduces the published tables.)
 - Azure results reflect the Azure OpenAI pipeline (lower observed effective resolution),
   not a different model.
 - LDX hub is the harness here, not a subject — it builds no models. One API key across
-  OpenAI, Azure, Google, Anthropic and AWS is what makes a 33-variant matrix practical.
+  OpenAI, Azure, Google, Anthropic and AWS is what makes a 34-variant matrix practical.
 
 ## Maintenance
 
