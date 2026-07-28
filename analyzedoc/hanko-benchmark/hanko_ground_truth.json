@@ -1,0 +1,470 @@
+{
+ "fields": {
+  "doc_title": {
+   "printed": "御 請 求 書",
+   "norm": "御請求書",
+   "tier": "title"
+  },
+  "total": {
+   "printed": "¥1,361,250 −",
+   "norm": "1361250",
+   "tier": "large"
+  },
+  "invoice_no": {
+   "printed": "INV-2026-0630-024",
+   "norm": "INV-2026-0630-024",
+   "tier": "large"
+  },
+  "counterparty_name": {
+   "printed": "有限会社ミナト設計",
+   "norm": "有限会社ミナト設計",
+   "tier": "body"
+  },
+  "issue_date": {
+   "printed": "2026年6月28日",
+   "norm": "2026-06-28",
+   "tier": "body"
+  },
+  "due_date": {
+   "printed": "2026年7月31日",
+   "norm": "2026-07-31",
+   "tier": "body"
+  },
+  "subtotal": {
+   "printed": "¥1,237,500",
+   "norm": "1237500",
+   "tier": "body"
+  },
+  "tax": {
+   "printed": "¥123,750",
+   "norm": "123750",
+   "tier": "body"
+  },
+  "bank_name": {
+   "printed": "ほしかげ信用金庫",
+   "norm": "ほしかげ信用金庫",
+   "tier": "fine"
+  },
+  "bank_branch": {
+   "printed": "本店営業部",
+   "norm": "本店営業部",
+   "tier": "fine"
+  },
+  "account_number": {
+   "printed": "0091553",
+   "norm": "0091553",
+   "tier": "fine"
+  },
+  "issuer_tel": {
+   "printed": "03-6845-2217",
+   "norm": "0368452217",
+   "tier": "fine"
+  },
+  "issuer_name": {
+   "printed": "クレハ電装株式会社",
+   "norm": "クレハ電装株式会社",
+   "tier": "body"
+  }
+ },
+ "stamp_text": "検収済印",
+ "meta": {
+  "canvas": [
+   2480,
+   3508
+  ],
+  "overlap_ladder_pct": [
+   0,
+   20,
+   40,
+   60,
+   80,
+   100
+  ],
+  "stamp": {
+   "size": 248,
+   "border": 8,
+   "rgb": [
+    199,
+    62,
+    58
+   ],
+   "glyph_rgb": [
+    148,
+    36,
+    32
+   ],
+   "text": "検収済印",
+   "pad": "solid"
+  },
+  "layout_deltas": [
+   "footer issuer line removed",
+   "口座名義 line removed",
+   "300px 社判スペース inserted below issuer name"
+  ],
+  "approach": {
+   "N": "below",
+   "M": "above"
+  },
+  "targets": {
+   "N": {
+    "field": "issuer_name",
+    "span": "クレハ電装",
+    "bbox": [
+     1400,
+     574,
+     1630,
+     620
+    ]
+   },
+   "M": {
+    "field": "subtotal",
+    "bbox": [
+     2036,
+     1785,
+     2256,
+     1827
+    ]
+   }
+  },
+  "protected": {
+   "addr": [
+    1400,
+    937,
+    1861,
+    974
+   ],
+   "tel": [
+    1400,
+    989,
+    1663,
+    1012
+   ],
+   "tax": [
+    2072,
+    1855,
+    2255,
+    1897
+   ],
+   "total": [
+    2036,
+    1925,
+    2256,
+    1967
+   ]
+  },
+  "materials": {
+   "hanko_A_N_L0.png": {
+    "opacity": 0.8,
+    "target": "N",
+    "L": 0,
+    "nominal_pct": 0,
+    "achieved_pct": 0.0,
+    "stamp_rect": [
+     1391,
+     650,
+     1639,
+     898
+    ]
+   },
+   "hanko_A_N_L1.png": {
+    "opacity": 0.8,
+    "target": "N",
+    "L": 1,
+    "nominal_pct": 20,
+    "achieved_pct": 19.57,
+    "stamp_rect": [
+     1391,
+     611,
+     1639,
+     859
+    ]
+   },
+   "hanko_A_N_L2.png": {
+    "opacity": 0.8,
+    "target": "N",
+    "L": 2,
+    "nominal_pct": 40,
+    "achieved_pct": 39.13,
+    "stamp_rect": [
+     1391,
+     602,
+     1639,
+     850
+    ]
+   },
+   "hanko_A_N_L3.png": {
+    "opacity": 0.8,
+    "target": "N",
+    "L": 3,
+    "nominal_pct": 60,
+    "achieved_pct": 60.87,
+    "stamp_rect": [
+     1391,
+     592,
+     1639,
+     840
+    ]
+   },
+   "hanko_A_N_L4.png": {
+    "opacity": 0.8,
+    "target": "N",
+    "L": 4,
+    "nominal_pct": 80,
+    "achieved_pct": 80.43,
+    "stamp_rect": [
+     1391,
+     583,
+     1639,
+     831
+    ]
+   },
+   "hanko_A_N_L5.png": {
+    "opacity": 0.8,
+    "target": "N",
+    "L": 5,
+    "nominal_pct": 100,
+    "achieved_pct": 100.0,
+    "stamp_rect": [
+     1391,
+     574,
+     1639,
+     822
+    ]
+   },
+   "hanko_A_M_L0.png": {
+    "opacity": 0.8,
+    "target": "M",
+    "L": 0,
+    "nominal_pct": 0,
+    "achieved_pct": 0.0,
+    "stamp_rect": [
+     2022,
+     1507,
+     2270,
+     1755
+    ]
+   },
+   "hanko_A_M_L1.png": {
+    "opacity": 0.8,
+    "target": "M",
+    "L": 1,
+    "nominal_pct": 20,
+    "achieved_pct": 19.05,
+    "stamp_rect": [
+     2022,
+     1545,
+     2270,
+     1793
+    ]
+   },
+   "hanko_A_M_L2.png": {
+    "opacity": 0.8,
+    "target": "M",
+    "L": 2,
+    "nominal_pct": 40,
+    "achieved_pct": 40.48,
+    "stamp_rect": [
+     2022,
+     1554,
+     2270,
+     1802
+    ]
+   },
+   "hanko_A_M_L3.png": {
+    "opacity": 0.8,
+    "target": "M",
+    "L": 3,
+    "nominal_pct": 60,
+    "achieved_pct": 59.52,
+    "stamp_rect": [
+     2022,
+     1562,
+     2270,
+     1810
+    ]
+   },
+   "hanko_A_M_L4.png": {
+    "opacity": 0.8,
+    "target": "M",
+    "L": 4,
+    "nominal_pct": 80,
+    "achieved_pct": 80.95,
+    "stamp_rect": [
+     2022,
+     1571,
+     2270,
+     1819
+    ]
+   },
+   "hanko_A_M_L5.png": {
+    "opacity": 0.8,
+    "target": "M",
+    "L": 5,
+    "nominal_pct": 100,
+    "achieved_pct": 100.0,
+    "stamp_rect": [
+     2022,
+     1579,
+     2270,
+     1827
+    ]
+   },
+   "hanko_B_N_L0.png": {
+    "opacity": 1.0,
+    "target": "N",
+    "L": 0,
+    "nominal_pct": 0,
+    "achieved_pct": 0.0,
+    "stamp_rect": [
+     1391,
+     650,
+     1639,
+     898
+    ]
+   },
+   "hanko_B_N_L1.png": {
+    "opacity": 1.0,
+    "target": "N",
+    "L": 1,
+    "nominal_pct": 20,
+    "achieved_pct": 19.57,
+    "stamp_rect": [
+     1391,
+     611,
+     1639,
+     859
+    ]
+   },
+   "hanko_B_N_L2.png": {
+    "opacity": 1.0,
+    "target": "N",
+    "L": 2,
+    "nominal_pct": 40,
+    "achieved_pct": 39.13,
+    "stamp_rect": [
+     1391,
+     602,
+     1639,
+     850
+    ]
+   },
+   "hanko_B_N_L3.png": {
+    "opacity": 1.0,
+    "target": "N",
+    "L": 3,
+    "nominal_pct": 60,
+    "achieved_pct": 60.87,
+    "stamp_rect": [
+     1391,
+     592,
+     1639,
+     840
+    ]
+   },
+   "hanko_B_N_L4.png": {
+    "opacity": 1.0,
+    "target": "N",
+    "L": 4,
+    "nominal_pct": 80,
+    "achieved_pct": 80.43,
+    "stamp_rect": [
+     1391,
+     583,
+     1639,
+     831
+    ]
+   },
+   "hanko_B_N_L5.png": {
+    "opacity": 1.0,
+    "target": "N",
+    "L": 5,
+    "nominal_pct": 100,
+    "achieved_pct": 100.0,
+    "stamp_rect": [
+     1391,
+     574,
+     1639,
+     822
+    ]
+   },
+   "hanko_B_M_L0.png": {
+    "opacity": 1.0,
+    "target": "M",
+    "L": 0,
+    "nominal_pct": 0,
+    "achieved_pct": 0.0,
+    "stamp_rect": [
+     2022,
+     1507,
+     2270,
+     1755
+    ]
+   },
+   "hanko_B_M_L1.png": {
+    "opacity": 1.0,
+    "target": "M",
+    "L": 1,
+    "nominal_pct": 20,
+    "achieved_pct": 19.05,
+    "stamp_rect": [
+     2022,
+     1545,
+     2270,
+     1793
+    ]
+   },
+   "hanko_B_M_L2.png": {
+    "opacity": 1.0,
+    "target": "M",
+    "L": 2,
+    "nominal_pct": 40,
+    "achieved_pct": 40.48,
+    "stamp_rect": [
+     2022,
+     1554,
+     2270,
+     1802
+    ]
+   },
+   "hanko_B_M_L3.png": {
+    "opacity": 1.0,
+    "target": "M",
+    "L": 3,
+    "nominal_pct": 60,
+    "achieved_pct": 59.52,
+    "stamp_rect": [
+     2022,
+     1562,
+     2270,
+     1810
+    ]
+   },
+   "hanko_B_M_L4.png": {
+    "opacity": 1.0,
+    "target": "M",
+    "L": 4,
+    "nominal_pct": 80,
+    "achieved_pct": 80.95,
+    "stamp_rect": [
+     2022,
+     1571,
+     2270,
+     1819
+    ]
+   },
+   "hanko_B_M_L5.png": {
+    "opacity": 1.0,
+    "target": "M",
+    "L": 5,
+    "nominal_pct": 100,
+    "achieved_pct": 100.0,
+    "stamp_rect": [
+     2022,
+     1579,
+     2270,
+     1827
+    ]
+   }
+  }
+ }
+}
