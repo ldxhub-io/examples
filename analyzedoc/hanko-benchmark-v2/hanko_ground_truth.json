@@ -1,0 +1,491 @@
+{
+ "fields": {
+  "doc_title": {
+   "printed": "御 請 求 書",
+   "norm": "御請求書",
+   "tier": "title"
+  },
+  "total": {
+   "printed": "¥1,358,500 −",
+   "norm": "1358500",
+   "tier": "large"
+  },
+  "invoice_no": {
+   "printed": "INV-2026-1030-047",
+   "norm": "INV-2026-1030-047",
+   "tier": "large"
+  },
+  "counterparty_name": {
+   "printed": "有限会社ミナト設計",
+   "norm": "有限会社ミナト設計",
+   "tier": "body"
+  },
+  "issue_date": {
+   "printed": "2026年10月30日",
+   "norm": "2026-10-30",
+   "tier": "body"
+  },
+  "due_date": {
+   "printed": "2026年11月30日",
+   "norm": "2026-11-30",
+   "tier": "body"
+  },
+  "subtotal": {
+   "printed": "¥1,237,500",
+   "norm": "1237500",
+   "tier": "body"
+  },
+  "tax": {
+   "printed": "¥121,000",
+   "norm": "121000",
+   "tier": "body"
+  },
+  "bank_name": {
+   "printed": "ほしかげ信用金庫",
+   "norm": "ほしかげ信用金庫",
+   "tier": "fine"
+  },
+  "bank_branch": {
+   "printed": "月芝支店",
+   "norm": "月芝支店",
+   "tier": "fine"
+  },
+  "account_number": {
+   "printed": "0091553",
+   "norm": "0091553",
+   "tier": "fine"
+  },
+  "issuer_tel": {
+   "printed": "03-6845-2217",
+   "norm": "0368452217",
+   "tier": "fine"
+  },
+  "issuer_name": {
+   "printed": "クレハ電装株式会社",
+   "norm": "クレハ電装株式会社",
+   "tier": "body"
+  }
+ },
+ "stamp_text": "納検済印",
+ "meta": {
+  "canvas": [
+   2480,
+   3508
+  ],
+  "overlap_ladder_pct": [
+   0,
+   20,
+   40,
+   60,
+   80,
+   100
+  ],
+  "stamp": {
+   "size": 248,
+   "border": 8,
+   "rgb": [
+    199,
+    62,
+    58
+   ],
+   "glyph_rgb": [
+    148,
+    36,
+    32
+   ],
+   "text": "納検済印",
+   "pad": "solid"
+  },
+  "layout_deltas": [
+   "footer issuer line removed",
+   "口座名義 line removed",
+   "300px 社判スペース inserted below issuer name",
+   "v2: third item row (reduced-rate ※) added",
+   "v2: 税率区分別内訳 box added bottom-left (protected)",
+   "v2: 消費税（10%） label → 消費税合計"
+  ],
+  "v2_deltas": {
+   "mixed_tax": "8%/10%; total/1.1 = 1,235,000 exact and off-document (route fingerprint)",
+   "seal": "納検済印 — fictional (web 0-hit 2026-07-18); real-phrase trap: 検収済印",
+   "branch": "月芝支店 — fictional (web 0-hit 2026-07-18); v1 branch was the category mode"
+  },
+  "tax_design": {
+   "sub8": 137500,
+   "tax8": 11000,
+   "sub10": 1100000,
+   "tax10": 110000,
+   "total_div_1_1": 1235000
+  },
+  "approach": {
+   "N": "below",
+   "M": "above"
+  },
+  "targets": {
+   "N": {
+    "field": "issuer_name",
+    "span": "クレハ電装",
+    "bbox": [
+     1400,
+     574,
+     1630,
+     620
+    ]
+   },
+   "M": {
+    "field": "subtotal",
+    "bbox": [
+     2036,
+     1863,
+     2256,
+     1905
+    ]
+   }
+  },
+  "protected": {
+   "addr": [
+    1400,
+    937,
+    1861,
+    974
+   ],
+   "tel": [
+    1400,
+    989,
+    1663,
+    1012
+   ],
+   "tax": [
+    2072,
+    1933,
+    2255,
+    1975
+   ],
+   "total": [
+    2036,
+    2003,
+    2256,
+    2045
+   ],
+   "kubun": [
+    200,
+    1856,
+    1022,
+    2001
+   ]
+  },
+  "materials": {
+   "hanko_A_N_L0.png": {
+    "opacity": 0.8,
+    "target": "N",
+    "L": 0,
+    "nominal_pct": 0,
+    "achieved_pct": 0.0,
+    "stamp_rect": [
+     1391,
+     650,
+     1639,
+     898
+    ]
+   },
+   "hanko_A_N_L1.png": {
+    "opacity": 0.8,
+    "target": "N",
+    "L": 1,
+    "nominal_pct": 20,
+    "achieved_pct": 19.57,
+    "stamp_rect": [
+     1391,
+     611,
+     1639,
+     859
+    ]
+   },
+   "hanko_A_N_L2.png": {
+    "opacity": 0.8,
+    "target": "N",
+    "L": 2,
+    "nominal_pct": 40,
+    "achieved_pct": 39.13,
+    "stamp_rect": [
+     1391,
+     602,
+     1639,
+     850
+    ]
+   },
+   "hanko_A_N_L3.png": {
+    "opacity": 0.8,
+    "target": "N",
+    "L": 3,
+    "nominal_pct": 60,
+    "achieved_pct": 60.87,
+    "stamp_rect": [
+     1391,
+     592,
+     1639,
+     840
+    ]
+   },
+   "hanko_A_N_L4.png": {
+    "opacity": 0.8,
+    "target": "N",
+    "L": 4,
+    "nominal_pct": 80,
+    "achieved_pct": 80.43,
+    "stamp_rect": [
+     1391,
+     583,
+     1639,
+     831
+    ]
+   },
+   "hanko_A_N_L5.png": {
+    "opacity": 0.8,
+    "target": "N",
+    "L": 5,
+    "nominal_pct": 100,
+    "achieved_pct": 100.0,
+    "stamp_rect": [
+     1391,
+     574,
+     1639,
+     822
+    ]
+   },
+   "hanko_A_M_L0.png": {
+    "opacity": 0.8,
+    "target": "M",
+    "L": 0,
+    "nominal_pct": 0,
+    "achieved_pct": 0.0,
+    "stamp_rect": [
+     2022,
+     1585,
+     2270,
+     1833
+    ]
+   },
+   "hanko_A_M_L1.png": {
+    "opacity": 0.8,
+    "target": "M",
+    "L": 1,
+    "nominal_pct": 20,
+    "achieved_pct": 19.05,
+    "stamp_rect": [
+     2022,
+     1623,
+     2270,
+     1871
+    ]
+   },
+   "hanko_A_M_L2.png": {
+    "opacity": 0.8,
+    "target": "M",
+    "L": 2,
+    "nominal_pct": 40,
+    "achieved_pct": 40.48,
+    "stamp_rect": [
+     2022,
+     1632,
+     2270,
+     1880
+    ]
+   },
+   "hanko_A_M_L3.png": {
+    "opacity": 0.8,
+    "target": "M",
+    "L": 3,
+    "nominal_pct": 60,
+    "achieved_pct": 59.52,
+    "stamp_rect": [
+     2022,
+     1640,
+     2270,
+     1888
+    ]
+   },
+   "hanko_A_M_L4.png": {
+    "opacity": 0.8,
+    "target": "M",
+    "L": 4,
+    "nominal_pct": 80,
+    "achieved_pct": 80.95,
+    "stamp_rect": [
+     2022,
+     1649,
+     2270,
+     1897
+    ]
+   },
+   "hanko_A_M_L5.png": {
+    "opacity": 0.8,
+    "target": "M",
+    "L": 5,
+    "nominal_pct": 100,
+    "achieved_pct": 100.0,
+    "stamp_rect": [
+     2022,
+     1657,
+     2270,
+     1905
+    ]
+   },
+   "hanko_B_N_L0.png": {
+    "opacity": 1.0,
+    "target": "N",
+    "L": 0,
+    "nominal_pct": 0,
+    "achieved_pct": 0.0,
+    "stamp_rect": [
+     1391,
+     650,
+     1639,
+     898
+    ]
+   },
+   "hanko_B_N_L1.png": {
+    "opacity": 1.0,
+    "target": "N",
+    "L": 1,
+    "nominal_pct": 20,
+    "achieved_pct": 19.57,
+    "stamp_rect": [
+     1391,
+     611,
+     1639,
+     859
+    ]
+   },
+   "hanko_B_N_L2.png": {
+    "opacity": 1.0,
+    "target": "N",
+    "L": 2,
+    "nominal_pct": 40,
+    "achieved_pct": 39.13,
+    "stamp_rect": [
+     1391,
+     602,
+     1639,
+     850
+    ]
+   },
+   "hanko_B_N_L3.png": {
+    "opacity": 1.0,
+    "target": "N",
+    "L": 3,
+    "nominal_pct": 60,
+    "achieved_pct": 60.87,
+    "stamp_rect": [
+     1391,
+     592,
+     1639,
+     840
+    ]
+   },
+   "hanko_B_N_L4.png": {
+    "opacity": 1.0,
+    "target": "N",
+    "L": 4,
+    "nominal_pct": 80,
+    "achieved_pct": 80.43,
+    "stamp_rect": [
+     1391,
+     583,
+     1639,
+     831
+    ]
+   },
+   "hanko_B_N_L5.png": {
+    "opacity": 1.0,
+    "target": "N",
+    "L": 5,
+    "nominal_pct": 100,
+    "achieved_pct": 100.0,
+    "stamp_rect": [
+     1391,
+     574,
+     1639,
+     822
+    ]
+   },
+   "hanko_B_M_L0.png": {
+    "opacity": 1.0,
+    "target": "M",
+    "L": 0,
+    "nominal_pct": 0,
+    "achieved_pct": 0.0,
+    "stamp_rect": [
+     2022,
+     1585,
+     2270,
+     1833
+    ]
+   },
+   "hanko_B_M_L1.png": {
+    "opacity": 1.0,
+    "target": "M",
+    "L": 1,
+    "nominal_pct": 20,
+    "achieved_pct": 19.05,
+    "stamp_rect": [
+     2022,
+     1623,
+     2270,
+     1871
+    ]
+   },
+   "hanko_B_M_L2.png": {
+    "opacity": 1.0,
+    "target": "M",
+    "L": 2,
+    "nominal_pct": 40,
+    "achieved_pct": 40.48,
+    "stamp_rect": [
+     2022,
+     1632,
+     2270,
+     1880
+    ]
+   },
+   "hanko_B_M_L3.png": {
+    "opacity": 1.0,
+    "target": "M",
+    "L": 3,
+    "nominal_pct": 60,
+    "achieved_pct": 59.52,
+    "stamp_rect": [
+     2022,
+     1640,
+     2270,
+     1888
+    ]
+   },
+   "hanko_B_M_L4.png": {
+    "opacity": 1.0,
+    "target": "M",
+    "L": 4,
+    "nominal_pct": 80,
+    "achieved_pct": 80.95,
+    "stamp_rect": [
+     2022,
+     1649,
+     2270,
+     1897
+    ]
+   },
+   "hanko_B_M_L5.png": {
+    "opacity": 1.0,
+    "target": "M",
+    "L": 5,
+    "nominal_pct": 100,
+    "achieved_pct": 100.0,
+    "stamp_rect": [
+     2022,
+     1657,
+     2270,
+     1905
+    ]
+   }
+  }
+ }
+}

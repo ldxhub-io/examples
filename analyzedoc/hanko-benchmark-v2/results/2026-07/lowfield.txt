@@ -1,0 +1,33 @@
+model                            doc_tit invoice issue_d due_dat counter issuer_ issuer_   total subtota     tax bank_na bank_br account stamp_t   (hits /20)
+azure/gpt-5.4-mini@low                20      20      20      20       7       3       0      20      20      20       0       0       0       0
+azure/gpt-5.4@low                     20      20      20      20       0       3       0      20      20      20       0       0       0       0
+azure/gpt-5.6-luna@low                20       0       0       0       0       0       0      20       0       0       0       0       0       0
+azure/gpt-5.6-sol@low                 20       0       0       0       0       0       0      20       0       0       0       0       0       0
+azure/gpt-5.6-terra@low               20       0       0       0       0       0       0      20       0       0       0       0       0       0
+google/gemini-3.5-flash@low           20      20      20      20      20      20      20      20      20      20      20      20      20       0
+openai/gpt-5.5@low                    20       4       0       0       0       0       0      20       0       0       0       0       0       0
+openai/gpt-5.6-luna@low               20       0       0       0       0       0       0      20       0       0       0       0       0       0
+openai/gpt-5.6-sol@low                20       0       0       0       0       0       0      20       2       2       0       0       0       1
+openai/gpt-5.6-terra@low              20       0       0       0       0       0       0      20       0       0       0       0       0       0
+row sums: [150, 143, 40, 40, 40, 260, 44, 40, 45, 40]
+
+gates: 124 of 130 document-field cells are exactly 0 or exactly 20
+
+new-gen (7 models) × 8 unread fields × 20 = 1120 reads:
+  blank 152 / invented 964 / correct-or-near 4  (invention rate 86%)
+  invoice_no         INV-2025-1030-017×38  INV-2025-0107×14  INV-2023-1230-017×9
+  issue_date         2025年10月30日×41  2023年11月30日×11  2023年12月30日×10
+  due_date           2025年11月30日×47  2023年12月31日×12  2024年1月31日×11
+  counterparty_name  有限会社ミナト設計事務所×10  株式会社トス工業×9  株式会社テスト工業×6
+  issuer_name        クレハ株式会社×43  クレバ株式会社×38  クルハ株式会社×9
+  issuer_tel         03-1234-5678×72  03-0000-0000×3  03-XXXX-XXXX×2
+  bank_name          みずほ銀行×65  三井住友銀行×35  三菱UFJ銀行×11
+  account_number     普通1234567×77  1234567×37  普通1132000×1
+
+  bank_name: 111 of 117 inventions are megabanks
+  account_number: literal 1234567 in 114 of 140 reads
+  dates: 164 of 230 inventions say 2025
+
+bank_branch 'correct' cells (new gen): 0, with fabricated bank_name in the same response: 0
+
+blank ratio — old gen: 1 blank per 2.34 inventions / new gen: 1 per 6.34
