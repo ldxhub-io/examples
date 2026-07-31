@@ -38,15 +38,15 @@ MODELS = [  # canonical order (provider-grouped) — 34 entries, AnalyzeDoc cata
  "anthropic/claude-fable-5","anthropic/claude-opus-5","anthropic/claude-sonnet-5","anthropic/claude-opus-4-8",
  "bedrock/global.amazon.nova-2-lite-v1:0",
 ]
-RATES = {  # (page_rate, output_rate/1000 chars) — billing.json 2026-07-24
+RATES = {  # (page_rate, output_rate/1000 chars) — billing.json 2026-07-31
  "openai/gpt-5.6-sol@high":(602,900),"openai/gpt-5.6-sol@low":(63,900),
- "openai/gpt-5.6-terra@high":(301,450),"openai/gpt-5.6-terra@low":(32,450),
- "openai/gpt-5.6-luna@high":(121,180),"openai/gpt-5.6-luna@low":(13,180),
+ "openai/gpt-5.6-terra@high":(241,360),"openai/gpt-5.6-terra@low":(26,360),
+ "openai/gpt-5.6-luna@high":(25,36),"openai/gpt-5.6-luna@low":(3,36),
  "openai/gpt-5.5@high":(602,900),"openai/gpt-5.5@low":(63,900),
  "openai/gpt-5.4@high":(301,450),"openai/gpt-5.4-mini@high":(91,135),
  "azure/gpt-5.6-sol@high":(334,1080),"azure/gpt-5.6-sol@low":(76,1080),
- "azure/gpt-5.6-terra@high":(167,540),"azure/gpt-5.6-terra@low":(38,540),
- "azure/gpt-5.6-luna@high":(67,216),"azure/gpt-5.6-luna@low":(16,216),
+ "azure/gpt-5.6-terra@high":(134,432), "azure/gpt-5.6-terra@low":(31,432),
+ "azure/gpt-5.6-luna@high":(14,44),"azure/gpt-5.6-luna@low":(4,44),
  "azure/gpt-5.4@high":(167,540),"azure/gpt-5.4@low":(38,540),
  "azure/gpt-5.4-mini@high":(51,162),"azure/gpt-5.4-mini@low":(12,162),
  "google/gemini-3.6-flash@high":(66,225),"google/gemini-3.6-flash@medium":(32,225),"google/gemini-3.6-flash@low":(16,225),
