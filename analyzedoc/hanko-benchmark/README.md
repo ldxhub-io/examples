@@ -63,3 +63,4 @@ Notes:
 ## Write-ups
 
 - [Reading under the stamp](https://dev.to/hidekimori/reading-under-the-stamp-57bi) — the two findings: the chromatic channel, and the readers going silent while the non-readers answer (2026-07-28)
+- [The cheap tier doesn't go blank — it writes](https://dev.to/hidekimori/the-cheap-tier-doesnt-go-blank-it-writes-5aoo) — the L0 slice: what @low actually reads on a razor-sharp invoice, and what fills the rest (2026-08-04)
