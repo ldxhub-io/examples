@@ -72,3 +72,7 @@ same catalog as v1's 2026-07-12 run): the per-model metric table, the four-panel
 the per-field and route analyses, and the model-catalog snapshot. Leg 2 lands beside it
 when it happens. Provider vision pipelines change — re-run before trusting anything for
 anything current.
+
+## Write-ups
+
+- [The cheap tier reads one number](https://dev.to/hidekimori/the-cheap-tier-reads-one-number-841) — leg 1: the ÷1.1 fingerprint, the seal resolved, the branch cured (2026-08-11)

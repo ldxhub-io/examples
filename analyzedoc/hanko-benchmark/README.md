@@ -55,6 +55,7 @@ Notes:
 - The tax in this invoice is a round 10%, so `total − tax` and `total ÷ 1.1` yield the same subtotal and can't be told apart from the value alone. A future version with a mixed rate would fingerprint the route.
 - The seal text 検収済印 is a real, common phrase, so a model reading it can't be separated from one recognizing it. A future version needs a fictional seal.
 - Six `bank_branch` cells scored *correct* for 5.5/5.6-generation `@low` variants at L0 are, on co-occurrence evidence, inventions that collide with the truth: the bank name in each of those same responses is fabricated, and the printed branch — 本店営業部 — is the most common branch name in Japan. Fictional ground truth doesn't protect a field whose true value is the category's mode; a future version uses a fictional branch name too.
+- 2026-08 update: all three "future version" notes above are closed — see [hanko-benchmark-v2](../hanko-benchmark-v2/) and [the write-up](https://dev.to/hidekimori/the-cheap-tier-reads-one-number-841).
 
 ## results/
 
