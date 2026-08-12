@@ -38,7 +38,7 @@ MODELS = [  # canonical order (provider-grouped) — 34 entries, AnalyzeDoc cata
  "anthropic/claude-fable-5","anthropic/claude-opus-5","anthropic/claude-sonnet-5","anthropic/claude-opus-4-8",
  "bedrock/global.amazon.nova-2-lite-v1:0",
 ]
-RATES = {  # (page_rate, output_rate/1000 chars) — billing.json 2026-07-31
+RATES = {  # (page_rate, output_rate/1000 chars) — billing.json 2026-08-11
  "openai/gpt-5.6-sol@high":(602,900),"openai/gpt-5.6-sol@low":(63,900),
  "openai/gpt-5.6-terra@high":(241,360),"openai/gpt-5.6-terra@low":(26,360),
  "openai/gpt-5.6-luna@high":(25,36),"openai/gpt-5.6-luna@low":(3,36),
@@ -52,7 +52,7 @@ RATES = {  # (page_rate, output_rate/1000 chars) — billing.json 2026-07-31
  "google/gemini-3.6-flash@high":(66,225),"google/gemini-3.6-flash@medium":(32,225),"google/gemini-3.6-flash@low":(16,225),
  "google/gemini-3.5-flash@high":(66,270),"google/gemini-3.5-flash@medium":(32,270),"google/gemini-3.5-flash@low":(16,270),
  "google/gemini-3.5-flash-lite@high":(14,75),"google/gemini-3.5-flash-lite@medium":(7,75),"google/gemini-3.5-flash-lite@low":(4,75),
- "anthropic/claude-fable-5":(1909,1500),"anthropic/claude-opus-5":(955,750),"anthropic/claude-sonnet-5":(573,450),"anthropic/claude-opus-4-8":(955,750),
+ "anthropic/claude-fable-5":(1909,1500),"anthropic/claude-opus-5":(955,750),"anthropic/claude-sonnet-5":(382,300),"anthropic/claude-opus-4-8":(955,750),
  "bedrock/global.amazon.nova-2-lite-v1:0":(4,75),
 }
 PILOT = ["google/gemini-3.5-flash@high","openai/gpt-5.5@low","anthropic/claude-fable-5"]
