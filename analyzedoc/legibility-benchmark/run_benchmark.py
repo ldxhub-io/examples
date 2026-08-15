@@ -25,20 +25,21 @@ T2_DOCS = {"t2_invoice": "invoice", "t2_receipt": "receipt",
 T1_OUT_CHARS, T2_OUT_CHARS = 350, 25               # cost-estimate assumptions
 UPLOAD_TTL_H = 24
 
-MODELS = [  # canonical order (provider-grouped) — 34 entries, AnalyzeDoc catalog 2026-07-25
+MODELS = [  # canonical order (provider-grouped) — 37 entries, AnalyzeDoc catalog 2026-08-15
  "openai/gpt-5.6-sol@high","openai/gpt-5.6-sol@low","openai/gpt-5.6-terra@high","openai/gpt-5.6-terra@low",
  "openai/gpt-5.6-luna@high","openai/gpt-5.6-luna@low","openai/gpt-5.5@high","openai/gpt-5.5@low",
  "openai/gpt-5.4@high","openai/gpt-5.4-mini@high",
  "azure/gpt-5.6-sol@high","azure/gpt-5.6-sol@low","azure/gpt-5.6-terra@high","azure/gpt-5.6-terra@low",
  "azure/gpt-5.6-luna@high","azure/gpt-5.6-luna@low","azure/gpt-5.4@high","azure/gpt-5.4@low",
  "azure/gpt-5.4-mini@high","azure/gpt-5.4-mini@low",
+ "google/gemini-3.7-flash@high","google/gemini-3.7-flash@medium","google/gemini-3.7-flash@low",
  "google/gemini-3.6-flash@high","google/gemini-3.6-flash@medium","google/gemini-3.6-flash@low",
  "google/gemini-3.5-flash@high","google/gemini-3.5-flash@medium","google/gemini-3.5-flash@low",
  "google/gemini-3.5-flash-lite@high","google/gemini-3.5-flash-lite@medium","google/gemini-3.5-flash-lite@low",
  "anthropic/claude-fable-5","anthropic/claude-opus-5","anthropic/claude-sonnet-5","anthropic/claude-opus-4-8",
  "bedrock/global.amazon.nova-2-lite-v1:0",
 ]
-RATES = {  # (page_rate, output_rate/1000 chars) — billing.json 2026-08-11
+RATES = {  # (page_rate, output_rate/1000 chars) — billing.json 2026-08-15
  "openai/gpt-5.6-sol@high":(602,900),"openai/gpt-5.6-sol@low":(63,900),
  "openai/gpt-5.6-terra@high":(241,360),"openai/gpt-5.6-terra@low":(26,360),
  "openai/gpt-5.6-luna@high":(25,36),"openai/gpt-5.6-luna@low":(3,36),
@@ -49,6 +50,7 @@ RATES = {  # (page_rate, output_rate/1000 chars) — billing.json 2026-08-11
  "azure/gpt-5.6-luna@high":(14,44),"azure/gpt-5.6-luna@low":(4,44),
  "azure/gpt-5.4@high":(167,540),"azure/gpt-5.4@low":(38,540),
  "azure/gpt-5.4-mini@high":(51,162),"azure/gpt-5.4-mini@low":(12,162),
+ "google/gemini-3.7-flash@high":(66,225),"google/gemini-3.7-flash@medium":(32,225),"google/gemini-3.7-flash@low":(16,225),
  "google/gemini-3.6-flash@high":(66,225),"google/gemini-3.6-flash@medium":(32,225),"google/gemini-3.6-flash@low":(16,225),
  "google/gemini-3.5-flash@high":(66,270),"google/gemini-3.5-flash@medium":(32,270),"google/gemini-3.5-flash@low":(16,270),
  "google/gemini-3.5-flash-lite@high":(14,75),"google/gemini-3.5-flash-lite@medium":(7,75),"google/gemini-3.5-flash-lite@low":(4,75),

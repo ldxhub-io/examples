@@ -2,13 +2,13 @@
 
 One Japanese invoice, rendered on a fixed 2480×3508 canvas, degraded through seven
 simulated scan resolutions (300 → 25 dpi). Twelve fields across four font tiers
-(28 pt title down to 7.5 pt fine print). **34 vision model variants, 5 repeats each,
-5,236 jobs — final state: 5,236 completed, 0 unparseable outputs.**
+(28 pt title down to 7.5 pt fine print). **37 vision model variants, 5 repeats each,
+5,698 jobs — final state: 5,698 completed, 0 unparseable outputs.**
 
 The question is not *which model is best*. It is **where each model stops reading —
 and what it does after that: leave the field blank, or fabricate a plausible value.**
 
-![Body-tier fabrication heatmap](results/2026-07/heatmap.png)
+![Body-tier fabrication heatmap](results/2026-08/heatmap.png)
 
 ## Headline findings (2026-07 run)
 
@@ -50,6 +50,16 @@ and what it does after that: leave the field blank, or fabricate a plausible val
 > models only `claude-fable-5` holds body at L6 — but after collapse it fabricates
 > less: 14% at 25 dpi versus 26% for both Opus 4.8 and Sonnet 5.
 
+> **Update 2026-08-15:** Gemini 3.7 Flash added (37 variants). It carries the same rates
+> as 3.6 Flash — Google's introductory $0.75/$3.75 runs to 2026-12-31, after which the
+> standard $1.50/$7.50 applies, which is what 3.6 costs today. Same price, three weeks
+> newer. On this benchmark it does not read better: body-tier fabrication at 25 dpi is
+> 10/150 across the three resolution variants against 2/150 for 3.6 (Fisher p=0.035),
+> and `@low` loses the fine tier entirely (L0 → ×). Per-variant differences are not
+> individually significant (p=0.44 / 0.12 / 1.00); only the direction is consistent,
+> holding in all three. Caveat: 3.6 was measured on 2026-07-24 and not re-run, so this
+> compares two points three weeks apart, not two simultaneous measurements.
+
 ## Results
 
 Frontier = deepest ladder step that keeps ≥90% field accuracy per tier
@@ -78,6 +88,9 @@ L3=70, L4=50, L5=35, L6=25 dpi.
 | `azure/gpt-5.4@low` | L6 | L5 | × | × | 58% | 84/84 |
 | `azure/gpt-5.4-mini@high` | L6 | L5 | L4 | × | 88% | 84/84 |
 | `azure/gpt-5.4-mini@low` | L6 | L5 | × | × | 54% | 84/84 |
+| `google/gemini-3.7-flash@high` | L6 | L6 | L6 | L5 | 10% | 84/84 |
+| `google/gemini-3.7-flash@medium` | L6 | L6 | L6 | L5 | 8% | 84/84 |
+| `google/gemini-3.7-flash@low` | L6 | L6 | L6 | × | 2% | 84/84 |
 | `google/gemini-3.6-flash@high` | L6 | L6 | L6 | L5 | 4% | 84/84 |
 | `google/gemini-3.6-flash@medium` | L6 | L6 | L6 | L4 | 0% | 84/84 |
 | `google/gemini-3.6-flash@low` | L6 | L6 | L6 | L0 | 0% | 84/84 |
@@ -93,8 +106,8 @@ L3=70, L4=50, L5=35, L6=25 dpi.
 | `anthropic/claude-opus-4-8` | L6 | L6 | L5 | L4 | 26% | 84/84 |
 | `bedrock/global.amazon.nova-2-lite-v1:0` | × | L5 | × | × | 80% | 63/84 |
 
-Full per-cell numbers: [`results/2026-07/summary.csv`](results/2026-07/summary.csv) ·
-raw model outputs: [`results/2026-07/results.jsonl`](results/2026-07/results.jsonl)
+Full per-cell numbers: [`results/2026-08/summary.csv`](results/2026-08/summary.csv) ·
+raw model outputs: [`results/2026-08/results.jsonl`](results/2026-08/results.jsonl)
 
 ## Method, briefly
 
@@ -134,11 +147,15 @@ python3 run_benchmark.py --models ume --t1-instances A --t1-reps 3 --t2-reps 1 -
 python3 score_results.py && python3 report.py
 ```
 
-**Full matrix** (34 variants, 5,236 jobs, ≈1.61M credits ≈ $161 list):
+**Full matrix** (37 variants, 5,698 jobs, ≈1.55M credits ≈ $155 list):
 
 ```bash
 python3 run_benchmark.py --models all --yes
 ```
+
+That is *below* the ≈$161 this README previously quoted for 34 variants: GPT-5.6 Terra
+and Luna were repriced down on 2026-07-30, and Claude Sonnet 5 on 2026-08-11. Three
+more variants, a cheaper matrix.
 
 The runner is resume-safe: interrupt it or hit provider rate limits, then re-run the
 same command — only unfinished jobs execute. Server-side failures (e.g. upstream 429s)
@@ -147,27 +164,32 @@ are retried with backoff inside the run; Anthropic-bound jobs are capped at 2 co
 Because raw model outputs are stored in `results.jsonl`, you can change the scoring
 rules and re-score **without re-running a single job**.
 
-(The raw log contains 5,240 records; four are duplicate resubmissions after a
-network interruption during the July run. The scorer processes all records, so
-re-scoring this exact file reproduces the published tables.)
+(The raw log contains 5,702 records; four are duplicate resubmissions after a
+network interruption during the July run. The scorer takes the last record per job
+key, so re-scoring this exact file reproduces the published tables.)
 
 ## Caveats
 
 - Degradation is synthetic resampling, not real scanner noise. Claims are limited to
   simulated legibility; a real-scan axis is a v2 candidate.
+- `results.jsonl` accumulates across runs — variants added in different months were not
+  measured at the same time, so cross-variant comparisons span weeks. Rows are not
+  re-run without a reason, and a provider updating a model behind an unchanged ID would
+  leave stale rows.
 - Nova's title-tier misses are character-level misreadings (e.g. 御請求状 for 御請求書),
   which our strict scorer counts as fabricated; its classification errors are consistent
   (receipt → invoice, 21/21).
 - Azure results reflect the Azure OpenAI pipeline (lower observed effective resolution),
   not a different model.
 - LDX hub is the harness here, not a subject — it builds no models. One API key across
-  OpenAI, Azure, Google, Anthropic and AWS is what makes a 34-variant matrix practical.
+  OpenAI, Azure, Google, Anthropic and AWS is what makes a 37-variant matrix practical.
 
 ## Maintenance
 
 New AnalyzeDoc models are benchmarked by running only the new entries (resume-safe)
 and appending to a dated `results/` directory. The catalog snapshot for each run lives
-next to its results (`models_snapshot.json`).
+next to its results (`models_snapshot.json`). Earlier snapshots are kept — the 2026-07
+run is at [`results/2026-07/`](results/2026-07/).
 
 ## Write-ups
 
