@@ -2,13 +2,13 @@
 
 One Japanese invoice, rendered on a fixed 2480×3508 canvas, degraded through seven
 simulated scan resolutions (300 → 25 dpi). Twelve fields across four font tiers
-(28 pt title down to 7.5 pt fine print). **37 vision model variants, 5 repeats each,
-5,698 jobs — final state: 5,698 completed, 0 unparseable outputs.**
+(28 pt title down to 7.5 pt fine print). **38 vision model variants, 5 repeats each,
+5,852 jobs — final state: 5,852 completed, 0 unparseable outputs.**
 
 The question is not *which model is best*. It is **where each model stops reading —
 and what it does after that: leave the field blank, or fabricate a plausible value.**
 
-![Body-tier fabrication heatmap](results/2026-08/heatmap.png)
+![Body-tier fabrication heatmap](results/2026-09/heatmap.png)
 
 ## Headline findings (2026-07 run)
 
@@ -34,7 +34,7 @@ and what it does after that: leave the field blank, or fabricate a plausible val
    48 times across Gemini variants — **at 300 dpi, on perfectly legible text**. The
    fictional credit union with no real-world neighbor was read correctly under the same
    conditions. Language priors can override vision even when reading is easy.
-6. **Classification survives reading loss.** 32 of 34 variants classified all 84
+6. **Classification survives reading loss.** 36 of 38 variants classified all 84
    documents correctly at every degradation step — models that cannot read a document
    can still tell what kind of document it is.
 
@@ -59,6 +59,14 @@ and what it does after that: leave the field blank, or fabricate a plausible val
 > individually significant (p=0.44 / 0.12 / 1.00); only the direction is consistent,
 > holding in all three. Caveat: 3.6 was measured on 2026-07-24 and not re-run, so this
 > compares two points three weeks apart, not two simultaneous measurements.
+
+> **Update 2026-09-01:** Claude Fable 5.1 added (38 variants), same-day. Anthropic keeps
+> Fable 5's rates unchanged at $10/$50, so this is a same-price successor. On this
+> benchmark it matches `claude-fable-5` on the title, large and body tiers (all L6) and
+> extends the 7.5 pt fine tier by one step, L4 → L5. Body-tier fabrication at 25 dpi is
+> identical at 10%. Within Anthropic, only the two Fable variants hold body at L6; Opus 5,
+> Sonnet 5 and Opus 4.8 stop at L5. Caveat: `claude-fable-5` was measured on 2026-08-14
+> and not re-run, so this compares two points two weeks apart.
 
 ## Results
 
@@ -100,14 +108,15 @@ L3=70, L4=50, L5=35, L6=25 dpi.
 | `google/gemini-3.5-flash-lite@high` | L6 | L6 | L6 | L3 | 6% | 84/84 |
 | `google/gemini-3.5-flash-lite@medium` | L6 | L6 | L6 | L4 | 8% | 84/84 |
 | `google/gemini-3.5-flash-lite@low` | L6 | L6 | L6 | × | 2% | 84/84 |
+| `anthropic/claude-fable-5-1` | L6 | L6 | L6 | L5 | 10% | 84/84 |
 | `anthropic/claude-fable-5` | L6 | L6 | L6 | L4 | 10% | 84/84 |
 | `anthropic/claude-opus-5` | L6 | L6 | L5 | L4 | 14% | 84/84 |
 | `anthropic/claude-sonnet-5` | L6 | L6 | L5 | L4 | 26% | 84/84 |
 | `anthropic/claude-opus-4-8` | L6 | L6 | L5 | L4 | 26% | 84/84 |
 | `bedrock/global.amazon.nova-2-lite-v1:0` | × | L5 | × | × | 80% | 63/84 |
 
-Full per-cell numbers: [`results/2026-08/summary.csv`](results/2026-08/summary.csv) ·
-raw model outputs: [`results/2026-08/results.jsonl`](results/2026-08/results.jsonl)
+Full per-cell numbers: [`results/2026-09/summary.csv`](results/2026-09/summary.csv) ·
+raw model outputs: [`results/2026-09/results.jsonl`](results/2026-09/results.jsonl)
 
 ## Method, briefly
 
@@ -147,15 +156,15 @@ python3 run_benchmark.py --models ume --t1-instances A --t1-reps 3 --t2-reps 1 -
 python3 score_results.py && python3 report.py
 ```
 
-**Full matrix** (37 variants, 5,698 jobs, ≈1.55M credits ≈ $155 list):
+**Full matrix** (38 variants, 5,852 jobs, ≈1.88M credits ≈ $188 list):
 
 ```bash
 python3 run_benchmark.py --models all --yes
 ```
 
-That is *below* the ≈$161 this README previously quoted for 34 variants: GPT-5.6 Terra
-and Luna were repriced down on 2026-07-30, and Claude Sonnet 5 on 2026-08-11. Three
-more variants, a cheaper matrix.
+That is *above* the ≈$155 this README previously quoted for 37 variants: Claude
+Fable 5.1 enters at $10/$50, the most expensive cell in the catalog at 1,909
+credits/page. One more variant, a costlier matrix.
 
 The runner is resume-safe: interrupt it or hit provider rate limits, then re-run the
 same command — only unfinished jobs execute. Server-side failures (e.g. upstream 429s)
@@ -164,7 +173,7 @@ are retried with backoff inside the run; Anthropic-bound jobs are capped at 2 co
 Because raw model outputs are stored in `results.jsonl`, you can change the scoring
 rules and re-score **without re-running a single job**.
 
-(The raw log contains 5,702 records; four are duplicate resubmissions after a
+(The raw log contains 5,856 records; four are duplicate resubmissions after a
 network interruption during the July run. The scorer takes the last record per job
 key, so re-scoring this exact file reproduces the published tables.)
 
@@ -182,7 +191,7 @@ key, so re-scoring this exact file reproduces the published tables.)
 - Azure results reflect the Azure OpenAI pipeline (lower observed effective resolution),
   not a different model.
 - LDX hub is the harness here, not a subject — it builds no models. One API key across
-  OpenAI, Azure, Google, Anthropic and AWS is what makes a 37-variant matrix practical.
+  OpenAI, Azure, Google, Anthropic and AWS is what makes a 38-variant matrix practical.
 
 ## Maintenance
 
