@@ -39,6 +39,7 @@ DEFAULT_ORDER = [
  "google/gemini-3.5-flash-lite@high",
  "google/gemini-3.5-flash-lite@medium",
  "google/gemini-3.5-flash-lite@low",
+ "anthropic/claude-fable-5-1",
  "anthropic/claude-fable-5",
  "anthropic/claude-opus-5",
  "anthropic/claude-sonnet-5",
