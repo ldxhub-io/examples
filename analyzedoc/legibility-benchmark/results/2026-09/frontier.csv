@@ -19,12 +19,15 @@ azure/gpt-5.4@high,6,5,4,-1
 azure/gpt-5.4@low,6,5,-1,-1
 azure/gpt-5.4-mini@high,6,5,4,-1
 azure/gpt-5.4-mini@low,6,5,-1,-1
+google/gemini-3.8-flash@high,6,6,6,5
+google/gemini-3.8-flash@medium,6,6,6,5
+google/gemini-3.8-flash@low,6,6,6,-1
 google/gemini-3.7-flash@high,6,6,6,5
 google/gemini-3.7-flash@medium,6,6,6,5
 google/gemini-3.7-flash@low,6,6,6,-1
 google/gemini-3.6-flash@high,6,6,6,5
-google/gemini-3.6-flash@medium,6,6,6,4
-google/gemini-3.6-flash@low,6,6,6,0
+google/gemini-3.6-flash@medium,6,6,6,5
+google/gemini-3.6-flash@low,6,6,6,-1
 google/gemini-3.5-flash@high,6,6,6,-1
 google/gemini-3.5-flash@medium,6,6,6,5
 google/gemini-3.5-flash@low,6,6,6,0
