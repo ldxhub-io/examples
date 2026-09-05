@@ -7,6 +7,8 @@ from collections import defaultdict
 LADDER = [300,150,100,70,50,35,25]
 TIERS = ["title","large","body","fine"]
 DEFAULT_ORDER = [
+ "openai/gpt-6-astra@high",
+ "openai/gpt-6-astra@low",
  "openai/gpt-5.6-sol@high",
  "openai/gpt-5.6-sol@low",
  "openai/gpt-5.6-terra@high",
@@ -17,6 +19,8 @@ DEFAULT_ORDER = [
  "openai/gpt-5.5@low",
  "openai/gpt-5.4@high",
  "openai/gpt-5.4-mini@high",
+ "azure/gpt-6-astra@high",
+ "azure/gpt-6-astra@low",
  "azure/gpt-5.6-sol@high",
  "azure/gpt-5.6-sol@low",
  "azure/gpt-5.6-terra@high",

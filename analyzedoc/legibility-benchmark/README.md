@@ -2,8 +2,8 @@
 
 One Japanese invoice, rendered on a fixed 2480×3508 canvas, degraded through seven
 simulated scan resolutions (300 → 25 dpi). Twelve fields across four font tiers
-(28 pt title down to 7.5 pt fine print). **41 vision model variants, 5 repeats each,
-6,314 jobs — final state: 6,314 completed, 0 unparseable outputs.**
+(28 pt title down to 7.5 pt fine print). **45 vision model variants, 5 repeats each,
+6,930 jobs — final state: 6,930 completed, 0 unparseable outputs.**
 
 The question is not *which model is best*. It is **where each model stops reading —
 and what it does after that: leave the field blank, or fabricate a plausible value.**
@@ -29,12 +29,14 @@ and what it does after that: leave the field blank, or fabricate a plausible val
    7.5 pt fine tier at 100% through L2 via OpenAI, but starts at 92% and degrades
    immediately via Azure — consistent with Azure's lower observed effective resolution.
    The failure *style* shifts too (terra's blank rate drops from 96% to 39% on Azure).
+   **Partly superseded by the 2026-09-04 update below**: on GPT-6 the depth gap closes,
+   while the fabrication gap does not.
 5. **Prior capture: fabrication without degradation.** A fictional bank one character
    away from a real megabank (みずなら銀行) was "corrected" to the real one (みずほ銀行)
    48 times across Gemini variants — **at 300 dpi, on perfectly legible text**. The
    fictional credit union with no real-world neighbor was read correctly under the same
    conditions. Language priors can override vision even when reading is easy.
-6. **Classification survives reading loss.** 39 of 41 variants classified all 84
+6. **Classification survives reading loss.** 43 of 45 variants classified all 84
    documents correctly at every degradation step — models that cannot read a document
    can still tell what kind of document it is.
 
@@ -91,6 +93,32 @@ and what it does after that: leave the field blank, or fabricate a plausible val
 > movements are consistent with run-to-run noise rather than evidence of a provider-side
 > update. The 3.6-vs-3.7/3.8 gap is an order of magnitude above that noise floor.
 
+> **Update 2026-09-04:** GPT-6 Astra added (45 variants), same-day — and `gpt-5.6-sol` was
+> **re-run alongside it**, so the two generations are measured simultaneously on both
+> gateways. Astra costs $10/$50, twice Sol's $5/$30, and is the most expensive per-page
+> cell in the OpenAI catalog at 1,204 credits. Three results:
+> **(a) Astra reads deeper and invents more.** Against Sol on the same day, the direct
+> route gains a step on both the 10.5 pt body tier (L4 → L5) and the 7.5 pt fine tier
+> (L2 → L3) — the deepest fine-tier frontier of any GPT variant, matching
+> `gpt-5.6-terra@high`. Body-tier fabrication at 25 dpi rises with it, 44% → 56%. Reading
+> further and staying quiet are not the same axis.
+> **(b) The gateway gap in *depth* is generation-dependent.** Sol reads the fine tier to
+> L2 via OpenAI but fails it at L0 via Azure — a two-step gap that survived a re-run, so
+> it is not an artifact of measurement dates. Astra reaches L3 on **both** routes. The
+> vision-token budgets are unchanged (3,008 direct, 1,390 Azure), so a token-budget
+> difference that used to cost two ladder steps now costs none.
+> **(c) The gateway gap in *failure style* is not.** Fabrication after collapse still
+> splits by route, and by almost the same margin in both generations: Sol 44% → 78%
+> (34 points), Astra 56% → 88% (32 points). The gateway no longer changes where a model
+> stops reading; it still changes what the model does afterwards.
+> One more comparison is available at equal price: `claude-fable-5-1` carries the same
+> character rates as Astra ($10/$50) and beats it on every tier — body L6 vs L5, fine L5
+> vs L3, fabrication 10% vs 56% — at a higher page rate (1,909 vs 1,204).
+> Sol's own numbers moved as well: body L5 → L4 on the direct route, and fabrication fell
+> in **all four** Sol variants (60→44, 64→60, 90→78, 76→64). A single frontier step is
+> within the noise described above, but four same-direction moves are worth noting rather
+> than explaining away.
+
 ## Results
 
 Frontier = deepest ladder step that keeps ≥90% field accuracy per tier
@@ -99,8 +127,10 @@ L3=70, L4=50, L5=35, L6=25 dpi.
 
 | model | title | large | body | fine | body fab @L6 | classified correctly |
 |---|---|---|---|---|---|---|
-| `openai/gpt-5.6-sol@high` | L6 | L5 | L5 | L2 | 60% | 84/84 |
-| `openai/gpt-5.6-sol@low` | L6 | × | × | × | 64% | 84/84 |
+| `openai/gpt-6-astra@high` | L6 | L5 | L5 | L3 | 56% | 84/84 |
+| `openai/gpt-6-astra@low` | L6 | × | × | × | 58% | 84/84 |
+| `openai/gpt-5.6-sol@high` | L6 | L5 | L4 | L2 | 44% | 84/84 |
+| `openai/gpt-5.6-sol@low` | L6 | × | × | × | 60% | 84/84 |
 | `openai/gpt-5.6-terra@high` | L6 | L5 | L4 | L3 | 4% | 84/84 |
 | `openai/gpt-5.6-terra@low` | L6 | × | × | × | 42% | 84/84 |
 | `openai/gpt-5.6-luna@high` | L6 | L5 | L4 | L2 | 96% | 84/84 |
@@ -109,8 +139,10 @@ L3=70, L4=50, L5=35, L6=25 dpi.
 | `openai/gpt-5.5@low` | L6 | × | × | × | 62% | 84/84 |
 | `openai/gpt-5.4@high` | L6 | L5 | L4 | L2 | 46% | 84/84 |
 | `openai/gpt-5.4-mini@high` | L6 | L5 | L4 | L0 | 78% | 84/84 |
-| `azure/gpt-5.6-sol@high` | L6 | L5 | L5 | L0 | 90% | 84/84 |
-| `azure/gpt-5.6-sol@low` | L6 | × | × | × | 76% | 84/84 |
+| `azure/gpt-6-astra@high` | L6 | L5 | L5 | L3 | 88% | 84/84 |
+| `azure/gpt-6-astra@low` | L6 | × | × | × | 36% | 84/84 |
+| `azure/gpt-5.6-sol@high` | L6 | L5 | L5 | L0 | 78% | 84/84 |
+| `azure/gpt-5.6-sol@low` | L6 | × | × | × | 64% | 84/84 |
 | `azure/gpt-5.6-terra@high` | L6 | L5 | L4 | × | 56% | 84/84 |
 | `azure/gpt-5.6-terra@low` | L6 | × | × | × | 50% | 84/84 |
 | `azure/gpt-5.6-luna@high` | L6 | L5 | L4 | × | 98% | 84/84 |
@@ -182,16 +214,17 @@ python3 run_benchmark.py --models ume --t1-instances A --t1-reps 3 --t2-reps 1 -
 python3 score_results.py && python3 report.py
 ```
 
-**Full matrix** (41 variants, 6,314 jobs, ≈1.91M credits ≈ $191 list):
+**Full matrix** (45 variants, 6,930 jobs, ≈2.39M credits ≈ $239 list):
 
 ```bash
 python3 run_benchmark.py --models all --yes
 ```
 
-That is barely above the ≈$188 this README previously quoted for 38 variants: the three
-Gemini 3.8 Flash variants cost 66/32/16 credits per page, so adding a whole point release
-costs less than 2% of the matrix. Compare Claude Fable 5.1, added on 2026-09-01 at 1,909
-credits/page — a single variant that raised the total by 21%.
+That is 25% above the ≈$191 this README previously quoted for 41 variants — the largest
+single-model jump so far. GPT-6 Astra enters at $10/$50, and its `@high` variants cost
+1,204 (direct) and 668 (Azure) credits per page. For contrast, adding the three Gemini
+3.8 Flash variants a day earlier moved the total by less than 2%. Per-page cost, not
+model count, is what drives this number.
 
 The runner is resume-safe: interrupt it or hit provider rate limits, then re-run the
 same command — only unfinished jobs execute. Server-side failures (e.g. upstream 429s)
@@ -200,7 +233,7 @@ are retried with backoff inside the run; Anthropic-bound jobs are capped at 2 co
 Because raw model outputs are stored in `results.jsonl`, you can change the scoring
 rules and re-score **without re-running a single job**.
 
-(The raw log contains 6,318 records; four are duplicate resubmissions after a
+(The raw log contains 6,934 records; four are duplicate resubmissions after a
 network interruption during the July run. The scorer takes the last record per job
 key, so re-scoring this exact file reproduces the published tables.)
 
@@ -214,7 +247,9 @@ key, so re-scoring this exact file reproduces the published tables.)
   leave stale rows. This is not hypothetical: when `gemini-3.6-flash` and
   `gemini-3.7-flash` were re-run on 2026-09-03 for a simultaneous comparison against 3.8,
   several cells moved (see the 2026-09-03 update) and one previously published difference
-  disappeared. When a comparison between specific variants is the point, re-run those
+  disappeared. It happened again the next day: re-running the four `gpt-5.6-sol` variants
+  alongside GPT-6 Astra moved one frontier step and lowered body-tier fabrication in all
+  four of them. When a comparison between specific variants is the point, re-run those
   variants together.
 - Nova's title-tier misses are character-level misreadings (e.g. 御請求状 for 御請求書),
   which our strict scorer counts as fabricated; its classification errors are consistent
@@ -222,7 +257,7 @@ key, so re-scoring this exact file reproduces the published tables.)
 - Azure results reflect the Azure OpenAI pipeline (lower observed effective resolution),
   not a different model.
 - LDX hub is the harness here, not a subject — it builds no models. One API key across
-  OpenAI, Azure, Google, Anthropic and AWS is what makes a 41-variant matrix practical.
+  OpenAI, Azure, Google, Anthropic and AWS is what makes a 45-variant matrix practical.
 
 ## Maintenance
 

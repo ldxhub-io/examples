@@ -1,7 +1,9 @@
 | model | frontier (title/large/body/fine) | body fab@L6 | T2 acc |
 |---|---|---|---|
-| openai/gpt-5.6-sol@high | L6 / L5 / L5 / L2 | 60% | 84/84 |
-| openai/gpt-5.6-sol@low | L6 / × / × / × | 64% | 84/84 |
+| openai/gpt-6-astra@high | L6 / L5 / L5 / L3 | 56% | 84/84 |
+| openai/gpt-6-astra@low | L6 / × / × / × | 58% | 84/84 |
+| openai/gpt-5.6-sol@high | L6 / L5 / L4 / L2 | 44% | 84/84 |
+| openai/gpt-5.6-sol@low | L6 / × / × / × | 60% | 84/84 |
 | openai/gpt-5.6-terra@high | L6 / L5 / L4 / L3 | 4% | 84/84 |
 | openai/gpt-5.6-terra@low | L6 / × / × / × | 42% | 84/84 |
 | openai/gpt-5.6-luna@high | L6 / L5 / L4 / L2 | 96% | 84/84 |
@@ -10,8 +12,10 @@
 | openai/gpt-5.5@low | L6 / × / × / × | 62% | 84/84 |
 | openai/gpt-5.4@high | L6 / L5 / L4 / L2 | 46% | 84/84 |
 | openai/gpt-5.4-mini@high | L6 / L5 / L4 / L0 | 78% | 84/84 |
-| azure/gpt-5.6-sol@high | L6 / L5 / L5 / L0 | 90% | 84/84 |
-| azure/gpt-5.6-sol@low | L6 / × / × / × | 76% | 84/84 |
+| azure/gpt-6-astra@high | L6 / L5 / L5 / L3 | 88% | 84/84 |
+| azure/gpt-6-astra@low | L6 / × / × / × | 36% | 84/84 |
+| azure/gpt-5.6-sol@high | L6 / L5 / L5 / L0 | 78% | 84/84 |
+| azure/gpt-5.6-sol@low | L6 / × / × / × | 64% | 84/84 |
 | azure/gpt-5.6-terra@high | L6 / L5 / L4 / × | 56% | 84/84 |
 | azure/gpt-5.6-terra@low | L6 / × / × / × | 50% | 84/84 |
 | azure/gpt-5.6-luna@high | L6 / L5 / L4 / × | 98% | 84/84 |

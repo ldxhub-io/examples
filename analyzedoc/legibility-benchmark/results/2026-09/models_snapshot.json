@@ -1,6 +1,46 @@
 {
   "data": [
     {
+      "display_name": "OpenAI GPT-6 Astra @high",
+      "description": "OpenAI's flagship model of the GPT-6 generation. High-resolution reading for the hardest documents — dense layouts, small fonts, and numeric tables — at a premium per-page cost.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "openai/gpt-6-astra@high",
+      "provider": "openai"
+    },
+    {
+      "display_name": "OpenAI GPT-6 Astra @low",
+      "description": "OpenAI's flagship model of the GPT-6 generation. Low-resolution mode for fast, economical PDF extraction and document classification; text read from JPEG/PNG images is unreliable at this resolution.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "openai/gpt-6-astra@low",
+      "provider": "openai"
+    },
+    {
       "display_name": "OpenAI GPT-5.6 Sol @high",
       "description": "OpenAI's flagship model in the GPT-5.6 generation. High-resolution reading for the most accurate extraction from dense layouts, small fonts, and numeric tables — best when accuracy justifies premium per-page cost.",
       "supported_conversions": [
@@ -199,6 +239,46 @@
       ],
       "id": "openai/gpt-5.4-mini@high",
       "provider": "openai"
+    },
+    {
+      "display_name": "Azure OpenAI GPT-6 Astra @high",
+      "description": "GPT-6 Astra hosted on Microsoft Azure. High-resolution reading for the hardest documents, with data residency and Azure compliance for enterprise use.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "azure/gpt-6-astra@high",
+      "provider": "azure"
+    },
+    {
+      "display_name": "Azure OpenAI GPT-6 Astra @low",
+      "description": "GPT-6 Astra hosted on Microsoft Azure. Low-resolution mode for fast, low-cost PDF extraction and document classification with Azure compliance; text read from JPEG/PNG images is unreliable at this resolution.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "azure/gpt-6-astra@low",
+      "provider": "azure"
     },
     {
       "display_name": "Azure OpenAI GPT-5.6 Sol @high",
