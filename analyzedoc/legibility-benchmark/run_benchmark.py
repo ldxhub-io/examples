@@ -25,12 +25,16 @@ T2_DOCS = {"t2_invoice": "invoice", "t2_receipt": "receipt",
 T1_OUT_CHARS, T2_OUT_CHARS = 350, 25               # cost-estimate assumptions
 UPLOAD_TTL_H = 24
 
-MODELS = [  # canonical order (provider-grouped) — 37 entries, AnalyzeDoc catalog 2026-09-04
+MODELS = [  # canonical order (provider-grouped), AnalyzeDoc catalog 2026-09-22
  "openai/gpt-6-astra@high","openai/gpt-6-astra@low",
+ "openai/gpt-6-sol@high","openai/gpt-6-sol@low",
+ "openai/gpt-6-luna@high","openai/gpt-6-luna@low",
  "openai/gpt-5.6-sol@high","openai/gpt-5.6-sol@low","openai/gpt-5.6-terra@high","openai/gpt-5.6-terra@low",
  "openai/gpt-5.6-luna@high","openai/gpt-5.6-luna@low","openai/gpt-5.5@high","openai/gpt-5.5@low",
  "openai/gpt-5.4@high","openai/gpt-5.4-mini@high",
  "azure/gpt-6-astra@high","azure/gpt-6-astra@low",
+ "azure/gpt-6-sol@high","azure/gpt-6-sol@low",
+ "azure/gpt-6-luna@high","azure/gpt-6-luna@low",
  "azure/gpt-5.6-sol@high","azure/gpt-5.6-sol@low","azure/gpt-5.6-terra@high","azure/gpt-5.6-terra@low",
  "azure/gpt-5.6-luna@high","azure/gpt-5.6-luna@low","azure/gpt-5.4@high","azure/gpt-5.4@low",
  "azure/gpt-5.4-mini@high","azure/gpt-5.4-mini@low",
@@ -39,17 +43,22 @@ MODELS = [  # canonical order (provider-grouped) — 37 entries, AnalyzeDoc cata
  "google/gemini-3.6-flash@high","google/gemini-3.6-flash@medium","google/gemini-3.6-flash@low",
  "google/gemini-3.5-flash@high","google/gemini-3.5-flash@medium","google/gemini-3.5-flash@low",
  "google/gemini-3.5-flash-lite@high","google/gemini-3.5-flash-lite@medium","google/gemini-3.5-flash-lite@low",
+ "anthropic/claude-opus-5-5",
  "anthropic/claude-fable-5-1","anthropic/claude-fable-5","anthropic/claude-opus-5","anthropic/claude-sonnet-5","anthropic/claude-opus-4-8",
  "bedrock/global.amazon.nova-2-lite-v1:0",
 ]
-RATES = {  # (page_rate, output_rate/1000 chars) — billing.json 2026-09-05
+RATES = {  # (page_rate, output_rate/1000 chars) — billing.json 2026-09-22
  "openai/gpt-6-astra@high":(1204,1500),"openai/gpt-6-astra@low":(126,1500),
+ "openai/gpt-6-sol@high":(241,300),"openai/gpt-6-sol@low":(26,300),
+ "openai/gpt-6-luna@high":(13,15),"openai/gpt-6-luna@low":(2,15),
  "openai/gpt-5.6-sol@high":(602,900),"openai/gpt-5.6-sol@low":(63,900),
  "openai/gpt-5.6-terra@high":(241,360),"openai/gpt-5.6-terra@low":(26,360),
  "openai/gpt-5.6-luna@high":(25,36),"openai/gpt-5.6-luna@low":(3,36),
  "openai/gpt-5.5@high":(602,900),"openai/gpt-5.5@low":(63,900),
  "openai/gpt-5.4@high":(301,450),"openai/gpt-5.4-mini@high":(91,135),
  "azure/gpt-6-astra@high":(668,1800),"azure/gpt-6-astra@low":(152,1800),
+ "azure/gpt-6-sol@high":(134,360),"azure/gpt-6-sol@low":(31,360),
+ "azure/gpt-6-luna@high":(7,18),"azure/gpt-6-luna@low":(2,18),
  "azure/gpt-5.6-sol@high":(334,1080),"azure/gpt-5.6-sol@low":(76,1080),
  "azure/gpt-5.6-terra@high":(134,432), "azure/gpt-5.6-terra@low":(31,432),
  "azure/gpt-5.6-luna@high":(14,44),"azure/gpt-5.6-luna@low":(4,44),
@@ -60,6 +69,7 @@ RATES = {  # (page_rate, output_rate/1000 chars) — billing.json 2026-09-05
  "google/gemini-3.6-flash@high":(66,225),"google/gemini-3.6-flash@medium":(32,225),"google/gemini-3.6-flash@low":(16,225),
  "google/gemini-3.5-flash@high":(66,270),"google/gemini-3.5-flash@medium":(32,270),"google/gemini-3.5-flash@low":(16,270),
  "google/gemini-3.5-flash-lite@high":(14,75),"google/gemini-3.5-flash-lite@medium":(7,75),"google/gemini-3.5-flash-lite@low":(4,75),
+ "anthropic/claude-opus-5-5":(764,600),
  "anthropic/claude-fable-5-1":(1909,1500),"anthropic/claude-fable-5":(1909,1500),"anthropic/claude-opus-5":(955,750),"anthropic/claude-sonnet-5":(382,300),"anthropic/claude-opus-4-8":(955,750),
  "bedrock/global.amazon.nova-2-lite-v1:0":(4,75),
 }

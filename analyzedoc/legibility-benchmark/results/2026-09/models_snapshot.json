@@ -41,6 +41,86 @@
       "provider": "openai"
     },
     {
+      "display_name": "OpenAI GPT-6 Sol @high",
+      "description": "OpenAI's Sol-tier model of the GPT-6 generation. High-resolution reading for dense layouts, small fonts, and numeric tables at roughly one-fifth the per-page cost of GPT-6 Astra.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "openai/gpt-6-sol@high",
+      "provider": "openai"
+    },
+    {
+      "display_name": "OpenAI GPT-6 Sol @low",
+      "description": "OpenAI's Sol-tier model of the GPT-6 generation. Low-resolution mode for fast, economical PDF extraction and document classification; text read from JPEG/PNG images is unreliable at this resolution.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "openai/gpt-6-sol@low",
+      "provider": "openai"
+    },
+    {
+      "display_name": "OpenAI GPT-6 Luna @high",
+      "description": "OpenAI's Luna-tier model of the GPT-6 generation. High-resolution reading for clean, standard-size text at low per-page cost; fine print is not reliably read.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "openai/gpt-6-luna@high",
+      "provider": "openai"
+    },
+    {
+      "display_name": "OpenAI GPT-6 Luna @low",
+      "description": "OpenAI's Luna-tier model of the GPT-6 generation. Low-resolution mode for high-volume PDF processing and document classification at minimal per-page cost; text read from JPEG/PNG images is unreliable at this resolution.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "openai/gpt-6-luna@low",
+      "provider": "openai"
+    },
+    {
       "display_name": "OpenAI GPT-5.6 Sol @high",
       "description": "OpenAI's flagship model in the GPT-5.6 generation. High-resolution reading for the most accurate extraction from dense layouts, small fonts, and numeric tables — best when accuracy justifies premium per-page cost.",
       "supported_conversions": [
@@ -142,7 +222,7 @@
     },
     {
       "display_name": "OpenAI GPT-5.6 Luna @low",
-      "description": "OpenAI's fast, lightweight GPT-5.6 model. Lowest-cost OpenAI option for high-volume PDF processing and document classification; text read from JPEG/PNG images is unreliable at this resolution.",
+      "description": "OpenAI's fast, lightweight GPT-5.6 model. Lowest-cost GPT-5.6 option for high-volume PDF processing and document classification; text read from JPEG/PNG images is unreliable at this resolution.",
       "supported_conversions": [
         {
           "from": "pdf",
@@ -278,6 +358,86 @@
         }
       ],
       "id": "azure/gpt-6-astra@low",
+      "provider": "azure"
+    },
+    {
+      "display_name": "Azure OpenAI GPT-6 Sol @high",
+      "description": "GPT-6 Sol hosted on Microsoft Azure. High-resolution reading for complex documents, with data residency and Azure compliance for enterprise use.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "azure/gpt-6-sol@high",
+      "provider": "azure"
+    },
+    {
+      "display_name": "Azure OpenAI GPT-6 Sol @low",
+      "description": "GPT-6 Sol hosted on Microsoft Azure. Low-resolution mode for fast, low-cost PDF extraction and document classification with Azure compliance; text read from JPEG/PNG images is unreliable at this resolution.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "azure/gpt-6-sol@low",
+      "provider": "azure"
+    },
+    {
+      "display_name": "Azure OpenAI GPT-6 Luna @high",
+      "description": "GPT-6 Luna hosted on Microsoft Azure. Affordable high-resolution extraction with Azure compliance for enterprise use.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "azure/gpt-6-luna@high",
+      "provider": "azure"
+    },
+    {
+      "display_name": "Azure OpenAI GPT-6 Luna @low",
+      "description": "GPT-6 Luna hosted on Microsoft Azure. Fast, low-cost PDF processing and document classification with Azure compliance; text read from JPEG/PNG images is unreliable at this resolution.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "azure/gpt-6-luna@low",
       "provider": "azure"
     },
     {
@@ -781,6 +941,26 @@
       "provider": "google"
     },
     {
+      "display_name": "Claude Opus 5.5",
+      "description": "Anthropic's Opus-tier model of the Claude 5.5 generation. Successor to Claude Opus 5 at 20% lower per-page cost, for demanding document extraction.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "anthropic/claude-opus-5-5",
+      "provider": "anthropic"
+    },
+    {
       "display_name": "Claude Fable 5.1",
       "description": "Anthropic's Mythos-class model, a tier above Opus. Successor to Claude Fable 5 at the same cost, for complex, nuanced document analysis.",
       "supported_conversions": [
@@ -862,7 +1042,7 @@
     },
     {
       "display_name": "Claude Opus 4.8",
-      "description": "Anthropic's flagship-tier Opus model. Deep reasoning and nuanced schema interpretation for demanding document extraction.",
+      "description": "Anthropic's Opus-tier model of the Claude 4.8 generation. Deep reasoning and nuanced schema interpretation for demanding document extraction.",
       "supported_conversions": [
         {
           "from": "pdf",
