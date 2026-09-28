@@ -43,7 +43,7 @@ MODELS = [  # canonical order (provider-grouped), AnalyzeDoc catalog 2026-09-22
  "google/gemini-3.6-flash@high","google/gemini-3.6-flash@medium","google/gemini-3.6-flash@low",
  "google/gemini-3.5-flash@high","google/gemini-3.5-flash@medium","google/gemini-3.5-flash@low",
  "google/gemini-3.5-flash-lite@high","google/gemini-3.5-flash-lite@medium","google/gemini-3.5-flash-lite@low",
- "anthropic/claude-opus-5-5",
+ "anthropic/claude-opus-5-5","anthropic/claude-sonnet-5-5",
  "anthropic/claude-fable-5-1","anthropic/claude-fable-5","anthropic/claude-opus-5","anthropic/claude-sonnet-5","anthropic/claude-opus-4-8",
  "bedrock/global.amazon.nova-2-lite-v1:0",
 ]
@@ -69,7 +69,7 @@ RATES = {  # (page_rate, output_rate/1000 chars) — billing.json 2026-09-22
  "google/gemini-3.6-flash@high":(66,225),"google/gemini-3.6-flash@medium":(32,225),"google/gemini-3.6-flash@low":(16,225),
  "google/gemini-3.5-flash@high":(66,270),"google/gemini-3.5-flash@medium":(32,270),"google/gemini-3.5-flash@low":(16,270),
  "google/gemini-3.5-flash-lite@high":(14,75),"google/gemini-3.5-flash-lite@medium":(7,75),"google/gemini-3.5-flash-lite@low":(4,75),
- "anthropic/claude-opus-5-5":(764,600),
+ "anthropic/claude-opus-5-5":(764,600),"anthropic/claude-sonnet-5-5":(382,300),
  "anthropic/claude-fable-5-1":(1909,1500),"anthropic/claude-fable-5":(1909,1500),"anthropic/claude-opus-5":(955,750),"anthropic/claude-sonnet-5":(382,300),"anthropic/claude-opus-4-8":(955,750),
  "bedrock/global.amazon.nova-2-lite-v1:0":(4,75),
 }

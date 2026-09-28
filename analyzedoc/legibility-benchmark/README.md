@@ -2,8 +2,8 @@
 
 One Japanese invoice, rendered on a fixed 2480×3508 canvas, degraded through seven
 simulated scan resolutions (300 → 25 dpi). Twelve fields across four font tiers
-(28 pt title down to 7.5 pt fine print). **54 vision model variants, 5 repeats each,
-8,316 jobs — final state: 8,316 completed, 0 unparseable outputs.**
+(28 pt title down to 7.5 pt fine print). **55 vision model variants, 5 repeats each,
+8,470 jobs — final state: 8,470 completed, 0 unparseable outputs.**
 
 The question is not *which model is best*. It is **where each model stops reading —
 and what it does after that: leave the field blank, or fabricate a plausible value.**
@@ -31,15 +31,18 @@ and what it does after that: leave the field blank, or fabricate a plausible val
    The failure *style* shifts too (terra's blank rate drops from 96% to 39% on Azure).
    **Partly superseded by the 2026-09-04 and 2026-09-23 updates below**: the depth gap
    closes for GPT-6 Astra but not for GPT-6 Sol, while the fabrication gap persists on both.
+   The Azure GPT-6 Sol / Luna rows predate OpenAI's 2026-09-25 image fix and await
+   re-measurement (see the 2026-09-28 update).
 5. **Prior capture: fabrication without degradation.** A fictional bank one character
    away from a real megabank (みずなら銀行) was "corrected" to the real one (みずほ銀行)
    48 times across Gemini variants — **at 300 dpi, on perfectly legible text**. The
    fictional credit union with no real-world neighbor was read correctly under the same
    conditions. Language priors can override vision even when reading is easy.
-6. **Classification survives reading loss.** 48 of 54 variants classified all 84
+6. **Classification survives reading loss.** 51 of 55 variants classified all 84
    documents correctly at every degradation step — models that cannot read a document
-   can still tell what kind of document it is. All four GPT-6 Luna variants are among
-   the six exceptions (see the 2026-09-23 update).
+   can still tell what kind of document it is. Two of the four exceptions are the Azure
+   GPT-6 Luna variants, measured before OpenAI's 2026-09-25 image fix; after the fix,
+   both OpenAI-direct Luna variants classify all 84 (see the 2026-09-28 update).
 
 > **Update 2026-07-24:** Gemini 3.6 Flash and Gemini 3.5 Flash-Lite added (33 variants).
 > `gemini-3.6-flash@high` holds the 7.5 pt fine tier to L5 (35 dpi) — a step
@@ -151,6 +154,35 @@ and what it does after that: leave the field blank, or fabricate a plausible val
 > `openai/gpt-6-luna@high` is also the only variant besides Nova that loses the 28 pt
 > title at L6, and neither route reads the fine tier even at 300 dpi. At 2 credits per
 > page, Luna `@low` on either route is now the cheapest cell in the catalog.
+> **Superseded in part by the 2026-09-28 update below**: the GPT-6 Sol and Luna rows
+> above were measured before OpenAI's 2026-09-25 image-encoding fix. Re-run after the
+> fix, (d) no longer holds for the OpenAI-direct Luna variants, and the Sol count in (b)
+> becomes 29 of 50. The Azure rows in (a) and (d) await re-measurement.
+
+> **Update 2026-09-28:** OpenAI fixed an image-encoding bug in GPT-6 Sol and GPT-6 Luna on
+> 2026-09-25, two days after the measurements above, and advised re-running image
+> evaluations. The four OpenAI-direct GPT-6 Sol / Luna variants were re-run after the fix
+> (the pre-fix records remain in commit `3c6db74`), and Claude Sonnet 5.5 was added
+> (55 variants). The four Azure GPT-6 Sol / Luna rows still carry pre-fix data: Azure file
+> uploads were failing during this run, so they could not be re-measured. Vision-token
+> budgets were re-measured after the fix and did not change (3,008 direct, 1,390 Azure),
+> so the fix changed what the models see, not what a page costs. Three results:
+> **(a) The fix mattered for Luna, not for Sol.** GPT-6 Sol @high keeps its frontier
+> (L6 / L5 / L5 / L2), and its 25 dpi body fabrications move only from 31 to 29 of 50, so
+> the Sol-versus-Terra contrast stands. GPT-6 Luna @high moves from L5 / L5 / L4 / × to
+> L6 / L5 / L5 / L2 — identical to Sol @high, at 13 credits per page instead of 241 — and
+> classifies all 84 documents (was 78). The title loss and fine-tier failure reported for
+> it on 2026-09-23 disappear after the fix.
+> **(b) Luna @low now guesses more.** Its frontier is unchanged (title only), but at
+> 25 dpi its body blanks fall from 17 to 2 of 50 while its fabrications rise from 28 to
+> 44 (Fisher p=0.001). After the fix it fills unreadable fields instead of leaving them
+> empty.
+> **(c) Claude Sonnet 5.5 reads like Sonnet 5 and guesses rather than blanks.** Its
+> frontier matches Sonnet 5 and Opus 5.5 (L6 / L6 / L5 / L4). At 25 dpi it answers every
+> body field — 41 correct, 9 fabricated, none blank — where Opus 5.5 left 19 blank and
+> fabricated none (Fisher p=0.0026 on fabrications, measured five days apart). Blanking
+> at the edge is Opus 5.5's behavior, not the 5.5 generation's. Against Sonnet 5 (13 of
+> 50, from the 2026-07 run) the drop is not significant (p=0.47).
 
 ## Results
 
@@ -162,10 +194,10 @@ L3=70, L4=50, L5=35, L6=25 dpi.
 |---|---|---|---|---|---|---|
 | `openai/gpt-6-astra@high` | L6 | L5 | L5 | L3 | 56% | 84/84 |
 | `openai/gpt-6-astra@low` | L6 | × | × | × | 58% | 84/84 |
-| `openai/gpt-6-sol@high` | L6 | L5 | L5 | L2 | 62% | 84/84 |
-| `openai/gpt-6-sol@low` | L6 | × | × | × | 42% | 84/84 |
-| `openai/gpt-6-luna@high` | L5 | L5 | L4 | × | 78% | 78/84 |
-| `openai/gpt-6-luna@low` | L6 | × | × | × | 56% | 83/84 |
+| `openai/gpt-6-sol@high` | L6 | L5 | L5 | L2 | 58% | 84/84 |
+| `openai/gpt-6-sol@low` | L6 | × | × | × | 30% | 84/84 |
+| `openai/gpt-6-luna@high` | L6 | L5 | L5 | L2 | 70% | 84/84 |
+| `openai/gpt-6-luna@low` | L6 | × | × | × | 88% | 84/84 |
 | `openai/gpt-5.6-sol@high` | L6 | L5 | L4 | L2 | 44% | 84/84 |
 | `openai/gpt-5.6-sol@low` | L6 | × | × | × | 60% | 84/84 |
 | `openai/gpt-5.6-terra@high` | L6 | L5 | L4 | L3 | 4% | 84/84 |
@@ -208,6 +240,7 @@ L3=70, L4=50, L5=35, L6=25 dpi.
 | `google/gemini-3.5-flash-lite@medium` | L6 | L6 | L6 | L4 | 8% | 84/84 |
 | `google/gemini-3.5-flash-lite@low` | L6 | L6 | L6 | × | 2% | 84/84 |
 | `anthropic/claude-opus-5-5` | L6 | L6 | L5 | L4 | 0% | 84/84 |
+| `anthropic/claude-sonnet-5-5` | L6 | L6 | L5 | L4 | 18% | 84/84 |
 | `anthropic/claude-fable-5-1` | L6 | L6 | L6 | L5 | 10% | 84/84 |
 | `anthropic/claude-fable-5` | L6 | L6 | L6 | L4 | 10% | 84/84 |
 | `anthropic/claude-opus-5` | L6 | L6 | L5 | L4 | 14% | 84/84 |
@@ -256,19 +289,15 @@ python3 run_benchmark.py --models ume --t1-instances A --t1-reps 3 --t2-reps 1 -
 python3 score_results.py && python3 report.py
 ```
 
-**Full matrix** (54 variants, 8,316 jobs, ≈2.67M credits ≈ $267 list):
+**Full matrix** (55 variants, 8,470 jobs, ≈2.74M credits ≈ $274 list):
 
 ```bash
 python3 run_benchmark.py --models all --yes
 ```
 
-That is 10% above the 45-variant matrix. Claude Opus 5.5 alone accounts for 56% of the
-increase: its character rates ($4/$20) undercut Opus 5 by a fifth, but its 764-credit page
-rate is still above every GPT-6 Sol or Luna cell, and the page rate is what the matrix
-multiplies. The eight GPT-6 variants together add less than Opus 5.5 does on its own.
-Per-page cost, not model count, is what drives this number. (The ≈$239 previously quoted
-for 45 variants had been carried forward by addition; the runner's own estimator puts it
-at ≈$243.)
+That is 2.5% above the 54-variant matrix. Claude Sonnet 5.5 is priced exactly like
+Sonnet 5, down to its 382-credit page rate, so adding it moves the total by one
+Sonnet-sized row. Per-page cost, not model count, is what drives this number.
 
 The runner is resume-safe: interrupt it or hit provider rate limits, then re-run the
 same command — only unfinished jobs execute. Server-side failures (e.g. upstream 429s)
@@ -279,7 +308,7 @@ adds one if needed).
 Because raw model outputs are stored in `results.jsonl`, you can change the scoring
 rules and re-score **without re-running a single job**.
 
-(The raw log contains 8,320 records; four are duplicate resubmissions after a
+(The raw log contains 8,474 records; four are duplicate resubmissions after a
 network interruption during the July run. The scorer takes the last record per job
 key, so re-scoring this exact file reproduces the published tables.)
 
@@ -303,7 +332,7 @@ key, so re-scoring this exact file reproduces the published tables.)
 - Azure results reflect the Azure OpenAI pipeline (lower observed effective resolution),
   not a different model.
 - LDX hub is the harness here, not a subject — it builds no models. One API key across
-  OpenAI, Azure, Google, Anthropic and AWS is what makes a 54-variant matrix practical.
+  OpenAI, Azure, Google, Anthropic and AWS is what makes a 55-variant matrix practical.
 
 ## Maintenance
 

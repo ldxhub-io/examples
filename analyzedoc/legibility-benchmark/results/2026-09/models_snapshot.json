@@ -82,7 +82,7 @@
     },
     {
       "display_name": "OpenAI GPT-6 Luna @high",
-      "description": "OpenAI's Luna-tier model of the GPT-6 generation. High-resolution reading for clean, standard-size text at low per-page cost; fine print is not reliably read.",
+      "description": "OpenAI's Luna-tier model of the GPT-6 generation. High-resolution reading for dense layouts and small fonts at low per-page cost.",
       "supported_conversions": [
         {
           "from": "pdf",
@@ -402,7 +402,7 @@
     },
     {
       "display_name": "Azure OpenAI GPT-6 Luna @high",
-      "description": "GPT-6 Luna hosted on Microsoft Azure. Affordable high-resolution extraction with Azure compliance for enterprise use.",
+      "description": "GPT-6 Luna hosted on Microsoft Azure. Affordable high-resolution extraction for PDFs with a text layer, with Azure compliance; text read from JPEG/PNG images is unreliable.",
       "supported_conversions": [
         {
           "from": "pdf",
@@ -961,6 +961,26 @@
       "provider": "anthropic"
     },
     {
+      "display_name": "Claude Sonnet 5.5",
+      "description": "Anthropic's Sonnet-tier model of the Claude 5.5 generation. Successor to Claude Sonnet 5 at the same cost, for demanding document extraction.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "anthropic/claude-sonnet-5-5",
+      "provider": "anthropic"
+    },
+    {
       "display_name": "Claude Fable 5.1",
       "description": "Anthropic's Mythos-class model, a tier above Opus. Successor to Claude Fable 5 at the same cost, for complex, nuanced document analysis.",
       "supported_conversions": [
@@ -1022,7 +1042,7 @@
     },
     {
       "display_name": "Claude Sonnet 5",
-      "description": "Anthropic's Sonnet-tier model, a major upgrade over Sonnet 4.6. Strong schema adherence for demanding document extraction at Sonnet-tier cost.",
+      "description": "Anthropic's Sonnet-tier model of the Claude 5 generation, a major upgrade over Sonnet 4.6. Strong schema adherence for demanding document extraction at Sonnet-tier cost.",
       "supported_conversions": [
         {
           "from": "pdf",

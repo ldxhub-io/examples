@@ -2,10 +2,10 @@
 |---|---|---|---|
 | openai/gpt-6-astra@high | L6 / L5 / L5 / L3 | 56% | 84/84 |
 | openai/gpt-6-astra@low | L6 / × / × / × | 58% | 84/84 |
-| openai/gpt-6-sol@high | L6 / L5 / L5 / L2 | 62% | 84/84 |
-| openai/gpt-6-sol@low | L6 / × / × / × | 42% | 84/84 |
-| openai/gpt-6-luna@high | L5 / L5 / L4 / × | 78% | 78/84 |
-| openai/gpt-6-luna@low | L6 / × / × / × | 56% | 83/84 |
+| openai/gpt-6-sol@high | L6 / L5 / L5 / L2 | 58% | 84/84 |
+| openai/gpt-6-sol@low | L6 / × / × / × | 30% | 84/84 |
+| openai/gpt-6-luna@high | L6 / L5 / L5 / L2 | 70% | 84/84 |
+| openai/gpt-6-luna@low | L6 / × / × / × | 88% | 84/84 |
 | openai/gpt-5.6-sol@high | L6 / L5 / L4 / L2 | 44% | 84/84 |
 | openai/gpt-5.6-sol@low | L6 / × / × / × | 60% | 84/84 |
 | openai/gpt-5.6-terra@high | L6 / L5 / L4 / L3 | 4% | 84/84 |
@@ -48,6 +48,7 @@
 | google/gemini-3.5-flash-lite@medium | L6 / L6 / L6 / L4 | 8% | 84/84 |
 | google/gemini-3.5-flash-lite@low | L6 / L6 / L6 / × | 2% | 84/84 |
 | anthropic/claude-opus-5-5 | L6 / L6 / L5 / L4 | 0% | 84/84 |
+| anthropic/claude-sonnet-5-5 | L6 / L6 / L5 / L4 | 18% | 84/84 |
 | anthropic/claude-fable-5-1 | L6 / L6 / L6 / L5 | 10% | 84/84 |
 | anthropic/claude-fable-5 | L6 / L6 / L6 / L4 | 10% | 84/84 |
 | anthropic/claude-opus-5 | L6 / L6 / L5 / L4 | 14% | 84/84 |
