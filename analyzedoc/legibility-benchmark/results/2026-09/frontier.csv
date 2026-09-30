@@ -1,4 +1,6 @@
 model,title,large,body,fine
+openai/gpt-6.1-sol@high,6,5,5,2
+openai/gpt-6.1-sol@low,6,-1,-1,-1
 openai/gpt-6-astra@high,6,5,5,3
 openai/gpt-6-astra@low,6,-1,-1,-1
 openai/gpt-6-sol@high,6,5,5,2

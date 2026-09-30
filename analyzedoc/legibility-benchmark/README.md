@@ -2,8 +2,8 @@
 
 One Japanese invoice, rendered on a fixed 2480×3508 canvas, degraded through seven
 simulated scan resolutions (300 → 25 dpi). Twelve fields across four font tiers
-(28 pt title down to 7.5 pt fine print). **55 vision model variants, 5 repeats each,
-8,470 jobs — final state: 8,470 completed, 0 unparseable outputs.**
+(28 pt title down to 7.5 pt fine print). **57 vision model variants, 5 repeats each,
+8,778 jobs — final state: 8,778 completed, 0 unparseable outputs.**
 
 The question is not *which model is best*. It is **where each model stops reading —
 and what it does after that: leave the field blank, or fabricate a plausible value.**
@@ -38,7 +38,7 @@ and what it does after that: leave the field blank, or fabricate a plausible val
    48 times across Gemini variants — **at 300 dpi, on perfectly legible text**. The
    fictional credit union with no real-world neighbor was read correctly under the same
    conditions. Language priors can override vision even when reading is easy.
-6. **Classification survives reading loss.** 51 of 55 variants classified all 84
+6. **Classification survives reading loss.** 53 of 57 variants classified all 84
    documents correctly at every degradation step — models that cannot read a document
    can still tell what kind of document it is. Two of the four exceptions are the Azure
    GPT-6 Luna variants, measured before OpenAI's 2026-09-25 image fix; after the fix,
@@ -157,7 +157,8 @@ and what it does after that: leave the field blank, or fabricate a plausible val
 > **Superseded in part by the 2026-09-28 update below**: the GPT-6 Sol and Luna rows
 > above were measured before OpenAI's 2026-09-25 image-encoding fix. Re-run after the
 > fix, (d) no longer holds for the OpenAI-direct Luna variants, and the Sol count in (b)
-> becomes 29 of 50. The Azure rows in (a) and (d) await re-measurement.
+> becomes 29 of 50 (22 of 50 in the 2026-09-30 same-day re-run). The Azure rows in (a)
+> and (d) await re-measurement.
 
 > **Update 2026-09-28:** OpenAI fixed an image-encoding bug in GPT-6 Sol and GPT-6 Luna on
 > 2026-09-25, two days after the measurements above, and advised re-running image
@@ -183,6 +184,33 @@ and what it does after that: leave the field blank, or fabricate a plausible val
 > fabricated none (Fisher p=0.0026 on fabrications, measured five days apart). Blanking
 > at the edge is Opus 5.5's behavior, not the 5.5 generation's. Against Sonnet 5 (13 of
 > 50, from the 2026-07 run) the drop is not significant (p=0.47).
+> **Superseded in part by the 2026-09-30 update below**: GPT-6 Sol was re-run alongside
+> GPT-6.1 Sol, and its `@high` count in (a) becomes 22 fabricated and 18 blank of 50. The
+> Sol-versus-Terra contrast still stands (Terra: 2 fabricated, 46 blank; Fisher p≈2.9×10⁻⁶
+> on fabrications).
+
+> **Update 2026-09-30:** GPT-6.1 Sol added via OpenAI (57 variants). It is a same-price
+> successor to GPT-6 Sol ($2/$10, the same 241 / 26 credit page rates), the kind of release
+> the maintenance rule below normally skips. It earned a row because it has no
+> non-reasoning mode — `reasoning.effort` starts at `low` — while GPT-6 Sol runs with
+> reasoning off here, a difference that could move the blank-versus-fabricate finding.
+> GPT-6 Sol was re-run the same day so the two could be compared directly (its 2026-09-28
+> records remain in commit `90dc788`). The Azure route is not in this run: Azure file
+> uploads were still failing, so `azure/gpt-6.1-sol` is in the catalog but not in the
+> matrix. Two results:
+> **(a) Same frontier, almost no blanks.** GPT-6.1 Sol reads exactly as deep as GPT-6 Sol
+> at both resolutions (L6 / L5 / L5 / L2 at `@high`, the title tier only at `@low`). The
+> difference is past the frontier: at 25 dpi it left 1 of 100 body fields blank across the
+> two variants, where GPT-6 Sol left 61 of 100 blank the same day (Fisher p≈5×10⁻²³). It
+> turns those blanks into both more correct answers and more fabrications — at `@high` 21
+> vs 10 correct (p=0.03) and 29 vs 22 fabricated (not significant); at `@low` 21 vs 4
+> correct and 28 vs 3 fabricated (p≈5.5×10⁻⁸).
+> **(b) GPT-6 Sol `@low` moved in two days.** Against the 2026-09-28 run, its 25 dpi body
+> blanks rose from 21 to 43 of 50 and its fabrications fell from 15 to 3 (p≈7.6×10⁻⁶ on
+> blanks), while `@high` stayed within noise (fabrications 29 → 22, p=0.23). Price and
+> model ID are unchanged, and two runs cannot tell a model update from run-to-run
+> variance, so the table carries the 2026-09-30 numbers and (a) compares only within that
+> day.
 
 ## Results
 
@@ -192,10 +220,12 @@ L3=70, L4=50, L5=35, L6=25 dpi.
 
 | model | title | large | body | fine | body fab @L6 | classified correctly |
 |---|---|---|---|---|---|---|
+| `openai/gpt-6.1-sol@high` | L6 | L5 | L5 | L2 | 58% | 84/84 |
+| `openai/gpt-6.1-sol@low` | L6 | × | × | × | 56% | 84/84 |
 | `openai/gpt-6-astra@high` | L6 | L5 | L5 | L3 | 56% | 84/84 |
 | `openai/gpt-6-astra@low` | L6 | × | × | × | 58% | 84/84 |
-| `openai/gpt-6-sol@high` | L6 | L5 | L5 | L2 | 58% | 84/84 |
-| `openai/gpt-6-sol@low` | L6 | × | × | × | 30% | 84/84 |
+| `openai/gpt-6-sol@high` | L6 | L5 | L5 | L2 | 44% | 84/84 |
+| `openai/gpt-6-sol@low` | L6 | × | × | × | 6% | 84/84 |
 | `openai/gpt-6-luna@high` | L6 | L5 | L5 | L2 | 70% | 84/84 |
 | `openai/gpt-6-luna@low` | L6 | × | × | × | 88% | 84/84 |
 | `openai/gpt-5.6-sol@high` | L6 | L5 | L4 | L2 | 44% | 84/84 |
@@ -289,15 +319,15 @@ python3 run_benchmark.py --models ume --t1-instances A --t1-reps 3 --t2-reps 1 -
 python3 score_results.py && python3 report.py
 ```
 
-**Full matrix** (55 variants, 8,470 jobs, ≈2.74M credits ≈ $274 list):
+**Full matrix** (57 variants, 8,778 jobs, ≈2.79M credits ≈ $279 list):
 
 ```bash
 python3 run_benchmark.py --models all --yes
 ```
 
-That is 2.5% above the 54-variant matrix. Claude Sonnet 5.5 is priced exactly like
-Sonnet 5, down to its 382-credit page rate, so adding it moves the total by one
-Sonnet-sized row. Per-page cost, not model count, is what drives this number.
+That is 2.1% above the 55-variant matrix. GPT-6.1 Sol is priced exactly like GPT-6 Sol,
+down to its 241 / 26 credit page rates, so adding it moves the total by one Sol-sized
+pair of rows. Per-page cost, not model count, is what drives this number.
 
 The runner is resume-safe: interrupt it or hit provider rate limits, then re-run the
 same command — only unfinished jobs execute. Server-side failures (e.g. upstream 429s)
@@ -308,7 +338,7 @@ adds one if needed).
 Because raw model outputs are stored in `results.jsonl`, you can change the scoring
 rules and re-score **without re-running a single job**.
 
-(The raw log contains 8,474 records; four are duplicate resubmissions after a
+(The raw log contains 8,782 records; four are duplicate resubmissions after a
 network interruption during the July run. The scorer takes the last record per job
 key, so re-scoring this exact file reproduces the published tables.)
 
@@ -324,15 +354,20 @@ key, so re-scoring this exact file reproduces the published tables.)
   several cells moved (see the 2026-09-03 update) and one previously published difference
   disappeared. It happened again the next day: re-running the four `gpt-5.6-sol` variants
   alongside GPT-6 Astra moved one frontier step and lowered body-tier fabrication in all
-  four of them. When a comparison between specific variants is the point, re-run those
-  variants together.
+  four of them. And on 2026-09-30, re-running GPT-6 Sol alongside GPT-6.1 Sol moved
+  `gpt-6-sol@low`'s 25 dpi body results (see the 2026-09-30 update). When a comparison
+  between specific variants is the point, re-run those variants together.
 - Nova's title-tier misses are character-level misreadings (e.g. 御請求状 for 御請求書),
   which our strict scorer counts as fabricated; its classification errors are consistent
   (receipt → invoice, 21/21).
 - Azure results reflect the Azure OpenAI pipeline (lower observed effective resolution),
   not a different model.
+- `azure/gpt-6.1-sol` is in the AnalyzeDoc catalog but not in this matrix: Azure file
+  uploads have been failing since 2026-09-28. The harness keeps its rates but leaves it out
+  of `MODELS` until the route recovers, and the four Azure GPT-6 Sol / Luna rows likewise
+  still carry data from before OpenAI's 2026-09-25 image fix.
 - LDX hub is the harness here, not a subject — it builds no models. One API key across
-  OpenAI, Azure, Google, Anthropic and AWS is what makes a 55-variant matrix practical.
+  OpenAI, Azure, Google, Anthropic and AWS is what makes a 57-variant matrix practical.
 
 ## Maintenance
 

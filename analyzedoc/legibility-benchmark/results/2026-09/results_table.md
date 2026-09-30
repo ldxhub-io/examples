@@ -1,9 +1,11 @@
 | model | frontier (title/large/body/fine) | body fab@L6 | T2 acc |
 |---|---|---|---|
+| openai/gpt-6.1-sol@high | L6 / L5 / L5 / L2 | 58% | 84/84 |
+| openai/gpt-6.1-sol@low | L6 / × / × / × | 56% | 84/84 |
 | openai/gpt-6-astra@high | L6 / L5 / L5 / L3 | 56% | 84/84 |
 | openai/gpt-6-astra@low | L6 / × / × / × | 58% | 84/84 |
-| openai/gpt-6-sol@high | L6 / L5 / L5 / L2 | 58% | 84/84 |
-| openai/gpt-6-sol@low | L6 / × / × / × | 30% | 84/84 |
+| openai/gpt-6-sol@high | L6 / L5 / L5 / L2 | 44% | 84/84 |
+| openai/gpt-6-sol@low | L6 / × / × / × | 6% | 84/84 |
 | openai/gpt-6-luna@high | L6 / L5 / L5 / L2 | 70% | 84/84 |
 | openai/gpt-6-luna@low | L6 / × / × / × | 88% | 84/84 |
 | openai/gpt-5.6-sol@high | L6 / L5 / L4 / L2 | 44% | 84/84 |

@@ -1,6 +1,46 @@
 {
   "data": [
     {
+      "display_name": "OpenAI GPT-6.1 Sol @high",
+      "description": "OpenAI's Sol-tier model of the GPT-6.1 generation. Successor to GPT-6 Sol at the same per-page cost, for high-resolution reading of dense layouts, small fonts, and numeric tables.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "openai/gpt-6.1-sol@high",
+      "provider": "openai"
+    },
+    {
+      "display_name": "OpenAI GPT-6.1 Sol @low",
+      "description": "OpenAI's Sol-tier model of the GPT-6.1 generation. Low-resolution mode for economical PDF extraction and document classification; text read from JPEG/PNG images is unreliable at this resolution.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "openai/gpt-6.1-sol@low",
+      "provider": "openai"
+    },
+    {
       "display_name": "OpenAI GPT-6 Astra @high",
       "description": "OpenAI's flagship model of the GPT-6 generation. High-resolution reading for the hardest documents — dense layouts, small fonts, and numeric tables — at a premium per-page cost.",
       "supported_conversions": [
@@ -319,6 +359,46 @@
       ],
       "id": "openai/gpt-5.4-mini@high",
       "provider": "openai"
+    },
+    {
+      "display_name": "Azure OpenAI GPT-6.1 Sol @high",
+      "description": "GPT-6.1 Sol hosted on Microsoft Azure. Successor to GPT-6 Sol at the same per-page cost, for high-resolution reading of complex documents with data residency and Azure compliance.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "azure/gpt-6.1-sol@high",
+      "provider": "azure"
+    },
+    {
+      "display_name": "Azure OpenAI GPT-6.1 Sol @low",
+      "description": "GPT-6.1 Sol hosted on Microsoft Azure. Low-resolution mode for low-cost PDF extraction and document classification with Azure compliance; text read from JPEG/PNG images is unreliable at this resolution.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "azure/gpt-6.1-sol@low",
+      "provider": "azure"
     },
     {
       "display_name": "Azure OpenAI GPT-6 Astra @high",
