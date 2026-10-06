@@ -25,7 +25,7 @@ DEFAULT_ORDER = [
  "openai/gpt-5.5@low",
  "openai/gpt-5.4@high",
  "openai/gpt-5.4-mini@high",
- "azure/gpt-6.1-sol@high",  # not in MODELS yet (see run_benchmark.py)
+ "azure/gpt-6.1-sol@high",
  "azure/gpt-6.1-sol@low",
  "azure/gpt-6-astra@high",
  "azure/gpt-6-astra@low",
