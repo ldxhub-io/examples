@@ -2,8 +2,8 @@
 
 One Japanese invoice, rendered on a fixed 2480×3508 canvas, degraded through seven
 simulated scan resolutions (300 → 25 dpi). Twelve fields across four font tiers
-(28 pt title down to 7.5 pt fine print). **59 vision model variants, 5 repeats each,
-9,086 jobs — final state: 9,086 completed, 0 unparseable outputs.**
+(28 pt title down to 7.5 pt fine print). **60 vision model variants, 5 repeats each,
+9,240 jobs — final state: 9,240 completed, 0 unparseable outputs.**
 
 The question is not *which model is best*. It is **where each model stops reading —
 and what it does after that: leave the field blank, or fabricate a plausible value.**
@@ -38,7 +38,7 @@ and what it does after that: leave the field blank, or fabricate a plausible val
    48 times across Gemini variants — **at 300 dpi, on perfectly legible text**. The
    fictional credit union with no real-world neighbor was read correctly under the same
    conditions. Language priors can override vision even when reading is easy.
-6. **Classification survives reading loss.** 55 of 59 variants classified all 84
+6. **Classification survives reading loss.** 56 of 60 variants classified all 84
    documents correctly at every degradation step — models that cannot read a document
    can still tell what kind of document it is. Two of the four exceptions are the Azure
    GPT-6 Luna variants, measured before OpenAI's 2026-09-25 image fix; after the fix,
@@ -184,7 +184,8 @@ and what it does after that: leave the field blank, or fabricate a plausible val
 > body field — 41 correct, 9 fabricated, none blank — where Opus 5.5 left 19 blank and
 > fabricated none (Fisher p=0.0026 on fabrications, measured five days apart). Blanking
 > at the edge is Opus 5.5's behavior, not the 5.5 generation's. Against Sonnet 5 (13 of
-> 50, from the 2026-07 run) the drop is not significant (p=0.47).
+> 50, from the 2026-07 run) the drop is not significant (p=0.47). Re-measured on 2026-10-08
+> with identical body counts (see that update).
 > **Superseded in part by the 2026-09-30 update below**: GPT-6 Sol was re-run alongside
 > GPT-6.1 Sol, and its `@high` count in (a) becomes 22 fabricated and 18 blank of 50. The
 > Sol-versus-Terra contrast still stands (Terra: 2 fabricated, 46 blank; Fisher p≈2.9×10⁻⁶
@@ -240,6 +241,22 @@ and what it does after that: leave the field blank, or fabricate a plausible val
 > 6 fabricated) is indistinguishable from the direct route's 2026-09-30 re-run (4, 43, 3;
 > p≥0.49), so the heavy blanking reported then reappears on a second route a week later
 > rather than being a one-run artifact.
+
+> **Update 2026-10-08:** Claude Haiku 5.5 added (60 variants). `anthropic/claude-sonnet-5-5`
+> was re-run the same day; its 2026-09-28 records remain in commit `d9063bb`. Two results:
+> **(a) Haiku 5.5 reads like Sonnet 5.5 at a quarter of the page cost.** On the same day the
+> two share a frontier (L6 / L6 / L5 / L4) and are indistinguishable at 25 dpi: Haiku gets
+> 42 of 50 body fields right and fabricates 8, Sonnet 41 and 9, and neither leaves a field
+> blank (p=1 on all three counts). Both classify all 84 T2 documents. Their page rates are
+> 96 and 382 credits. Haiku also guesses rather than blanks, so with two of the three
+> Claude 5.5 tiers answering every field, blanking at the edge remains Opus 5.5's behavior
+> (2026-09-28 (c)). The smallest Claude tier stays inside the family's 0–26% band of body
+> fabrications at 25 dpi: the family's low fabrication is not confined to its larger tiers.
+> **(b) Sonnet 5.5 barely moved in ten days.** Against its 2026-09-28 rows, 26 of its 28
+> summary cells (7 resolutions × 4 tiers) are identical, including every body cell; the
+> other two are the fine tier at 35 and 25 dpi, each moved by one or two of 40 records.
+> GPT-6 Sol moved far more within two days (2026-09-30) and on Azure (2026-10-06), so the
+> day-to-day variation this benchmark has caught so far is on the OpenAI side.
 
 ## Results
 
@@ -302,6 +319,7 @@ L3=70, L4=50, L5=35, L6=25 dpi.
 | `google/gemini-3.5-flash-lite@low` | L6 | L6 | L6 | × | 2% | 84/84 |
 | `anthropic/claude-opus-5-5` | L6 | L6 | L5 | L4 | 0% | 84/84 |
 | `anthropic/claude-sonnet-5-5` | L6 | L6 | L5 | L4 | 18% | 84/84 |
+| `anthropic/claude-haiku-5-5` | L6 | L6 | L5 | L4 | 16% | 84/84 |
 | `anthropic/claude-fable-5-1` | L6 | L6 | L6 | L5 | 10% | 84/84 |
 | `anthropic/claude-fable-5` | L6 | L6 | L6 | L4 | 10% | 84/84 |
 | `anthropic/claude-opus-5` | L6 | L6 | L5 | L4 | 14% | 84/84 |
@@ -350,15 +368,17 @@ python3 run_benchmark.py --models ume --t1-instances A --t1-reps 3 --t2-reps 1 -
 python3 score_results.py && python3 report.py
 ```
 
-**Full matrix** (59 variants, 9,086 jobs, ≈2.84M credits ≈ $284 list):
+**Full matrix** (60 variants, 9,240 jobs, ≈2.86M credits ≈ $286 list):
 
 ```bash
 python3 run_benchmark.py --models all --yes
 ```
 
-That is 1.6% above the 57-variant matrix. On Azure, GPT-6.1 Sol is priced exactly like
-GPT-6 Sol, down to its 134 / 31 credit page rates, so adding it moves the total by one
-Azure-Sol-sized pair of rows. Per-page cost, not model count, is what drives this number.
+That is 0.6% above the 59-variant matrix: Claude Haiku 5.5 is the one addition, at 96
+credits per page. That rate follows Anthropic's price for prompts above 100K tokens,
+because a PDF of around 15 pages crosses that line in a single request; one image, as in
+this benchmark, stays well below it. Per-page cost, not model count, is what drives this
+number.
 
 The runner is resume-safe: interrupt it or hit provider rate limits, then re-run the
 same command — only unfinished jobs execute. Server-side failures (e.g. upstream 429s)
@@ -369,7 +389,7 @@ adds one if needed).
 Because raw model outputs are stored in `results.jsonl`, you can change the scoring
 rules and re-score **without re-running a single job**.
 
-(The raw log contains 9,090 records; four are duplicate resubmissions after a
+(The raw log contains 9,244 records; four are duplicate resubmissions after a
 network interruption during the July run. The scorer takes the last record per job
 key, so re-scoring this exact file reproduces the published tables.)
 
@@ -388,7 +408,8 @@ key, so re-scoring this exact file reproduces the published tables.)
   four of them. And on 2026-09-30, re-running GPT-6 Sol alongside GPT-6.1 Sol moved
   `gpt-6-sol@low`'s 25 dpi body results (see the 2026-09-30 update), and on 2026-10-06
   re-running `azure/gpt-6-sol` alongside `azure/gpt-6.1-sol` moved both of its rows (see
-  the 2026-10-06 update). When a comparison
+  the 2026-10-06 update), while on 2026-10-08 re-running `anthropic/claude-sonnet-5-5`
+  alongside Haiku 5.5 left 26 of its 28 summary cells unchanged. When a comparison
   between specific variants is the point, re-run those variants together.
 - Nova's title-tier misses are character-level misreadings (e.g. 御請求状 for 御請求書),
   which our strict scorer counts as fabricated; its classification errors are consistent
@@ -399,7 +420,7 @@ key, so re-scoring this exact file reproduces the published tables.)
   fix. Azure file uploads failed from 2026-09-28 until 2026-10-06; the Azure GPT-6 Sol rows
   were re-measured once they worked again, and `azure/gpt-6.1-sol` was added the same day.
 - LDX hub is the harness here, not a subject — it builds no models. One API key across
-  OpenAI, Azure, Google, Anthropic and AWS is what makes a 59-variant matrix practical.
+  OpenAI, Azure, Google, Anthropic and AWS is what makes a 60-variant matrix practical.
 
 ## Maintenance
 

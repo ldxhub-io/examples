@@ -1061,6 +1061,26 @@
       "provider": "anthropic"
     },
     {
+      "display_name": "Claude Haiku 5.5",
+      "description": "Anthropic's Haiku-tier model of the Claude 5.5 generation. Document extraction at roughly one-quarter the per-page cost of Claude Sonnet 5.5.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "anthropic/claude-haiku-5-5",
+      "provider": "anthropic"
+    },
+    {
       "display_name": "Claude Fable 5.1",
       "description": "Anthropic's Mythos-class model, a tier above Opus. Successor to Claude Fable 5 at the same cost, for complex, nuanced document analysis.",
       "supported_conversions": [

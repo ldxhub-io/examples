@@ -53,6 +53,7 @@
 | google/gemini-3.5-flash-lite@low | L6 / L6 / L6 / × | 2% | 84/84 |
 | anthropic/claude-opus-5-5 | L6 / L6 / L5 / L4 | 0% | 84/84 |
 | anthropic/claude-sonnet-5-5 | L6 / L6 / L5 / L4 | 18% | 84/84 |
+| anthropic/claude-haiku-5-5 | L6 / L6 / L5 / L4 | 16% | 84/84 |
 | anthropic/claude-fable-5-1 | L6 / L6 / L6 / L5 | 10% | 84/84 |
 | anthropic/claude-fable-5 | L6 / L6 / L6 / L4 | 10% | 84/84 |
 | anthropic/claude-opus-5 | L6 / L6 / L5 / L4 | 14% | 84/84 |
