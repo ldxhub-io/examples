@@ -721,6 +721,66 @@
       "provider": "azure"
     },
     {
+      "display_name": "Google Gemini 4 Argon @high",
+      "description": "Google's Argon-tier model of the Gemini 4 generation. High-resolution reading for dense layouts, small fonts, and numeric tables at a premium per-page cost.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "google/gemini-4-argon@high",
+      "provider": "google"
+    },
+    {
+      "display_name": "Google Gemini 4 Argon @medium",
+      "description": "Google's Argon-tier model of the Gemini 4 generation. Balanced resolution at roughly half the per-page cost of Gemini 4 Argon @high.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "google/gemini-4-argon@medium",
+      "provider": "google"
+    },
+    {
+      "display_name": "Google Gemini 4 Argon @low",
+      "description": "Google's Argon-tier model of the Gemini 4 generation. Low-resolution reading for clean, large-text documents at roughly a quarter of the per-page cost of Gemini 4 Argon @high.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "google/gemini-4-argon@low",
+      "provider": "google"
+    },
+    {
       "display_name": "Google Gemini 3.8 Flash @high",
       "description": "Google's Flash-tier model of the Gemini 3.8 generation. High-resolution reading for accurate extraction from images and dense layouts at low cost.",
       "supported_conversions": [

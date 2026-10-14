@@ -2,8 +2,8 @@
 
 One Japanese invoice, rendered on a fixed 2480×3508 canvas, degraded through seven
 simulated scan resolutions (300 → 25 dpi). Twelve fields across four font tiers
-(28 pt title down to 7.5 pt fine print). **60 vision model variants, 5 repeats each,
-9,240 jobs — final state: 9,240 completed, 0 unparseable outputs.**
+(28 pt title down to 7.5 pt fine print). **63 vision model variants, 5 repeats each,
+9,702 jobs — final state: 9,702 completed, 0 unparseable outputs.**
 
 The question is not *which model is best*. It is **where each model stops reading —
 and what it does after that: leave the field blank, or fabricate a plausible value.**
@@ -38,7 +38,7 @@ and what it does after that: leave the field blank, or fabricate a plausible val
    48 times across Gemini variants — **at 300 dpi, on perfectly legible text**. The
    fictional credit union with no real-world neighbor was read correctly under the same
    conditions. Language priors can override vision even when reading is easy.
-6. **Classification survives reading loss.** 56 of 60 variants classified all 84
+6. **Classification survives reading loss.** 59 of 63 variants classified all 84
    documents correctly at every degradation step — models that cannot read a document
    can still tell what kind of document it is. Two of the four exceptions are the Azure
    GPT-6 Luna variants, measured before OpenAI's 2026-09-25 image fix; after the fix,
@@ -258,6 +258,19 @@ and what it does after that: leave the field blank, or fabricate a plausible val
 > GPT-6 Sol moved far more within two days (2026-09-30) and on Azure (2026-10-06), so the
 > day-to-day variation this benchmark has caught so far is on the OpenAI side.
 
+> **Update 2026-10-14:** Gemini 4 Argon added in its three resolution variants (63 variants).
+> No same-day re-run: both results compare Argon with the Gemini 3.x band, not with a single
+> model. **(a) Argon stays inside the Gemini band.** At 25 dpi its body fabrication is 2%,
+> 10% and 2% (`@high` / `@medium` / `@low`), against 0–10% for every Gemini 3.x variant, and
+> none of its variants leaves a field blank there. Against Gemini 3.8 Flash at the same
+> resolution it is indistinguishable at 25 dpi (body p ≥ 0.36, fine p ≥ 0.25; 3.8 Flash was
+> measured on an earlier day), and all three variants classify all 84 T2 documents.
+> **(b) Argon's `@low` reads the fine tier.** Its `@low` variant holds the 7.5 pt fine tier to
+> L4 (50 dpi), where every Gemini 3.x `@low` variant fails it at 300 dpi or holds it only at
+> L0 (3.5 Flash). Argon spends the same image budget as Gemini 3.x (its image tokens equal
+> Gemini 3.x's plus a constant 32), so the gain is the model's, not the resolution's. At
+> `@high` and `@medium` its frontier matches 3.8 Flash's (L6 / L6 / L6 / L5).
+
 ## Results
 
 Frontier = deepest ladder step that keeps ≥90% field accuracy per tier
@@ -302,6 +315,9 @@ L3=70, L4=50, L5=35, L6=25 dpi.
 | `azure/gpt-5.4@low` | L6 | L5 | × | × | 58% | 84/84 |
 | `azure/gpt-5.4-mini@high` | L6 | L5 | L4 | × | 88% | 84/84 |
 | `azure/gpt-5.4-mini@low` | L6 | L5 | × | × | 54% | 84/84 |
+| `google/gemini-4-argon@high` | L6 | L6 | L6 | L5 | 2% | 84/84 |
+| `google/gemini-4-argon@medium` | L6 | L6 | L6 | L5 | 10% | 84/84 |
+| `google/gemini-4-argon@low` | L6 | L6 | L6 | L4 | 2% | 84/84 |
 | `google/gemini-3.8-flash@high` | L6 | L6 | L6 | L5 | 8% | 84/84 |
 | `google/gemini-3.8-flash@medium` | L6 | L6 | L6 | L5 | 10% | 84/84 |
 | `google/gemini-3.8-flash@low` | L6 | L6 | L6 | × | 8% | 84/84 |
@@ -368,14 +384,15 @@ python3 run_benchmark.py --models ume --t1-instances A --t1-reps 3 --t2-reps 1 -
 python3 score_results.py && python3 report.py
 ```
 
-**Full matrix** (60 variants, 9,240 jobs, ≈2.86M credits ≈ $286 list):
+**Full matrix** (63 variants, 9,702 jobs, ≈2.95M credits ≈ $295 list):
 
 ```bash
 python3 run_benchmark.py --models all --yes
 ```
 
-That is 0.6% above the 59-variant matrix: Claude Haiku 5.5 is the one addition, at 96
-credits per page. That rate follows Anthropic's price for prompts above 100K tokens,
+That is 3.3% above the 60-variant matrix, from Gemini 4 Argon's three variants at 175 / 85 /
+42 credits per page (Google's standard $4 / $20 price, not its introductory one). Claude
+Haiku 5.5's 96 credits per page follow Anthropic's price for prompts above 100K tokens,
 because a PDF of around 15 pages crosses that line in a single request; one image, as in
 this benchmark, stays well below it. Per-page cost, not model count, is what drives this
 number.
@@ -389,7 +406,7 @@ adds one if needed).
 Because raw model outputs are stored in `results.jsonl`, you can change the scoring
 rules and re-score **without re-running a single job**.
 
-(The raw log contains 9,244 records; four are duplicate resubmissions after a
+(The raw log contains 9,706 records; four are duplicate resubmissions after a
 network interruption during the July run. The scorer takes the last record per job
 key, so re-scoring this exact file reproduces the published tables.)
 
@@ -420,7 +437,7 @@ key, so re-scoring this exact file reproduces the published tables.)
   fix. Azure file uploads failed from 2026-09-28 until 2026-10-06; the Azure GPT-6 Sol rows
   were re-measured once they worked again, and `azure/gpt-6.1-sol` was added the same day.
 - LDX hub is the harness here, not a subject — it builds no models. One API key across
-  OpenAI, Azure, Google, Anthropic and AWS is what makes a 60-variant matrix practical.
+  OpenAI, Azure, Google, Anthropic and AWS is what makes a 63-variant matrix practical.
 
 ## Maintenance
 

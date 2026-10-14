@@ -36,6 +36,9 @@
 | azure/gpt-5.4@low | L6 / L5 / × / × | 58% | 84/84 |
 | azure/gpt-5.4-mini@high | L6 / L5 / L4 / × | 88% | 84/84 |
 | azure/gpt-5.4-mini@low | L6 / L5 / × / × | 54% | 84/84 |
+| google/gemini-4-argon@high | L6 / L6 / L6 / L5 | 2% | 84/84 |
+| google/gemini-4-argon@medium | L6 / L6 / L6 / L5 | 10% | 84/84 |
+| google/gemini-4-argon@low | L6 / L6 / L6 / L4 | 2% | 84/84 |
 | google/gemini-3.8-flash@high | L6 / L6 / L6 / L5 | 8% | 84/84 |
 | google/gemini-3.8-flash@medium | L6 / L6 / L6 / L5 | 10% | 84/84 |
 | google/gemini-3.8-flash@low | L6 / L6 / L6 / × | 8% | 84/84 |
