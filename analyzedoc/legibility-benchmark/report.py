@@ -9,6 +9,8 @@ TIERS = ["title","large","body","fine"]
 DEFAULT_ORDER = [
  "openai/gpt-6.1-sol@high",
  "openai/gpt-6.1-sol@low",
+ "openai/gpt-6.1-terra@high",
+ "openai/gpt-6.1-terra@low",
  "openai/gpt-6-astra@high",
  "openai/gpt-6-astra@low",
  "openai/gpt-6-sol@high",
@@ -27,6 +29,8 @@ DEFAULT_ORDER = [
  "openai/gpt-5.4-mini@high",
  "azure/gpt-6.1-sol@high",
  "azure/gpt-6.1-sol@low",
+ "azure/gpt-6.1-terra@high",
+ "azure/gpt-6.1-terra@low",
  "azure/gpt-6-astra@high",
  "azure/gpt-6-astra@low",
  "azure/gpt-6-sol@high",
