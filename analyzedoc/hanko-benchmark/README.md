@@ -42,6 +42,12 @@ python3 hanko_run_benchmark.py --models pilot --yes          # 3 models × full 
 python3 hanko_score_results.py && python3 hanko_report.py
 ```
 
+> **Pricing note (2026-11-06):** AnalyzeDoc is now billed by the AI model's input and output tokens
+> instead of per page. The costs below use the per-page rates in effect when each run
+> was made (until 2026-11-05). Under token billing, a page costs its input tokens (image, any PDF text,
+> and instructions) at the model's input rate plus the output tokens at its output rate — see
+> [Credits & Pricing](https://gw.portal.ldxhub.io/credits-and-pricing).
+
 | Scope | Command | Jobs | List cost (dry-run) |
 |---|---|---|---|
 | Full (27 variants) | `--models all` | 3,240 | ≈ $144.84 |

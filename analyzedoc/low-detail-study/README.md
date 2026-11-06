@@ -37,7 +37,7 @@ python3 fab_test.py                  # or: REPEATS=3 python3 fab_test.py
 Notes:
 
 - `sort_lookalike_test.py` needs a Japanese font (Hiragino on macOS, Noto Sans CJK on Linux). Edit `ja_font()` if yours lives elsewhere.
-- A default `fab_test.py` run costs roughly 40–50k credits at current AnalyzeDoc rates; the classification runs are cheaper.
+- A default `fab_test.py` run cost roughly 40–50k credits at the per-page AnalyzeDoc rates in effect until 2026-11-05 (AnalyzeDoc is billed by tokens since 2026-11-06); the classification runs are cheaper.
 - `example_output` uses non-`X.0` decimals (e.g. `12.34`) on purpose: values like `10.0` collapse to integers in JSON round-trips, which silently turns the inferred schema into integer fields and produces a convincing false positive. If you modify the harness, keep the decimals non-trivial.
 
 ## results/

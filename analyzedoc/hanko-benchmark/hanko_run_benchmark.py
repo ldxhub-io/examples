@@ -33,6 +33,9 @@ MODELS = [  # canonical order (provider-grouped) — 27 entries, AnalyzeDoc cata
  "anthropic/claude-fable-5","anthropic/claude-sonnet-5","anthropic/claude-opus-4-8",
  "bedrock/global.amazon.nova-2-lite-v1:0",
 ]
+# NOTE (2026-11-06): these are the per-page AnalyzeDoc rates in effect until 2026-11-05. AnalyzeDoc is now
+# billed by input/output tokens, so the --dry-run estimate below is a pre-switch figure. Rebuild the
+# estimate from the token rates (credits per 1,000 tokens) before the next run.
 RATES = {  # (page_rate, output_rate/1000 chars) — billing.json 2026-07-11
  "openai/gpt-5.6-sol@high":(602,900),"openai/gpt-5.6-sol@low":(63,900),
  "openai/gpt-5.6-terra@high":(301,450),"openai/gpt-5.6-terra@low":(32,450),

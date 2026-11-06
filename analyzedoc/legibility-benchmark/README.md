@@ -8,6 +8,12 @@ simulated scan resolutions (300 → 25 dpi). Twelve fields across four font tier
 The question is not *which model is best*. It is **where each model stops reading —
 and what it does after that: leave the field blank, or fabricate a plausible value.**
 
+> **Pricing note (2026-11-06):** AnalyzeDoc is now billed by the AI model's input and output tokens
+> instead of per page. Credit figures in this README use the per-page rates in effect when each run
+> was made (until 2026-11-05). Under token billing, a page costs its input tokens (image, any PDF text,
+> and instructions) at the model's input rate plus the output tokens at its output rate — see
+> [Credits & Pricing](https://gw.portal.ldxhub.io/credits-and-pricing).
+
 ![Body-tier fabrication heatmap](results/2026-10/heatmap.png)
 
 ## Headline findings (2026-07 run)
@@ -413,7 +419,8 @@ python3 gen_materials.py                      # 42 deterministic materials + sel
 export LDXHUB_API_KEY=...                     # free key: https://gw.portal.ldxhub.io
 ```
 
-**Free-tier subset** (3 representative variants, 147 jobs, ≈17,600 credits — fits the
+**Free-tier subset** (3 representative variants, 147 jobs, ≈17,600 credits at the per-page rates in effect
+until 2026-11-05 — fits the
 free 25,000/month allowance):
 
 ```bash
@@ -421,7 +428,8 @@ python3 run_benchmark.py --models ume --t1-instances A --t1-reps 3 --t2-reps 1 -
 python3 score_results.py && python3 report.py
 ```
 
-**Full matrix** (67 variants, 10,318 jobs, ≈3.00M credits ≈ $300 list):
+**Full matrix** (67 variants, 10,318 jobs, ≈3.00M credits ≈ $300 list at the per-page rates in
+effect until 2026-11-05):
 
 ```bash
 python3 run_benchmark.py --models all --yes
@@ -433,7 +441,9 @@ credits per page direct and 67 / 16 via Azure. Gemini 4 Argon's three variants c
 Haiku 5.5's 96 credits per page follow Anthropic's price for prompts above 100K tokens,
 because a PDF of around 15 pages crosses that line in a single request; one image, as in
 this benchmark, stays well below it. Per-page cost, not model count, is what drives this
-number.
+number. These per-page rates are historical: since 2026-11-06 a page costs its input tokens at the
+model's input rate (see the pricing note above), so smaller images now cost less on the
+size-dependent models.
 
 The runner is resume-safe: interrupt it or hit provider rate limits, then re-run the
 same command — only unfinished jobs execute. Server-side failures (e.g. upstream 429s)

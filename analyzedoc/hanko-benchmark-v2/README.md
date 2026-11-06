@@ -46,7 +46,7 @@ does) and the route-fingerprint non-collision at every rounding granularity.
 | Script | Provenance |
 |---|---|
 | `hanko_gen_materials_v2.py` | **The only file that differs from v1** — the `_v2` suffix marks the diff surface. Asserts the arithmetic freeze, the route-fingerprint separation, and the L5 pixel checks |
-| `hanko_run_benchmark.py` | Verbatim v1. **Refresh `MODELS`/`RATES` from the run-day catalog and billing before running** |
+| `hanko_run_benchmark.py` | Verbatim v1. **Refresh `MODELS`/`RATES` from the run-day catalog and billing before running** — the `RATES` are per-page rates from before AnalyzeDoc's switch to token billing on 2026-11-06 |
 | `hanko_score_results.py` | Verbatim v1 (ground-truth-driven; no changes needed) |
 | `hanko_report.py` | Verbatim v1 |
 | `hanko_lowfield_analysis.py` | Shared with v1; pass `--newgen`/`--oldgen` patterns for the generations under test |
