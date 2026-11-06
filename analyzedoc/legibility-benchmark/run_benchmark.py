@@ -4,7 +4,7 @@
 
 Usage:
   export LDXHUB_API_KEY=...
-  python3 run_benchmark.py --dry-run                 # enumerate + cost preflight only
+  python3 run_benchmark.py --dry-run                 # enumerate jobs only (no API calls)
   python3 run_benchmark.py --models pilot --yes      # P3 pilot (3 models)
   python3 run_benchmark.py --models all --yes        # full matrix (松)
   python3 run_benchmark.py --models ume --yes        # free-tier reproduction subset
@@ -22,7 +22,6 @@ LADDER = [300, 150, 100, 70, 50, 35, 25]           # L0..L6
 T1_INSTANCES = ["A", "B"]
 T2_DOCS = {"t2_invoice": "invoice", "t2_receipt": "receipt",
            "t2_card": "business_card", "t2_minutes": "meeting_minutes"}
-T1_OUT_CHARS, T2_OUT_CHARS = 350, 25               # cost-estimate assumptions
 UPLOAD_TTL_H = 24
 
 MODELS = [  # canonical order (provider-grouped), AnalyzeDoc catalog 2026-10-27,
@@ -52,40 +51,9 @@ MODELS = [  # canonical order (provider-grouped), AnalyzeDoc catalog 2026-10-27,
  "anthropic/claude-fable-5-1","anthropic/claude-fable-5","anthropic/claude-opus-5","anthropic/claude-sonnet-5","anthropic/claude-opus-4-8",
  "bedrock/global.amazon.nova-2-lite-v1:0",
 ]
-# NOTE (2026-11-06): these are the per-page AnalyzeDoc rates in effect until 2026-11-05. AnalyzeDoc is now
-# billed by input/output tokens, so the --dry-run estimate below is a pre-switch figure. Rebuild the
-# estimate from the token rates (credits per 1,000 tokens) before the next run.
-RATES = {  # (page_rate, output_rate/1000 chars) — billing.json 2026-10-27
- "openai/gpt-6.1-sol@high":(241,300),"openai/gpt-6.1-sol@low":(26,300),
- "openai/gpt-6.1-terra@high":(121,150),"openai/gpt-6.1-terra@low":(13,150),
- "openai/gpt-6-astra@high":(1204,1500),"openai/gpt-6-astra@low":(126,1500),
- "openai/gpt-6-sol@high":(241,300),"openai/gpt-6-sol@low":(26,300),
- "openai/gpt-6-luna@high":(13,15),"openai/gpt-6-luna@low":(2,15),
- "openai/gpt-5.6-sol@high":(602,900),"openai/gpt-5.6-sol@low":(63,900),
- "openai/gpt-5.6-terra@high":(241,360),"openai/gpt-5.6-terra@low":(26,360),
- "openai/gpt-5.6-luna@high":(25,36),"openai/gpt-5.6-luna@low":(3,36),
- "openai/gpt-5.5@high":(602,900),"openai/gpt-5.5@low":(63,900),
- "openai/gpt-5.4@high":(301,450),"openai/gpt-5.4-mini@high":(91,135),
- "azure/gpt-6.1-sol@high":(134,360),"azure/gpt-6.1-sol@low":(31,360),
- "azure/gpt-6.1-terra@high":(67,180),"azure/gpt-6.1-terra@low":(16,180),
- "azure/gpt-6-astra@high":(668,1800),"azure/gpt-6-astra@low":(152,1800),
- "azure/gpt-6-sol@high":(134,360),"azure/gpt-6-sol@low":(31,360),
- "azure/gpt-6-luna@high":(7,18),"azure/gpt-6-luna@low":(2,18),
- "azure/gpt-5.6-sol@high":(334,1080),"azure/gpt-5.6-sol@low":(76,1080),
- "azure/gpt-5.6-terra@high":(134,432), "azure/gpt-5.6-terra@low":(31,432),
- "azure/gpt-5.6-luna@high":(14,44),"azure/gpt-5.6-luna@low":(4,44),
- "azure/gpt-5.4@high":(167,540),"azure/gpt-5.4@low":(38,540),
- "azure/gpt-5.4-mini@high":(51,162),"azure/gpt-5.4-mini@low":(12,162),
- "google/gemini-4-argon@high":(175,600),"google/gemini-4-argon@medium":(85,600),"google/gemini-4-argon@low":(42,600),
- "google/gemini-3.8-flash@high":(66,225),"google/gemini-3.8-flash@medium":(32,225),"google/gemini-3.8-flash@low":(16,225),
- "google/gemini-3.7-flash@high":(66,225),"google/gemini-3.7-flash@medium":(32,225),"google/gemini-3.7-flash@low":(16,225),
- "google/gemini-3.6-flash@high":(66,225),"google/gemini-3.6-flash@medium":(32,225),"google/gemini-3.6-flash@low":(16,225),
- "google/gemini-3.5-flash@high":(66,270),"google/gemini-3.5-flash@medium":(32,270),"google/gemini-3.5-flash@low":(16,270),
- "google/gemini-3.5-flash-lite@high":(14,75),"google/gemini-3.5-flash-lite@medium":(7,75),"google/gemini-3.5-flash-lite@low":(4,75),
- "anthropic/claude-opus-5-5":(764,600),"anthropic/claude-sonnet-5-5":(382,300),"anthropic/claude-haiku-5-5":(96,75),
- "anthropic/claude-fable-5-1":(1909,1500),"anthropic/claude-fable-5":(1909,1500),"anthropic/claude-opus-5":(955,750),"anthropic/claude-sonnet-5":(382,300),"anthropic/claude-opus-4-8":(955,750),
- "bedrock/global.amazon.nova-2-lite-v1:0":(4,75),
-}
+# Cost: AnalyzeDoc is billed by the AI model's input and output tokens (since 2026-11-06). The runner keeps
+# no rate table and prints no estimate; each completed job's `usage` (input_tokens / output_tokens) is saved
+# to the results file. Rates: https://gw.portal.ldxhub.io/credits-and-pricing
 PILOT = ["google/gemini-3.5-flash@high","openai/gpt-5.5@low","anthropic/claude-fable-5"]
 UME   = ["google/gemini-3.5-flash@high","openai/gpt-5.5@low","azure/gpt-5.4-mini@low"]
 
@@ -151,13 +119,13 @@ def enumerate_jobs(models, t1_reps, t2_reps, mat_dir, t1_instances=T1_INSTANCES)
                     jobs.append(dict(key=f"t1|{m}|t1_{inst}|L{li}|r{rep}", task="t1", model=m,
                                      doc=f"t1_{inst}", L=li, dpi=dpi, rep=rep,
                                      path=f"{mat_dir}/t1_{inst}_L{li}_{dpi}dpi.png",
-                                     prompt=T1_PROMPT, example=T1_EXAMPLE, out_chars=T1_OUT_CHARS))
+                                     prompt=T1_PROMPT, example=T1_EXAMPLE))
             for doc in T2_DOCS:
                 for rep in range(t2_reps):
                     jobs.append(dict(key=f"t2|{m}|{doc}|L{li}|r{rep}", task="t2", model=m,
                                      doc=doc, L=li, dpi=dpi, rep=rep,
                                      path=f"{mat_dir}/{doc}_L{li}_{dpi}dpi.png",
-                                     prompt=T2_PROMPT, example=T2_EXAMPLE, out_chars=T2_OUT_CHARS))
+                                     prompt=T2_PROMPT, example=T2_EXAMPLE))
     return jobs
 
 def done_keys(out_path):
@@ -168,9 +136,6 @@ def done_keys(out_path):
             except Exception: continue
             if rec.get("status") == "completed": done.add(rec["key"])
     return done
-
-def estimate(jobs):
-    return sum(RATES[j["model"]][0] + j["out_chars"] * RATES[j["model"]][1] / 1000 for j in jobs)
 
 # Optional client-side cap on concurrent jobs per provider, e.g. {"anthropic": 2}.
 # Normally unnecessary: the gateway rate-shapes provider file APIs server-side.
@@ -197,7 +162,7 @@ def _attempt(job, file_ids, key, poll_max, wait_s):
             break
     if j.get("status") == "completed":
         out = api("GET", f"/files/{j['output_file_id']}/content", key).text
-        return dict(status="completed", job_id=job_id, output_raw=out)
+        return dict(status="completed", job_id=job_id, output_raw=out, usage=j.get("usage"))
     return dict(status="failed", job_id=job_id, error=json.dumps(j, ensure_ascii=False)[:2000])
 
 def run_one(job, file_ids, key, out_path, poll_max, wait_s, job_retries):
@@ -242,17 +207,15 @@ def main():
 
     models = MODELS if a.models == "all" else PILOT if a.models == "pilot" else UME if a.models == "ume" \
              else [m.strip() for m in a.models.split(",")]
-    unknown = [m for m in models if m not in RATES]
-    if unknown: sys.exit(f"unknown models: {unknown}")
+    unknown = [m for m in models if m not in MODELS]
+    if unknown: sys.exit(f"unknown models (not in MODELS): {unknown}")
 
     jobs = enumerate_jobs(models, a.t1_reps, a.t2_reps, a.materials, [i.strip() for i in a.t1_instances.split(",")])
     missing = [j["path"] for j in jobs if not os.path.exists(j["path"])]
     if missing: sys.exit(f"missing materials ({len(missing)}), e.g. {missing[0]} — run gen_materials.py first")
     done = done_keys(a.out)
     pending = [j for j in jobs if j["key"] not in done]
-    cr = estimate(pending)
     print(f"matrix: {len(jobs)} jobs / done: {len(done & {j['key'] for j in jobs})} / pending: {len(pending)}")
-    print(f"estimated pending cost: {cr:,.0f} credits (≈ ${cr*1e-4:,.2f} list)")
     if a.dry_run: return
     if not os.environ.get("LDXHUB_API_KEY"): sys.exit("LDXHUB_API_KEY not set")
     if not a.yes and input("proceed? [y/N] ").lower() != "y": return
@@ -261,16 +224,18 @@ def main():
     print("uploading materials (cached 24h)...")
     file_ids = upload_all(sorted({j["path"] for j in pending}), key)
 
-    t0 = time.time(); ok = fail = 0
+    t0 = time.time(); ok = fail = 0; tok_in = tok_out = 0
     with ThreadPoolExecutor(a.concurrency) as ex:
         futs = [ex.submit(run_one, j, file_ids, key, a.out, a.poll_max, a.wait, a.job_retries) for j in pending]
         for i, fu in enumerate(as_completed(futs), 1):
             r = fu.result(); ok += r["status"] == "completed"; fail += r["status"] != "completed"
+            u = r.get("usage") or {}; tok_in += u.get("input_tokens") or 0; tok_out += u.get("output_tokens") or 0
             if i % 25 == 0 or i == len(futs):
                 print(f"  {i}/{len(futs)}  ok={ok} fail={fail}  elapsed={time.time()-t0:,.0f}s")
     print("\n===== RUN SUMMARY =====")
     print(f"pending={len(pending)} ok={ok} fail={fail} elapsed={time.time()-t0:,.0f}s")
-    print(f"estimated credits consumed: {estimate([j for j in pending]):,.0f} (page+assumed output)")
+    print(f"tokens (completed jobs, this run): input {tok_in:,} / output {tok_out:,}"
+          " - rates: https://gw.portal.ldxhub.io/credits-and-pricing")
     print("next: python3 score_results.py && python3 report.py")
 
 if __name__ == "__main__":

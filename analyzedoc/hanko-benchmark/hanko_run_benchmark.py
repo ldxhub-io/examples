@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """Hanko Occlusion — benchmark runner (resume-safe).
-Sibling of the Legibility Frontier runner: MODELS/RATES/api/upload/retry logic are
+Sibling of the Legibility Frontier runner: MODELS/api/upload/retry logic are
 verbatim from that harness (behavioral parity). One variable: stamp overlap L0-L5.
 
 Usage:
-  python3 hanko_run_benchmark.py --dry-run
+  python3 hanko_run_benchmark.py --dry-run                       # enumerate jobs only (no API calls)
   python3 hanko_run_benchmark.py --models pilot --yes            # 3 models x full grid
   python3 hanko_run_benchmark.py --models all --yes              # 27 variants (matsu)
   python3 hanko_run_benchmark.py --models all --instances A_N,B_N --yes   # ume (name target only)
@@ -19,7 +19,6 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 BASE_URL = os.environ.get("LDXHUB_BASE_URL", "https://gw.ldxhub.io")
 OVERLAPS = [0,20,40,60,80,100]                     # L0..L5 (%)
 INSTANCES = ["A_N","B_N","A_M","B_M"]              # opacity x target
-T1_OUT_CHARS = 380
 UPLOAD_TTL_H = 24
 
 MODELS = [  # canonical order (provider-grouped) — 27 entries, AnalyzeDoc catalog 2026-07-11
@@ -33,24 +32,9 @@ MODELS = [  # canonical order (provider-grouped) — 27 entries, AnalyzeDoc cata
  "anthropic/claude-fable-5","anthropic/claude-sonnet-5","anthropic/claude-opus-4-8",
  "bedrock/global.amazon.nova-2-lite-v1:0",
 ]
-# NOTE (2026-11-06): these are the per-page AnalyzeDoc rates in effect until 2026-11-05. AnalyzeDoc is now
-# billed by input/output tokens, so the --dry-run estimate below is a pre-switch figure. Rebuild the
-# estimate from the token rates (credits per 1,000 tokens) before the next run.
-RATES = {  # (page_rate, output_rate/1000 chars) — billing.json 2026-07-11
- "openai/gpt-5.6-sol@high":(602,900),"openai/gpt-5.6-sol@low":(63,900),
- "openai/gpt-5.6-terra@high":(301,450),"openai/gpt-5.6-terra@low":(32,450),
- "openai/gpt-5.6-luna@high":(121,180),"openai/gpt-5.6-luna@low":(13,180),
- "openai/gpt-5.5@high":(602,900),"openai/gpt-5.5@low":(63,900),
- "openai/gpt-5.4@high":(301,450),"openai/gpt-5.4-mini@high":(91,135),
- "azure/gpt-5.6-sol@high":(334,1080),"azure/gpt-5.6-sol@low":(76,1080),
- "azure/gpt-5.6-terra@high":(167,540),"azure/gpt-5.6-terra@low":(38,540),
- "azure/gpt-5.6-luna@high":(67,216),"azure/gpt-5.6-luna@low":(16,216),
- "azure/gpt-5.4@high":(167,540),"azure/gpt-5.4@low":(38,540),
- "azure/gpt-5.4-mini@high":(51,162),"azure/gpt-5.4-mini@low":(12,162),
- "google/gemini-3.5-flash@high":(66,270),"google/gemini-3.5-flash@medium":(32,270),"google/gemini-3.5-flash@low":(16,270),
- "anthropic/claude-fable-5":(1909,1500),"anthropic/claude-sonnet-5":(573,450),"anthropic/claude-opus-4-8":(955,750),
- "bedrock/global.amazon.nova-2-lite-v1:0":(4,75),
-}
+# Cost: AnalyzeDoc is billed by the AI model's input and output tokens (since 2026-11-06). The runner keeps
+# no rate table and prints no estimate; each completed job's `usage` (input_tokens / output_tokens) is saved
+# to the results file. Rates: https://gw.portal.ldxhub.io/credits-and-pricing
 PILOT = ["google/gemini-3.5-flash@high","openai/gpt-5.5@low","anthropic/claude-fable-5"]
 UME   = ["google/gemini-3.5-flash@high","openai/gpt-5.5@low","azure/gpt-5.4-mini@low"]
 
@@ -118,7 +102,7 @@ def enumerate_jobs(models, reps, mat_dir, instances=INSTANCES):
                     jobs.append(dict(key=f"h|{m}|{inst}|L{li}|r{rep}", task="t1", model=m,
                                      doc=inst, L=li, pct=pct, rep=rep,
                                      path=f"{mat_dir}/hanko_{inst}_L{li}.png",
-                                     prompt=T1_PROMPT, example=T1_EXAMPLE, out_chars=T1_OUT_CHARS))
+                                     prompt=T1_PROMPT, example=T1_EXAMPLE))
     return jobs
 
 def done_keys(out_path):
@@ -130,9 +114,6 @@ def done_keys(out_path):
             if rec.get("status") == "completed": done.add(rec["key"])
     return done
 
-
-def estimate(jobs):
-    return sum(RATES[j["model"]][0] + j["out_chars"] * RATES[j["model"]][1] / 1000 for j in jobs)
 
 # Optional client-side cap on concurrent jobs per provider, e.g. {"anthropic": 2}.
 # Normally unnecessary: the gateway rate-shapes provider file APIs server-side.
@@ -160,7 +141,7 @@ def _attempt(job, file_ids, key, poll_max, wait_s):
             break
     if j.get("status") == "completed":
         out = api("GET", f"/files/{j['output_file_id']}/content", key).text
-        return dict(status="completed", job_id=job_id, output_raw=out)
+        return dict(status="completed", job_id=job_id, output_raw=out, usage=j.get("usage"))
     return dict(status="failed", job_id=job_id, error=json.dumps(j, ensure_ascii=False)[:2000])
 
 
@@ -206,8 +187,8 @@ def main():
 
     models = MODELS if a.models == "all" else PILOT if a.models == "pilot" else UME if a.models == "ume" \
              else [m.strip() for m in a.models.split(",")]
-    unknown = [m for m in models if m not in RATES]
-    if unknown: sys.exit(f"unknown models: {unknown}")
+    unknown = [m for m in models if m not in MODELS]
+    if unknown: sys.exit(f"unknown models (not in MODELS): {unknown}")
     insts = [i.strip() for i in a.instances.split(",")]
     bad = [i for i in insts if i not in INSTANCES]
     if bad: sys.exit(f"unknown instances: {bad}")
@@ -217,9 +198,7 @@ def main():
     if missing: sys.exit(f"missing materials ({len(missing)}), e.g. {missing[0]} - run hanko_gen_materials.py first")
     done = done_keys(a.out)
     pending = [j for j in jobs if j["key"] not in done]
-    cr = estimate(pending)
     print(f"matrix: {len(jobs)} jobs / done: {len(done & {j['key'] for j in jobs})} / pending: {len(pending)}")
-    print(f"estimated pending cost: {cr:,.0f} credits (approx ${cr*1e-4:,.2f} list)")
     if a.dry_run: return
     if not os.environ.get("LDXHUB_API_KEY"): sys.exit("LDXHUB_API_KEY not set")
     if not a.yes and input("proceed? [y/N] ").lower() != "y": return
@@ -228,15 +207,18 @@ def main():
     print("uploading materials (cached 24h)...")
     file_ids = upload_all(sorted({j["path"] for j in pending}), key, cache_path="hanko_uploads.json")
 
-    t0 = time.time(); ok = fail = 0
+    t0 = time.time(); ok = fail = 0; tok_in = tok_out = 0
     with ThreadPoolExecutor(a.concurrency) as ex:
         futs = [ex.submit(run_one, j, file_ids, key, a.out, a.poll_max, a.wait, a.job_retries) for j in pending]
         for i, fu in enumerate(as_completed(futs), 1):
             r = fu.result(); ok += r["status"] == "completed"; fail += r["status"] != "completed"
+            u = r.get("usage") or {}; tok_in += u.get("input_tokens") or 0; tok_out += u.get("output_tokens") or 0
             if i % 25 == 0 or i == len(futs):
                 print(f"  {i}/{len(futs)}  ok={ok} fail={fail}  elapsed={time.time()-t0:,.0f}s")
     print("\n===== RUN SUMMARY =====")
     print(f"pending={len(pending)} ok={ok} fail={fail} elapsed={time.time()-t0:,.0f}s")
+    print(f"tokens (completed jobs, this run): input {tok_in:,} / output {tok_out:,}"
+          " - rates: https://gw.portal.ldxhub.io/credits-and-pricing")
     print("next: python3 hanko_score_results.py && python3 hanko_report.py")
 
 if __name__ == "__main__":

@@ -3,9 +3,16 @@
 Harness frozen 2026-07-18 — and run the same day. v2 answers [v1](../hanko-benchmark/)'s
 three stated limitations, in two legs: **leg 1 (2026-07-18)**, on the same model catalog
 as v1, settled the three open questions six days after the original run; **leg 2
-(autumn 2026)**, on the next model generation with the harness byte-identical, adds the
-longitudinal axis. Together the legs form a clean 2×2 — a material axis (v1 vs v2) at one
-point in time, and a time axis (July vs autumn) on one fixed material.
+(autumn 2026)**, on the next model generation with the measurement harness unchanged (same
+materials, prompts and requests), adds the longitudinal axis. Together the legs form a clean
+2×2 — a material axis (v1 vs v2) at one point in time, and a time axis (July vs autumn) on one
+fixed material.
+
+> **Harness note (2026-11-06):** after AnalyzeDoc moved to token billing, the runner's local cost
+> estimate and its `RATES` table were removed, and each completed job's token `usage` is now saved
+> to the results file. What is sent to the API — materials, prompts, request parameters — is
+> unchanged, so leg 2 measures the same thing as leg 1, but `hanko_run_benchmark.py` is no longer
+> byte-identical to the 2026-07-18 freeze.
 
 ## Leg-1 answers (2026-07-18)
 
@@ -46,7 +53,7 @@ does) and the route-fingerprint non-collision at every rounding granularity.
 | Script | Provenance |
 |---|---|
 | `hanko_gen_materials_v2.py` | **The only file that differs from v1** — the `_v2` suffix marks the diff surface. Asserts the arithmetic freeze, the route-fingerprint separation, and the L5 pixel checks |
-| `hanko_run_benchmark.py` | Verbatim v1. **Refresh `MODELS`/`RATES` from the run-day catalog and billing before running** — the `RATES` are per-page rates from before AnalyzeDoc's switch to token billing on 2026-11-06 |
+| `hanko_run_benchmark.py` | Verbatim v1. **Refresh `MODELS` from the run-day catalog before running** (the cost estimate and its `RATES` table were removed on 2026-11-06, after AnalyzeDoc's switch to token billing; each job's token `usage` is saved instead) |
 | `hanko_score_results.py` | Verbatim v1 (ground-truth-driven; no changes needed) |
 | `hanko_report.py` | Verbatim v1 |
 | `hanko_lowfield_analysis.py` | Shared with v1; pass `--newgen`/`--oldgen` patterns for the generations under test |
@@ -58,7 +65,7 @@ does) and the route-fingerprint non-collision at every rounding granularity.
 pip install requests pillow numpy
 export LDXHUB_API_KEY="your-key"          # get one: https://gw.portal.ldxhub.io
 python3 hanko_gen_materials_v2.py         # 24 materials + ground truth; all asserts must pass
-python3 hanko_run_benchmark.py --dry-run --models all   # cost preflight (rates change — no fixed table here)
+python3 hanko_run_benchmark.py --dry-run --models all   # enumerate jobs only (no API calls)
 python3 hanko_run_benchmark.py --models pilot --yes
 python3 hanko_score_results.py && python3 hanko_report.py
 python3 hanko_lowfield_analysis.py --newgen "<pattern>" --oldgen "<pattern>"

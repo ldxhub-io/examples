@@ -37,7 +37,7 @@ All materials are generated on the fly into `materials_hanko/` — fully synthet
 pip install requests pillow numpy
 export LDXHUB_API_KEY="your-key"     # get one: https://gw.portal.ldxhub.io
 python3 hanko_gen_materials.py       # writes materials_hanko/ (deterministic)
-python3 hanko_run_benchmark.py --dry-run --models all        # cost preflight
+python3 hanko_run_benchmark.py --dry-run --models all        # enumerate jobs only (no API calls)
 python3 hanko_run_benchmark.py --models pilot --yes          # 3 models × full grid
 python3 hanko_score_results.py && python3 hanko_report.py
 ```
@@ -46,9 +46,10 @@ python3 hanko_score_results.py && python3 hanko_report.py
 > instead of per page. The costs below use the per-page rates in effect when each run
 > was made (until 2026-11-05). Under token billing, a page costs its input tokens (image, any PDF text,
 > and instructions) at the model's input rate plus the output tokens at its output rate — see
-> [Credits & Pricing](https://gw.portal.ldxhub.io/credits-and-pricing).
+> [Credits & Pricing](https://gw.portal.ldxhub.io/credits-and-pricing). The runner no longer prints a cost
+> estimate; each completed job's token `usage` is saved to the results file instead.
 
-| Scope | Command | Jobs | List cost (dry-run) |
+| Scope | Command | Jobs | List cost (dry-run, July 2026 per-page rates) |
 |---|---|---|---|
 | Full (27 variants) | `--models all` | 3,240 | ≈ $144.84 |
 | Name target only | `--models all --instances A_N,B_N` | 1,620 | ≈ $72.42 |

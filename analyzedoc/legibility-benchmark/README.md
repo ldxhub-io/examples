@@ -428,22 +428,19 @@ python3 run_benchmark.py --models ume --t1-instances A --t1-reps 3 --t2-reps 1 -
 python3 score_results.py && python3 report.py
 ```
 
-**Full matrix** (67 variants, 10,318 jobs, ≈3.00M credits ≈ $300 list at the per-page rates in
-effect until 2026-11-05):
+**Full matrix** (67 variants, 10,318 jobs):
 
 ```bash
 python3 run_benchmark.py --models all --yes
 ```
 
-That is 1.7% above the 63-variant matrix, from GPT-6.1 Terra's four variants at 121 / 13
-credits per page direct and 67 / 16 via Azure. Gemini 4 Argon's three variants cost 175 / 85 /
-42 credits per page (Google's standard $4 / $20 price, not its introductory one). Claude
-Haiku 5.5's 96 credits per page follow Anthropic's price for prompts above 100K tokens,
-because a PDF of around 15 pages crosses that line in a single request; one image, as in
-this benchmark, stays well below it. Per-page cost, not model count, is what drives this
-number. These per-page rates are historical: since 2026-11-06 a page costs its input tokens at the
-model's input rate (see the pricing note above), so smaller images now cost less on the
-size-dependent models.
+The runner does not estimate cost. AnalyzeDoc is billed by the input and output tokens of the AI
+model (since 2026-11-06), so the runner saves each completed job's `usage` (`input_tokens` /
+`output_tokens`) to `results.jsonl` and prints the run's token totals; price them with the rates on
+[Credits & Pricing](https://gw.portal.ldxhub.io/credits-and-pricing). To gauge a large run, run the
+Free-tier subset first and look at its usage. Image tokens dominate: every material is a
+2480×3508 page, so most models read it at their per-image maximum. Under the per-page rates in effect
+until 2026-11-05, the full 67-variant matrix was estimated at ≈3.00M credits (≈ $300 list).
 
 The runner is resume-safe: interrupt it or hit provider rate limits, then re-run the
 same command — only unfinished jobs execute. Server-side failures (e.g. upstream 429s)
