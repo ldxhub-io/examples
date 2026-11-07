@@ -7,6 +7,9 @@ from collections import defaultdict
 LADDER = [300,150,100,70,50,35,25]
 TIERS = ["title","large","body","fine"]
 DEFAULT_ORDER = [
+ # Variants retired from LDX hub on 2026-11-07 (e.g. GPT-5.6, Gemini 3.7 Flash, Claude Opus 5) stay in this list
+ # so that their measured rows keep their place when the table is regenerated. They are no longer
+ # in run_benchmark.py's MODELS and cannot be re-run.
  "openai/gpt-6.1-sol@high",
  "openai/gpt-6.1-sol@low",
  "openai/gpt-6.1-terra@high",

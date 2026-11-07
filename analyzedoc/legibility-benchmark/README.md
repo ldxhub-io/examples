@@ -310,6 +310,15 @@ and what it does after that: leave the field blank, or fabricate a plausible val
 > 2026-10-27 numbers and (a) and (b) compare only within that day. One frontier step moved:
 > direct GPT-6.1 Sol `@high` now holds the fine tier to L3 (L2 on 2026-09-30).
 
+> **Update 2026-11-07:** LDX hub retired 21 models that now have a newer model at the same
+> or lower price, which removed 37 of the variants in this table: GPT-6 Sol, GPT-5.6 Sol, Terra
+> and Luna, GPT-5.4 and GPT-5.4 mini (OpenAI and Azure), GPT-5.5, Gemini 3.7 Flash, 3.6 Flash and
+> 3.5 Flash, and Claude Fable 5, Opus 5, Sonnet 5 and Opus 4.8. They are no longer in the
+> AnalyzeDoc catalog, so `run_benchmark.py` lists the 30 current variants, and the `pilot` and
+> `ume` presets use their successors (Gemini 3.8 Flash, GPT-6.1 Terra, Claude Fable 5.1 and
+> Azure GPT-6 Luna). Their rows stay in the tables and in `results.jsonl` as measured; they can
+> no longer be re-run.
+
 ## Results
 
 Frontier = deepest ladder step that keeps ≥90% field accuracy per tier
@@ -419,16 +428,14 @@ python3 gen_materials.py                      # 42 deterministic materials + sel
 export LDXHUB_API_KEY=...                     # free key: https://gw.portal.ldxhub.io
 ```
 
-**Free-tier subset** (3 representative variants, 147 jobs, ≈17,600 credits at the per-page rates in effect
-until 2026-11-05 — fits the
-free 25,000/month allowance):
+**Free-tier subset** (3 representative variants, 147 jobs):
 
 ```bash
 python3 run_benchmark.py --models ume --t1-instances A --t1-reps 3 --t2-reps 1 --yes
 python3 score_results.py && python3 report.py
 ```
 
-**Full matrix** (67 variants, 10,318 jobs):
+**Full matrix** (the 30 current variants, 4,620 jobs):
 
 ```bash
 python3 run_benchmark.py --models all --yes

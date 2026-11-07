@@ -24,38 +24,27 @@ T2_DOCS = {"t2_invoice": "invoice", "t2_receipt": "receipt",
            "t2_card": "business_card", "t2_minutes": "meeting_minutes"}
 UPLOAD_TTL_H = 24
 
-MODELS = [  # canonical order (provider-grouped), AnalyzeDoc catalog 2026-10-27,
+MODELS = [  # canonical order (provider-grouped), AnalyzeDoc catalog 2026-11-07 (retired variants removed; see README),
  "openai/gpt-6.1-sol@high","openai/gpt-6.1-sol@low",
  "openai/gpt-6.1-terra@high","openai/gpt-6.1-terra@low",
  "openai/gpt-6-astra@high","openai/gpt-6-astra@low",
- "openai/gpt-6-sol@high","openai/gpt-6-sol@low",
  "openai/gpt-6-luna@high","openai/gpt-6-luna@low",
- "openai/gpt-5.6-sol@high","openai/gpt-5.6-sol@low","openai/gpt-5.6-terra@high","openai/gpt-5.6-terra@low",
- "openai/gpt-5.6-luna@high","openai/gpt-5.6-luna@low","openai/gpt-5.5@high","openai/gpt-5.5@low",
- "openai/gpt-5.4@high","openai/gpt-5.4-mini@high",
  "azure/gpt-6.1-sol@high","azure/gpt-6.1-sol@low",
  "azure/gpt-6.1-terra@high","azure/gpt-6.1-terra@low",
  "azure/gpt-6-astra@high","azure/gpt-6-astra@low",
- "azure/gpt-6-sol@high","azure/gpt-6-sol@low",
  "azure/gpt-6-luna@high","azure/gpt-6-luna@low",
- "azure/gpt-5.6-sol@high","azure/gpt-5.6-sol@low","azure/gpt-5.6-terra@high","azure/gpt-5.6-terra@low",
- "azure/gpt-5.6-luna@high","azure/gpt-5.6-luna@low","azure/gpt-5.4@high","azure/gpt-5.4@low",
- "azure/gpt-5.4-mini@high","azure/gpt-5.4-mini@low",
  "google/gemini-4-argon@high","google/gemini-4-argon@medium","google/gemini-4-argon@low",
  "google/gemini-3.8-flash@high","google/gemini-3.8-flash@medium","google/gemini-3.8-flash@low",
- "google/gemini-3.7-flash@high","google/gemini-3.7-flash@medium","google/gemini-3.7-flash@low",
- "google/gemini-3.6-flash@high","google/gemini-3.6-flash@medium","google/gemini-3.6-flash@low",
- "google/gemini-3.5-flash@high","google/gemini-3.5-flash@medium","google/gemini-3.5-flash@low",
  "google/gemini-3.5-flash-lite@high","google/gemini-3.5-flash-lite@medium","google/gemini-3.5-flash-lite@low",
  "anthropic/claude-opus-5-5","anthropic/claude-sonnet-5-5","anthropic/claude-haiku-5-5",
- "anthropic/claude-fable-5-1","anthropic/claude-fable-5","anthropic/claude-opus-5","anthropic/claude-sonnet-5","anthropic/claude-opus-4-8",
+ "anthropic/claude-fable-5-1",
  "bedrock/global.amazon.nova-2-lite-v1:0",
 ]
 # Cost: AnalyzeDoc is billed by the AI model's input and output tokens (since 2026-11-06). The runner keeps
 # no rate table and prints no estimate; each completed job's `usage` (input_tokens / output_tokens) is saved
 # to the results file. Rates: https://gw.portal.ldxhub.io/credits-and-pricing
-PILOT = ["google/gemini-3.5-flash@high","openai/gpt-5.5@low","anthropic/claude-fable-5"]
-UME   = ["google/gemini-3.5-flash@high","openai/gpt-5.5@low","azure/gpt-5.4-mini@low"]
+PILOT = ["google/gemini-3.8-flash@high","openai/gpt-6.1-terra@low","anthropic/claude-fable-5-1"]  # 2026-11-07: successors of the retired 3.5 Flash, GPT-5.5 and Fable 5
+UME   = ["google/gemini-3.8-flash@high","openai/gpt-6.1-terra@low","azure/gpt-6-luna@low"]  # 2026-11-07: successors of the retired 3.5 Flash, GPT-5.5 and Azure GPT-5.4 mini
 
 T1_PROMPT = (
  "Extract the following 12 fields from this Japanese invoice, exactly as printed in the "
