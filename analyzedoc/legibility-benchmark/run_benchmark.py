@@ -37,6 +37,7 @@ MODELS = [  # canonical order (provider-grouped), AnalyzeDoc catalog 2026-11-07 
  "google/gemini-3.8-flash@high","google/gemini-3.8-flash@medium","google/gemini-3.8-flash@low",
  "google/gemini-3.5-flash-lite@high","google/gemini-3.5-flash-lite@medium","google/gemini-3.5-flash-lite@low",
  "anthropic/claude-opus-5-5","anthropic/claude-sonnet-5-5","anthropic/claude-haiku-5-5",
+ "anthropic/claude-fable-5-2",
  "anthropic/claude-fable-5-1",
  "bedrock/global.amazon.nova-2-lite-v1:0",
 ]

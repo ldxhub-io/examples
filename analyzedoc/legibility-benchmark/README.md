@@ -2,8 +2,8 @@
 
 One Japanese invoice, rendered on a fixed 2480×3508 canvas, degraded through seven
 simulated scan resolutions (300 → 25 dpi). Twelve fields across four font tiers
-(28 pt title down to 7.5 pt fine print). **67 vision model variants, 5 repeats each,
-10,318 jobs — final state: 10,318 completed, 0 unparseable outputs.**
+(28 pt title down to 7.5 pt fine print). **68 vision model variants, 5 repeats each,
+10,472 jobs — final state: 10,472 completed, 0 unparseable outputs.**
 
 The question is not *which model is best*. It is **where each model stops reading —
 and what it does after that: leave the field blank, or fabricate a plausible value.**
@@ -14,7 +14,7 @@ and what it does after that: leave the field blank, or fabricate a plausible val
 > and instructions) at the model's input rate plus the output tokens at its output rate — see
 > [Credits & Pricing](https://gw.portal.ldxhub.io/credits-and-pricing).
 
-![Body-tier fabrication heatmap](results/2026-10/heatmap.png)
+![Body-tier fabrication heatmap](results/2026-11/heatmap.png)
 
 ## Headline findings (2026-07 run)
 
@@ -44,7 +44,7 @@ and what it does after that: leave the field blank, or fabricate a plausible val
    48 times across Gemini variants — **at 300 dpi, on perfectly legible text**. The
    fictional credit union with no real-world neighbor was read correctly under the same
    conditions. Language priors can override vision even when reading is easy.
-6. **Classification survives reading loss.** 63 of 67 variants classified all 84
+6. **Classification survives reading loss.** 64 of 68 variants classified all 84
    documents correctly at every degradation step — models that cannot read a document
    can still tell what kind of document it is. Two of the four exceptions are the Azure
    GPT-6 Luna variants, measured before OpenAI's 2026-09-25 image fix; after the fix,
@@ -319,6 +319,27 @@ and what it does after that: leave the field blank, or fabricate a plausible val
 > Azure GPT-6 Luna). Their rows stay in the tables and in `results.jsonl` as measured; they can
 > no longer be re-run.
 
+> **Update 2026-11-10:** Claude Fable 5.2 added (68 variants). It succeeds Claude Fable 5.1 at
+> 20% lower token rates ($8/$40 against $10/$50), and Fable 5.1 leaves the AnalyzeDoc catalog on
+> 2026-11-24. The two read the pages with the same input tokens (824,866 over the 154 jobs each),
+> so the price gap is the rate alone. Fable 5.1 was re-run the same day; its 2026-09-01 records
+> remain in [`results/2026-10/results.jsonl`](results/2026-10/results.jsonl). Two results:
+> **(a) Fable 5.2 leaves unreadable fine print blank.** At 25 dpi it returned all 40 fine-tier
+> fields (bank, branch, account number, phone) empty, where Fable 5.1 the same day fabricated 10
+> and left 28 blank (fabrications p=0.001, blanks p≈2×10⁻⁴); across 35 and 25 dpi the fine tier
+> shows 0 of 80 fabricated against 15 of 80 (p≈3×10⁻⁵). Everywhere else the two read the same:
+> 26 of their 28 summary cells are identical, including every body cell (45 correct, 0 blank and
+> 5 fabricated at 25 dpi), and both classify all 84 T2 documents. Blanking at the fine-print edge
+> is what Opus 5.5 does (2026-09-28 (c)); the other seven Claude variants fabricate 10 to 35 of
+> those 40 fields. The fine-tier frontiers differ by one step (L5 against L4) only because 37 and
+> 35 of 40 fall on either side of the 90% bar (p=0.71).
+> **(b) Fable 5.1 itself drifted toward blanks.** Against its 2026-09-01 rows, 26 of its 28
+> summary cells are identical. At 25 dpi its fine tier moved from 5 / 17 / 18 to 2 / 28 / 10
+> correct / blank / fabricated (blanks p=0.024, fabrications p=0.10), and at 35 dpi it went from
+> 36 to 35 correct (p=1), which drops its fine frontier from L5 to L4. The table carries the
+> 2026-11-10 numbers. As on 2026-10-27, two runs cannot tell a model update from run-to-run
+> variance, so (a) compares only within this day.
+
 ## Results
 
 Frontier = deepest ladder step that keeps ≥90% field accuracy per tier
@@ -388,15 +409,16 @@ L3=70, L4=50, L5=35, L6=25 dpi.
 | `anthropic/claude-opus-5-5` | L6 | L6 | L5 | L4 | 0% | 84/84 |
 | `anthropic/claude-sonnet-5-5` | L6 | L6 | L5 | L4 | 18% | 84/84 |
 | `anthropic/claude-haiku-5-5` | L6 | L6 | L5 | L4 | 16% | 84/84 |
-| `anthropic/claude-fable-5-1` | L6 | L6 | L6 | L5 | 10% | 84/84 |
+| `anthropic/claude-fable-5-2` | L6 | L6 | L6 | L5 | 10% | 84/84 |
+| `anthropic/claude-fable-5-1` | L6 | L6 | L6 | L4 | 10% | 84/84 |
 | `anthropic/claude-fable-5` | L6 | L6 | L6 | L4 | 10% | 84/84 |
 | `anthropic/claude-opus-5` | L6 | L6 | L5 | L4 | 14% | 84/84 |
 | `anthropic/claude-sonnet-5` | L6 | L6 | L5 | L4 | 26% | 84/84 |
 | `anthropic/claude-opus-4-8` | L6 | L6 | L5 | L4 | 26% | 84/84 |
 | `bedrock/global.amazon.nova-2-lite-v1:0` | × | L5 | × | × | 80% | 63/84 |
 
-Full per-cell numbers: [`results/2026-10/summary.csv`](results/2026-10/summary.csv) ·
-raw model outputs: [`results/2026-10/results.jsonl`](results/2026-10/results.jsonl)
+Full per-cell numbers: [`results/2026-11/summary.csv`](results/2026-11/summary.csv) ·
+raw model outputs: [`results/2026-11/results.jsonl`](results/2026-11/results.jsonl)
 
 ## Method, briefly
 
@@ -435,7 +457,7 @@ python3 run_benchmark.py --models ume --t1-instances A --t1-reps 3 --t2-reps 1 -
 python3 score_results.py && python3 report.py
 ```
 
-**Full matrix** (the 30 current variants, 4,620 jobs):
+**Full matrix** (the 31 current variants, 4,774 jobs):
 
 ```bash
 python3 run_benchmark.py --models all --yes
@@ -458,7 +480,7 @@ adds one if needed).
 Because raw model outputs are stored in `results.jsonl`, you can change the scoring
 rules and re-score **without re-running a single job**.
 
-(The raw log contains 10,322 records; four are duplicate resubmissions after a
+(The raw log contains 10,476 records; four are duplicate resubmissions after a
 network interruption during the July run. The scorer takes the last record per job
 key, so re-scoring this exact file reproduces the published tables.)
 
@@ -492,7 +514,7 @@ key, so re-scoring this exact file reproduces the published tables.)
   fix. Azure file uploads failed from 2026-09-28 until 2026-10-06; the Azure GPT-6 Sol rows
   were re-measured once they worked again, and `azure/gpt-6.1-sol` was added the same day.
 - LDX hub is the harness here, not a subject — it builds no models. One API key across
-  OpenAI, Azure, Google, Anthropic and AWS is what makes a 67-variant matrix practical.
+  OpenAI, Azure, Google, Anthropic and AWS is what makes a 68-variant matrix practical.
 
 ## Maintenance
 
@@ -500,7 +522,8 @@ New AnalyzeDoc models are benchmarked by running only the new entries (resume-sa
 and appending to a dated `results/` directory. The catalog snapshot for each run lives
 next to its results (`models_snapshot.json`). Earlier snapshots are kept — the 2026-07
 run is at [`results/2026-07/`](results/2026-07/), 2026-08 at
-[`results/2026-08/`](results/2026-08/) and 2026-09 at [`results/2026-09/`](results/2026-09/).
+[`results/2026-08/`](results/2026-08/), 2026-09 at [`results/2026-09/`](results/2026-09/) and 2026-10 at
+[`results/2026-10/`](results/2026-10/).
 
 Not every new model is added. A release earns a row when it can move a finding — a new
 provider, a new architecture, something that could falsify a claim above, or the next
