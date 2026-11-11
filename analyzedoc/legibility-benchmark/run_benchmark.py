@@ -33,6 +33,7 @@ MODELS = [  # canonical order (provider-grouped), AnalyzeDoc catalog 2026-11-07 
  "azure/gpt-6.1-terra@high","azure/gpt-6.1-terra@low",
  "azure/gpt-6-astra@high","azure/gpt-6-astra@low",
  "azure/gpt-6-luna@high","azure/gpt-6-luna@low",
+ "google/gemini-4-carbon@high","google/gemini-4-carbon@medium","google/gemini-4-carbon@low",
  "google/gemini-4-argon@high","google/gemini-4-argon@medium","google/gemini-4-argon@low",
  "google/gemini-3.8-flash@high","google/gemini-3.8-flash@medium","google/gemini-3.8-flash@low",
  "google/gemini-3.5-flash-lite@high","google/gemini-3.5-flash-lite@medium","google/gemini-3.5-flash-lite@low",

@@ -321,6 +321,66 @@
       "provider": "azure"
     },
     {
+      "display_name": "Google Gemini 4 Carbon @high",
+      "description": "Google's Carbon-tier model of the Gemini 4 generation. High-resolution reading for dense layouts, small fonts, and numeric tables at a premium cost.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "google/gemini-4-carbon@high",
+      "provider": "google"
+    },
+    {
+      "display_name": "Google Gemini 4 Carbon @medium",
+      "description": "Google's Carbon-tier model of the Gemini 4 generation. Balanced resolution that uses about half the input tokens per page of Gemini 4 Carbon @high.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "google/gemini-4-carbon@medium",
+      "provider": "google"
+    },
+    {
+      "display_name": "Google Gemini 4 Carbon @low",
+      "description": "Google's Carbon-tier model of the Gemini 4 generation. Low-resolution reading for clean, large-text documents, using about a quarter of the input tokens per page of Gemini 4 Carbon @high.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "google/gemini-4-carbon@low",
+      "provider": "google"
+    },
+    {
       "display_name": "Google Gemini 4 Argon @high",
       "description": "Google's Argon-tier model of the Gemini 4 generation. High-resolution reading for dense layouts, small fonts, and numeric tables at a premium cost.",
       "supported_conversions": [
