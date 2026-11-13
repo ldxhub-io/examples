@@ -1,5 +1,5 @@
 {
-  "model": "google/gemini-3.5-flash@high",
+  "model": "google/gemini-4-hydrogen@high",
   "file_id": "REPLACE_WITH_FILE_ID",
   "output_format": "json",
   "system_prompt": "Extract the invoice data from this Japanese qualified invoice (適格請求書).\nRules:\n- Dates in YYYY-MM-DD format.\n- All monetary amounts as integers in JPY (no separators, no currency symbols).\n- registration_number in \"T + 13 digits\" format.\n- tax_rate as an integer percentage (8 or 10).\n- tax_summary must contain one entry per tax rate on the invoice.\n- Phone numbers must not start with \"+\".",
