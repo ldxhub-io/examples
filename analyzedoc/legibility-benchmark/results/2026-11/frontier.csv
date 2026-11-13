@@ -45,6 +45,9 @@ google/gemini-4-carbon@low,6,6,6,4
 google/gemini-4-argon@high,6,6,6,5
 google/gemini-4-argon@medium,6,6,6,5
 google/gemini-4-argon@low,6,6,6,4
+google/gemini-4-hydrogen@high,6,6,6,5
+google/gemini-4-hydrogen@medium,6,6,6,5
+google/gemini-4-hydrogen@low,6,6,6,4
 google/gemini-3.8-flash@high,6,6,6,5
 google/gemini-3.8-flash@medium,6,6,6,5
 google/gemini-3.8-flash@low,6,6,6,-1

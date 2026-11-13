@@ -46,6 +46,9 @@
 | google/gemini-4-argon@high | L6 / L6 / L6 / L5 | 2% | 84/84 |
 | google/gemini-4-argon@medium | L6 / L6 / L6 / L5 | 10% | 84/84 |
 | google/gemini-4-argon@low | L6 / L6 / L6 / L4 | 2% | 84/84 |
+| google/gemini-4-hydrogen@high | L6 / L6 / L6 / L5 | 0% | 84/84 |
+| google/gemini-4-hydrogen@medium | L6 / L6 / L6 / L5 | 10% | 84/84 |
+| google/gemini-4-hydrogen@low | L6 / L6 / L6 / L4 | 8% | 84/84 |
 | google/gemini-3.8-flash@high | L6 / L6 / L6 / L5 | 8% | 84/84 |
 | google/gemini-3.8-flash@medium | L6 / L6 / L6 / L5 | 10% | 84/84 |
 | google/gemini-3.8-flash@low | L6 / L6 / L6 / × | 8% | 84/84 |

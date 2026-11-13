@@ -441,8 +441,68 @@
       "provider": "google"
     },
     {
+      "display_name": "Google Gemini 4 Hydrogen @high",
+      "description": "Google's Hydrogen-tier model of the Gemini 4 generation. High-resolution reading for dense layouts, small fonts, and numeric tables at under 40% of the per-token cost of Gemini 4 Argon.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "google/gemini-4-hydrogen@high",
+      "provider": "google"
+    },
+    {
+      "display_name": "Google Gemini 4 Hydrogen @medium",
+      "description": "Google's Hydrogen-tier model of the Gemini 4 generation. Balanced resolution that uses about half the input tokens per page of Gemini 4 Hydrogen @high.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "google/gemini-4-hydrogen@medium",
+      "provider": "google"
+    },
+    {
+      "display_name": "Google Gemini 4 Hydrogen @low",
+      "description": "Google's Hydrogen-tier model of the Gemini 4 generation. Low-resolution reading for clean, large-text documents, using about a quarter of the input tokens per page of Gemini 4 Hydrogen @high.",
+      "supported_conversions": [
+        {
+          "from": "pdf",
+          "to": "json"
+        },
+        {
+          "from": "jpeg",
+          "to": "json"
+        },
+        {
+          "from": "png",
+          "to": "json"
+        }
+      ],
+      "id": "google/gemini-4-hydrogen@low",
+      "provider": "google"
+    },
+    {
       "display_name": "Google Gemini 3.8 Flash @high",
-      "description": "Google's Flash-tier model of the Gemini 3.8 generation. High-resolution reading for accurate extraction from images and dense layouts at low cost.",
+      "description": "Google's Flash-tier model of the Gemini 3.8 generation. Succeeded by Gemini 4 Hydrogen at the same per-token cost.",
       "supported_conversions": [
         {
           "from": "pdf",
@@ -462,7 +522,7 @@
     },
     {
       "display_name": "Google Gemini 3.8 Flash @medium",
-      "description": "Google's Flash-tier model of the Gemini 3.8 generation. Balanced resolution for a good mix of accuracy and cost on everyday documents.",
+      "description": "Google's Flash-tier model of the Gemini 3.8 generation. Succeeded by Gemini 4 Hydrogen at the same per-token cost.",
       "supported_conversions": [
         {
           "from": "pdf",
@@ -482,7 +542,7 @@
     },
     {
       "display_name": "Google Gemini 3.8 Flash @low",
-      "description": "Google's Flash-tier model of the Gemini 3.8 generation. Low-cost reading for clean, large-text documents at high volume.",
+      "description": "Google's Flash-tier model of the Gemini 3.8 generation. Succeeded by Gemini 4 Hydrogen at the same per-token cost.",
       "supported_conversions": [
         {
           "from": "pdf",
@@ -502,7 +562,7 @@
     },
     {
       "display_name": "Google Gemini 3.5 Flash-Lite @high",
-      "description": "Google's Lite-tier model of the Gemini 3.5 generation. High-resolution reading for high-volume extraction at a lower cost than Gemini 3.8 Flash.",
+      "description": "Google's Lite-tier model of the Gemini 3.5 generation. High-resolution reading for high-volume extraction at a lower cost than Gemini 4 Hydrogen.",
       "supported_conversions": [
         {
           "from": "pdf",

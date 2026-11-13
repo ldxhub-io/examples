@@ -2,8 +2,8 @@
 
 One Japanese invoice, rendered on a fixed 2480×3508 canvas, degraded through seven
 simulated scan resolutions (300 → 25 dpi). Twelve fields across four font tiers
-(28 pt title down to 7.5 pt fine print). **71 vision model variants, 5 repeats each,
-10,934 jobs — final state: 10,934 completed, 0 unparseable outputs.**
+(28 pt title down to 7.5 pt fine print). **74 vision model variants, 5 repeats each,
+11,396 jobs — final state: 11,396 completed, 0 unparseable outputs.**
 
 The question is not *which model is best*. It is **where each model stops reading —
 and what it does after that: leave the field blank, or fabricate a plausible value.**
@@ -44,7 +44,7 @@ and what it does after that: leave the field blank, or fabricate a plausible val
    48 times across Gemini variants — **at 300 dpi, on perfectly legible text**. The
    fictional credit union with no real-world neighbor was read correctly under the same
    conditions. Language priors can override vision even when reading is easy.
-6. **Classification survives reading loss.** 67 of 71 variants classified all 84
+6. **Classification survives reading loss.** 70 of 74 variants classified all 84
    documents correctly at every degradation step — models that cannot read a document
    can still tell what kind of document it is. Two of the four exceptions are the Azure
    GPT-6 Luna variants, measured before OpenAI's 2026-09-25 image fix; after the fix,
@@ -351,6 +351,21 @@ and what it does after that: leave the field blank, or fabricate a plausible val
 > all three variants classify all 84 T2 documents. Argon was measured on 2026-10-14, so this
 > compares two runs, not a same-day pair.
 
+> **Update 2026-11-13:** Gemini 4 Hydrogen added in its three resolution variants (74 variants).
+> It succeeds Gemini 3.8 Flash at the same token rates (60 / 300), which the maintenance rule below
+> would normally skip; it gets rows because it is the Flash-tier model of the Gemini 4 generation and
+> becomes that tier's next observation point once Gemini 3.8 Flash is retired. On this invoice it
+> reads like the larger Gemini 4 models. Its frontiers are exactly Carbon's and Argon's
+> (L6 / L6 / L6 / L5 at `@high` and `@medium`, the fine tier to L4 at `@low`), and the gateway counted
+> the same input tokens for the same test pages. At 25 dpi Hydrogen fabricated 9 of 150 body fields
+> across its three variants (Carbon and Argon 7, p=0.80) and 76 of 120 fine-tier fields (both 81,
+> p=0.59). Against Gemini 3.8 Flash (13 of 150 and 89 of 120) neither gap is significant (fine tier
+> p=0.094). Like the other Gemini 4 models, Hydrogen never leaves a field blank at any resolution, and
+> all three variants classify all 84 T2 documents. It does write more: at the same `LOW` thinking
+> level its 462 jobs produced 180,171 output tokens, against 43,073 for Carbon's same 462 jobs (input
+> 508,284 for both). Carbon and Argon come from earlier runs (the 2026-11-12 and 2026-10-14 updates),
+> so these are cross-run comparisons.
+
 ## Results
 
 Frontier = deepest ladder step that keeps ≥90% field accuracy per tier
@@ -405,6 +420,9 @@ L3=70, L4=50, L5=35, L6=25 dpi.
 | `google/gemini-4-argon@high` | L6 | L6 | L6 | L5 | 2% | 84/84 |
 | `google/gemini-4-argon@medium` | L6 | L6 | L6 | L5 | 10% | 84/84 |
 | `google/gemini-4-argon@low` | L6 | L6 | L6 | L4 | 2% | 84/84 |
+| `google/gemini-4-hydrogen@high` | L6 | L6 | L6 | L5 | 0% | 84/84 |
+| `google/gemini-4-hydrogen@medium` | L6 | L6 | L6 | L5 | 10% | 84/84 |
+| `google/gemini-4-hydrogen@low` | L6 | L6 | L6 | L4 | 8% | 84/84 |
 | `google/gemini-3.8-flash@high` | L6 | L6 | L6 | L5 | 8% | 84/84 |
 | `google/gemini-3.8-flash@medium` | L6 | L6 | L6 | L5 | 10% | 84/84 |
 | `google/gemini-3.8-flash@low` | L6 | L6 | L6 | × | 8% | 84/84 |
@@ -471,7 +489,7 @@ python3 run_benchmark.py --models ume --t1-instances A --t1-reps 3 --t2-reps 1 -
 python3 score_results.py && python3 report.py
 ```
 
-**Full matrix** (the 34 current variants, 5,236 jobs):
+**Full matrix** (the 37 current variants, 5,698 jobs):
 
 ```bash
 python3 run_benchmark.py --models all --yes
@@ -494,7 +512,7 @@ adds one if needed).
 Because raw model outputs are stored in `results.jsonl`, you can change the scoring
 rules and re-score **without re-running a single job**.
 
-(The raw log contains 10,938 records; four are duplicate resubmissions after a
+(The raw log contains 11,400 records; four are duplicate resubmissions after a
 network interruption during the July run. The scorer takes the last record per job
 key, so re-scoring this exact file reproduces the published tables.)
 
@@ -528,7 +546,7 @@ key, so re-scoring this exact file reproduces the published tables.)
   fix. Azure file uploads failed from 2026-09-28 until 2026-10-06; the Azure GPT-6 Sol rows
   were re-measured once they worked again, and `azure/gpt-6.1-sol` was added the same day.
 - LDX hub is the harness here, not a subject — it builds no models. One API key across
-  OpenAI, Azure, Google, Anthropic and AWS is what makes a 71-variant matrix practical.
+  OpenAI, Azure, Google, Anthropic and AWS is what makes a 74-variant matrix practical.
 
 ## Maintenance
 
