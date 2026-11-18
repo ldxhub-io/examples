@@ -1,11 +1,15 @@
 | model | frontier (title/large/body/fine) | body fab@L6 | T2 acc |
 |---|---|---|---|
-| openai/gpt-6.1-sol@high | L6 / L5 / L5 / L3 | 60% | 84/84 |
-| openai/gpt-6.1-sol@low | L6 / × / × / × | 58% | 84/84 |
+| openai/gpt-6.2-astra@high | L6 / L6 / L5 / L3 | 26% | 84/84 |
+| openai/gpt-6.2-astra@low | L6 / × / × / × | 38% | 84/84 |
+| openai/gpt-6.2-sol@high | L6 / L6 / L6 / L4 | 10% | 84/84 |
+| openai/gpt-6.2-sol@low | L6 / × / × / × | 10% | 84/84 |
+| openai/gpt-6.1-sol@high | L6 / L5 / L5 / L2 | 54% | 84/84 |
+| openai/gpt-6.1-sol@low | L6 / × / × / × | 56% | 84/84 |
 | openai/gpt-6.1-terra@high | L6 / L5 / L4 / L3 | 56% | 84/84 |
 | openai/gpt-6.1-terra@low | L6 / × / × / × | 16% | 84/84 |
-| openai/gpt-6-astra@high | L6 / L5 / L5 / L3 | 56% | 84/84 |
-| openai/gpt-6-astra@low | L6 / × / × / × | 58% | 84/84 |
+| openai/gpt-6-astra@high | L6 / L5 / L5 / L3 | 58% | 84/84 |
+| openai/gpt-6-astra@low | L6 / × / × / × | 48% | 84/84 |
 | openai/gpt-6-sol@high | L6 / L5 / L5 / L2 | 48% | 84/84 |
 | openai/gpt-6-sol@low | L6 / × / × / × | 0% | 84/84 |
 | openai/gpt-6-luna@high | L6 / L5 / L5 / L2 | 70% | 84/84 |
@@ -20,12 +24,16 @@
 | openai/gpt-5.5@low | L6 / × / × / × | 62% | 84/84 |
 | openai/gpt-5.4@high | L6 / L5 / L4 / L2 | 46% | 84/84 |
 | openai/gpt-5.4-mini@high | L6 / L5 / L4 / L0 | 78% | 84/84 |
-| azure/gpt-6.1-sol@high | L6 / L5 / L5 / L3 | 74% | 84/84 |
-| azure/gpt-6.1-sol@low | L6 / × / × / × | 56% | 84/84 |
+| azure/gpt-6.2-astra@high | L6 / L6 / L5 / L4 | 32% | 84/84 |
+| azure/gpt-6.2-astra@low | L6 / × / × / × | 32% | 84/84 |
+| azure/gpt-6.2-sol@high | L6 / L6 / L6 / L4 | 10% | 84/84 |
+| azure/gpt-6.2-sol@low | L6 / × / × / × | 10% | 84/84 |
+| azure/gpt-6.1-sol@high | L6 / L5 / L5 / L3 | 70% | 84/84 |
+| azure/gpt-6.1-sol@low | L6 / × / × / × | 58% | 84/84 |
 | azure/gpt-6.1-terra@high | L6 / L6 / L5 / L3 | 32% | 84/84 |
 | azure/gpt-6.1-terra@low | L6 / × / × / × | 20% | 84/84 |
-| azure/gpt-6-astra@high | L6 / L5 / L5 / L3 | 88% | 84/84 |
-| azure/gpt-6-astra@low | L6 / × / × / × | 36% | 84/84 |
+| azure/gpt-6-astra@high | L6 / L5 / L5 / L3 | 80% | 84/84 |
+| azure/gpt-6-astra@low | L6 / × / × / × | 38% | 84/84 |
 | azure/gpt-6-sol@high | L6 / L5 / L4 / × | 90% | 84/84 |
 | azure/gpt-6-sol@low | L6 / × / × / × | 12% | 84/84 |
 | azure/gpt-6-luna@high | L6 / L5 / L4 / × | 92% | 80/84 |

@@ -10,6 +10,10 @@ DEFAULT_ORDER = [
  # Variants retired from LDX hub on 2026-11-07 (e.g. GPT-5.6, Gemini 3.7 Flash, Claude Opus 5) stay in this list
  # so that their measured rows keep their place when the table is regenerated. They are no longer
  # in run_benchmark.py's MODELS and cannot be re-run.
+ "openai/gpt-6.2-astra@high",
+ "openai/gpt-6.2-astra@low",
+ "openai/gpt-6.2-sol@high",
+ "openai/gpt-6.2-sol@low",
  "openai/gpt-6.1-sol@high",
  "openai/gpt-6.1-sol@low",
  "openai/gpt-6.1-terra@high",
@@ -30,6 +34,10 @@ DEFAULT_ORDER = [
  "openai/gpt-5.5@low",
  "openai/gpt-5.4@high",
  "openai/gpt-5.4-mini@high",
+ "azure/gpt-6.2-astra@high",
+ "azure/gpt-6.2-astra@low",
+ "azure/gpt-6.2-sol@high",
+ "azure/gpt-6.2-sol@low",
  "azure/gpt-6.1-sol@high",
  "azure/gpt-6.1-sol@low",
  "azure/gpt-6.1-terra@high",

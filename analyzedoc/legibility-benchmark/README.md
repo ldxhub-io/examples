@@ -2,8 +2,8 @@
 
 One Japanese invoice, rendered on a fixed 2480×3508 canvas, degraded through seven
 simulated scan resolutions (300 → 25 dpi). Twelve fields across four font tiers
-(28 pt title down to 7.5 pt fine print). **74 vision model variants, 5 repeats each,
-11,396 jobs — final state: 11,396 completed, 0 unparseable outputs.**
+(28 pt title down to 7.5 pt fine print). **82 vision model variants, 5 repeats each,
+12,628 jobs — final state: 12,628 completed, 0 unparseable outputs.**
 
 The question is not *which model is best*. It is **where each model stops reading —
 and what it does after that: leave the field blank, or fabricate a plausible value.**
@@ -44,7 +44,7 @@ and what it does after that: leave the field blank, or fabricate a plausible val
    48 times across Gemini variants — **at 300 dpi, on perfectly legible text**. The
    fictional credit union with no real-world neighbor was read correctly under the same
    conditions. Language priors can override vision even when reading is easy.
-6. **Classification survives reading loss.** 70 of 74 variants classified all 84
+6. **Classification survives reading loss.** 78 of 82 variants classified all 84
    documents correctly at every degradation step — models that cannot read a document
    can still tell what kind of document it is. Two of the four exceptions are the Azure
    GPT-6 Luna variants, measured before OpenAI's 2026-09-25 image fix; after the fix,
@@ -366,6 +366,42 @@ and what it does after that: leave the field blank, or fabricate a plausible val
 > 508,284 for both). Carbon and Argon come from earlier runs (the 2026-11-12 and 2026-10-14 updates),
 > so these are cross-run comparisons.
 
+> **Update 2026-11-18:** GPT-6.2 Astra and GPT-6.2 Sol added via OpenAI and Azure (82 variants).
+> GPT-6.2 Sol keeps GPT-6.1 Sol's token rates ($2/$10), and GPT-6.2 Astra costs 20% less than
+> GPT-6 Astra ($8/$40 against $10/$50). LDX hub retires GPT-6.1 Sol and GPT-6 Astra on 2026-12-02,
+> so GPT-6.2 Sol, a same-price successor that the maintenance rule below would normally skip, gets
+> rows as the Sol tier's next observation point. Like their predecessors, both run with
+> `reasoning.effort: low` (GPT-6.2 rejects `none` and `minimal`). GPT-6.1 Sol and GPT-6 Astra were
+> re-run the same day on both routes, so the comparisons below are same-day; their previous rows
+> (2026-10-27 and 2026-09-04) remain in commit `6ed95ae`. Three results:
+> **(a) The new Sol out-reads both Astras.** At `@high` GPT-6.2 Sol reads L6 / L6 / L6 / L4 on both
+> routes, against GPT-6.1 Sol's L6 / L5 / L5 / L2 direct and L6 / L5 / L5 / L3 via Azure. GPT-6.2
+> Astra gains a step on the large tier on both routes and on the fine tier via Azure
+> (L6 / L6 / L5 / L3 direct, L6 / L6 / L5 / L4 via Azure, against GPT-6 Astra's L6 / L5 / L5 / L3 on
+> both), so on this invoice the cheaper tier now reads deeper than the flagship. The `@low` variants
+> still hold only the title tier.
+> **(b) It reads the 25 dpi body instead of inventing it.** Across the four variants of each model
+> (two routes, two resolutions), GPT-6.2 Sol answered 180 of 200 body fields at 25 dpi correctly and
+> fabricated 20, where GPT-6.1 Sol answered 79 and fabricated 119 (Fisher p≈1×10⁻²⁶ on
+> fabrications); GPT-6.2 Astra answered 135 and fabricated 64, against GPT-6 Astra's 86 and 112
+> (p≈2×10⁻⁶). Body fab @L6 is 10% in all four GPT-6.2 Sol rows (GPT-6.1 Sol: 54–70%) and 26–38% for
+> GPT-6.2 Astra (GPT-6 Astra: 38–80%).
+> **(c) Unreadable fine print is left blank again.** At 25 dpi GPT-6.2 Sol left 118 of 160
+> fine-tier fields blank and fabricated 34, where GPT-6.1 Sol left 33 blank and fabricated 123
+> (fabrications p≈5×10⁻²⁴); GPT-6.2 Astra left 101 blank and fabricated 53, against 43 and 112
+> (p≈5×10⁻¹¹). Blanking this tier is the norm for GPT models in this table (44–92% of these fields
+> from GPT-5.4 to GPT-6.1 Terra); GPT-6 Astra and GPT-6.1 Sol were the two that filled it in, and
+> GPT-6.2 returns to the norm while still reasoning at `low`, so reasoning alone does not make a GPT
+> model fill in fine print. It also writes less: 73–99 output tokens per job against 108–211 for its
+> predecessors.
+> All eight variants classify all 84 T2 documents. Per job the gateway counted the same input tokens
+> for the new and the old models on each route (on average 3,265 via OpenAI and 1,247 via Azure at
+> `@high`, 522 and 498 at `@low`), except direct GPT-6.1 Sol at 24 fewer. The re-run reproduced the
+> predecessors: 148 of their 224 summary cells are identical to the earlier rows, no 25 dpi body or
+> fine-tier count moved significantly (p≥0.059), and the one frontier step that moved is direct
+> GPT-6.1 Sol `@high`'s fine tier, back to L2 as on 2026-09-30 (35 against 38 of 40 at 70 dpi,
+> either side of the 90% bar).
+
 ## Results
 
 Frontier = deepest ladder step that keeps ≥90% field accuracy per tier
@@ -374,12 +410,16 @@ L3=70, L4=50, L5=35, L6=25 dpi.
 
 | model | title | large | body | fine | body fab @L6 | classified correctly |
 |---|---|---|---|---|---|---|
-| `openai/gpt-6.1-sol@high` | L6 | L5 | L5 | L3 | 60% | 84/84 |
-| `openai/gpt-6.1-sol@low` | L6 | × | × | × | 58% | 84/84 |
+| `openai/gpt-6.2-astra@high` | L6 | L6 | L5 | L3 | 26% | 84/84 |
+| `openai/gpt-6.2-astra@low` | L6 | × | × | × | 38% | 84/84 |
+| `openai/gpt-6.2-sol@high` | L6 | L6 | L6 | L4 | 10% | 84/84 |
+| `openai/gpt-6.2-sol@low` | L6 | × | × | × | 10% | 84/84 |
+| `openai/gpt-6.1-sol@high` | L6 | L5 | L5 | L2 | 54% | 84/84 |
+| `openai/gpt-6.1-sol@low` | L6 | × | × | × | 56% | 84/84 |
 | `openai/gpt-6.1-terra@high` | L6 | L5 | L4 | L3 | 56% | 84/84 |
 | `openai/gpt-6.1-terra@low` | L6 | × | × | × | 16% | 84/84 |
-| `openai/gpt-6-astra@high` | L6 | L5 | L5 | L3 | 56% | 84/84 |
-| `openai/gpt-6-astra@low` | L6 | × | × | × | 58% | 84/84 |
+| `openai/gpt-6-astra@high` | L6 | L5 | L5 | L3 | 58% | 84/84 |
+| `openai/gpt-6-astra@low` | L6 | × | × | × | 48% | 84/84 |
 | `openai/gpt-6-sol@high` | L6 | L5 | L5 | L2 | 48% | 84/84 |
 | `openai/gpt-6-sol@low` | L6 | × | × | × | 0% | 84/84 |
 | `openai/gpt-6-luna@high` | L6 | L5 | L5 | L2 | 70% | 84/84 |
@@ -394,12 +434,16 @@ L3=70, L4=50, L5=35, L6=25 dpi.
 | `openai/gpt-5.5@low` | L6 | × | × | × | 62% | 84/84 |
 | `openai/gpt-5.4@high` | L6 | L5 | L4 | L2 | 46% | 84/84 |
 | `openai/gpt-5.4-mini@high` | L6 | L5 | L4 | L0 | 78% | 84/84 |
-| `azure/gpt-6.1-sol@high` | L6 | L5 | L5 | L3 | 74% | 84/84 |
-| `azure/gpt-6.1-sol@low` | L6 | × | × | × | 56% | 84/84 |
+| `azure/gpt-6.2-astra@high` | L6 | L6 | L5 | L4 | 32% | 84/84 |
+| `azure/gpt-6.2-astra@low` | L6 | × | × | × | 32% | 84/84 |
+| `azure/gpt-6.2-sol@high` | L6 | L6 | L6 | L4 | 10% | 84/84 |
+| `azure/gpt-6.2-sol@low` | L6 | × | × | × | 10% | 84/84 |
+| `azure/gpt-6.1-sol@high` | L6 | L5 | L5 | L3 | 70% | 84/84 |
+| `azure/gpt-6.1-sol@low` | L6 | × | × | × | 58% | 84/84 |
 | `azure/gpt-6.1-terra@high` | L6 | L6 | L5 | L3 | 32% | 84/84 |
 | `azure/gpt-6.1-terra@low` | L6 | × | × | × | 20% | 84/84 |
-| `azure/gpt-6-astra@high` | L6 | L5 | L5 | L3 | 88% | 84/84 |
-| `azure/gpt-6-astra@low` | L6 | × | × | × | 36% | 84/84 |
+| `azure/gpt-6-astra@high` | L6 | L5 | L5 | L3 | 80% | 84/84 |
+| `azure/gpt-6-astra@low` | L6 | × | × | × | 38% | 84/84 |
 | `azure/gpt-6-sol@high` | L6 | L5 | L4 | × | 90% | 84/84 |
 | `azure/gpt-6-sol@low` | L6 | × | × | × | 12% | 84/84 |
 | `azure/gpt-6-luna@high` | L6 | L5 | L4 | × | 92% | 80/84 |
@@ -489,7 +533,7 @@ python3 run_benchmark.py --models ume --t1-instances A --t1-reps 3 --t2-reps 1 -
 python3 score_results.py && python3 report.py
 ```
 
-**Full matrix** (the 37 current variants, 5,698 jobs):
+**Full matrix** (the 45 current variants, 6,930 jobs):
 
 ```bash
 python3 run_benchmark.py --models all --yes
@@ -512,7 +556,7 @@ adds one if needed).
 Because raw model outputs are stored in `results.jsonl`, you can change the scoring
 rules and re-score **without re-running a single job**.
 
-(The raw log contains 11,400 records; four are duplicate resubmissions after a
+(The raw log contains 12,632 records; four are duplicate resubmissions after a
 network interruption during the July run. The scorer takes the last record per job
 key, so re-scoring this exact file reproduces the published tables.)
 
@@ -546,7 +590,7 @@ key, so re-scoring this exact file reproduces the published tables.)
   fix. Azure file uploads failed from 2026-09-28 until 2026-10-06; the Azure GPT-6 Sol rows
   were re-measured once they worked again, and `azure/gpt-6.1-sol` was added the same day.
 - LDX hub is the harness here, not a subject — it builds no models. One API key across
-  OpenAI, Azure, Google, Anthropic and AWS is what makes a 74-variant matrix practical.
+  OpenAI, Azure, Google, Anthropic and AWS is what makes an 82-variant matrix practical.
 
 ## Maintenance
 
