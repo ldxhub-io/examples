@@ -2,8 +2,8 @@
 
 One Japanese invoice, rendered on a fixed 2480×3508 canvas, degraded through seven
 simulated scan resolutions (300 → 25 dpi). Twelve fields across four font tiers
-(28 pt title down to 7.5 pt fine print). **82 vision model variants, 5 repeats each,
-12,628 jobs — final state: 12,628 completed, 0 unparseable outputs.**
+(28 pt title down to 7.5 pt fine print). **85 vision model variants, 5 repeats each,
+13,090 jobs — final state: 13,090 completed, 0 unparseable outputs.**
 
 The question is not *which model is best*. It is **where each model stops reading —
 and what it does after that: leave the field blank, or fabricate a plausible value.**
@@ -44,7 +44,7 @@ and what it does after that: leave the field blank, or fabricate a plausible val
    48 times across Gemini variants — **at 300 dpi, on perfectly legible text**. The
    fictional credit union with no real-world neighbor was read correctly under the same
    conditions. Language priors can override vision even when reading is easy.
-6. **Classification survives reading loss.** 78 of 82 variants classified all 84
+6. **Classification survives reading loss.** 81 of 85 variants classified all 84
    documents correctly at every degradation step — models that cannot read a document
    can still tell what kind of document it is. Two of the four exceptions are the Azure
    GPT-6 Luna variants, measured before OpenAI's 2026-09-25 image fix; after the fix,
@@ -402,6 +402,22 @@ and what it does after that: leave the field blank, or fabricate a plausible val
 > GPT-6.1 Sol `@high`'s fine tier, back to L2 as on 2026-09-30 (35 against 38 of 40 at 70 dpi,
 > either side of the 90% bar).
 
+> **Update 2026-11-19:** Gemini 4 Neon added in its three resolution variants (85 variants).
+> Google places it between Gemini 4 Hydrogen and Gemini 4 Carbon at $3/$15 (75% of Carbon's and
+> Argon's standard token rates, twice Hydrogen's) and does not name it a successor to any model, so it
+> gets its own rows. On this invoice it reads like the other Gemini 4 models, with one step more at
+> `@low`: its frontiers are L6 / L6 / L6 / L5 at all three resolutions, where Carbon, Argon and
+> Hydrogen take the fine tier only to L4 at `@low`. That step is small: at 35 dpi `@low` Neon read 37
+> of the 40 fine-tier fields, against 34 for Hydrogen (either side of the 90% bar, p=0.48) and 29 and
+> 28 for Carbon and Argon (p=0.037 and 0.020). The gateway counted the same input tokens for the same
+> test pages (508,284 over the 462 jobs, as for Carbon and Hydrogen). At 25 dpi Neon fabricated 5 of
+> 150 body fields across its three variants (Hydrogen 9, Carbon and Argon 7; p≥0.41) and 71 of 120
+> fine-tier fields (Hydrogen 76, Carbon and Argon 81; p≥0.23). Like the other Gemini 4 models, Neon
+> never leaves a field blank at any resolution, and all three variants classify all 84 T2 documents.
+> At the same `LOW` thinking level its 462 jobs produced 212,294 output tokens, against 180,171 for
+> Hydrogen and 43,073 for Carbon. Hydrogen, Carbon and Argon come from earlier runs (the 2026-11-13,
+> 2026-11-12 and 2026-10-14 updates), so these are cross-run comparisons.
+
 ## Results
 
 Frontier = deepest ladder step that keeps ≥90% field accuracy per tier
@@ -464,6 +480,9 @@ L3=70, L4=50, L5=35, L6=25 dpi.
 | `google/gemini-4-argon@high` | L6 | L6 | L6 | L5 | 2% | 84/84 |
 | `google/gemini-4-argon@medium` | L6 | L6 | L6 | L5 | 10% | 84/84 |
 | `google/gemini-4-argon@low` | L6 | L6 | L6 | L4 | 2% | 84/84 |
+| `google/gemini-4-neon@high` | L6 | L6 | L6 | L5 | 0% | 84/84 |
+| `google/gemini-4-neon@medium` | L6 | L6 | L6 | L5 | 10% | 84/84 |
+| `google/gemini-4-neon@low` | L6 | L6 | L6 | L5 | 0% | 84/84 |
 | `google/gemini-4-hydrogen@high` | L6 | L6 | L6 | L5 | 0% | 84/84 |
 | `google/gemini-4-hydrogen@medium` | L6 | L6 | L6 | L5 | 10% | 84/84 |
 | `google/gemini-4-hydrogen@low` | L6 | L6 | L6 | L4 | 8% | 84/84 |
@@ -533,7 +552,7 @@ python3 run_benchmark.py --models ume --t1-instances A --t1-reps 3 --t2-reps 1 -
 python3 score_results.py && python3 report.py
 ```
 
-**Full matrix** (the 45 current variants, 6,930 jobs):
+**Full matrix** (the 48 current variants, 7,392 jobs):
 
 ```bash
 python3 run_benchmark.py --models all --yes
@@ -556,7 +575,7 @@ adds one if needed).
 Because raw model outputs are stored in `results.jsonl`, you can change the scoring
 rules and re-score **without re-running a single job**.
 
-(The raw log contains 12,632 records; four are duplicate resubmissions after a
+(The raw log contains 13,094 records; four are duplicate resubmissions after a
 network interruption during the July run. The scorer takes the last record per job
 key, so re-scoring this exact file reproduces the published tables.)
 
@@ -590,7 +609,7 @@ key, so re-scoring this exact file reproduces the published tables.)
   fix. Azure file uploads failed from 2026-09-28 until 2026-10-06; the Azure GPT-6 Sol rows
   were re-measured once they worked again, and `azure/gpt-6.1-sol` was added the same day.
 - LDX hub is the harness here, not a subject — it builds no models. One API key across
-  OpenAI, Azure, Google, Anthropic and AWS is what makes an 82-variant matrix practical.
+  OpenAI, Azure, Google, Anthropic and AWS is what makes an 85-variant matrix practical.
 
 ## Maintenance
 
