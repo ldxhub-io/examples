@@ -418,6 +418,11 @@ and what it does after that: leave the field blank, or fabricate a plausible val
 > Hydrogen and 43,073 for Carbon. Hydrogen, Carbon and Argon come from earlier runs (the 2026-11-13,
 > 2026-11-12 and 2026-10-14 updates), so these are cross-run comparisons.
 
+> **Update 2026-11-24:** Claude Fable 5.1 left the AnalyzeDoc catalog on the date announced on
+> 2026-11-10, in favor of Claude Fable 5.2. `run_benchmark.py` now lists the 47 current variants, and
+> the `pilot` preset uses Claude Fable 5.2 in its place. Fable 5.1's rows stay in the tables and in
+> `results.jsonl` as measured; it can no longer be re-run.
+
 ## Results
 
 Frontier = deepest ladder step that keeps ≥90% field accuracy per tier
@@ -552,7 +557,7 @@ python3 run_benchmark.py --models ume --t1-instances A --t1-reps 3 --t2-reps 1 -
 python3 score_results.py && python3 report.py
 ```
 
-**Full matrix** (the 48 current variants, 7,392 jobs):
+**Full matrix** (the 47 current variants, 7,238 jobs):
 
 ```bash
 python3 run_benchmark.py --models all --yes
