@@ -24,7 +24,7 @@ T2_DOCS = {"t2_invoice": "invoice", "t2_receipt": "receipt",
            "t2_card": "business_card", "t2_minutes": "meeting_minutes"}
 UPLOAD_TTL_H = 24
 
-MODELS = [  # canonical order (provider-grouped), AnalyzeDoc catalog 2026-11-24 (retired variants removed; see README),
+MODELS = [  # canonical order (provider-grouped), AnalyzeDoc catalog 2026-11-27 (retired variants removed; see README),
  "openai/gpt-6.2-astra@high","openai/gpt-6.2-astra@low",
  "openai/gpt-6.2-sol@high","openai/gpt-6.2-sol@low",
  "openai/gpt-6.1-sol@high","openai/gpt-6.1-sol@low",
@@ -41,7 +41,6 @@ MODELS = [  # canonical order (provider-grouped), AnalyzeDoc catalog 2026-11-24 
  "google/gemini-4-argon@high","google/gemini-4-argon@medium","google/gemini-4-argon@low",
  "google/gemini-4-neon@high","google/gemini-4-neon@medium","google/gemini-4-neon@low",
  "google/gemini-4-hydrogen@high","google/gemini-4-hydrogen@medium","google/gemini-4-hydrogen@low",
- "google/gemini-3.8-flash@high","google/gemini-3.8-flash@medium","google/gemini-3.8-flash@low",
  "google/gemini-3.5-flash-lite@high","google/gemini-3.5-flash-lite@medium","google/gemini-3.5-flash-lite@low",
  "anthropic/claude-opus-5-5","anthropic/claude-sonnet-5-5","anthropic/claude-haiku-5-5",
  "anthropic/claude-fable-5-2",
@@ -50,8 +49,8 @@ MODELS = [  # canonical order (provider-grouped), AnalyzeDoc catalog 2026-11-24 
 # Cost: AnalyzeDoc is billed by the AI model's input and output tokens (since 2026-11-06). The runner keeps
 # no rate table and prints no estimate; each completed job's `usage` (input_tokens / output_tokens) is saved
 # to the results file. Rates: https://gw.portal.ldxhub.io/credits-and-pricing
-PILOT = ["google/gemini-3.8-flash@high","openai/gpt-6.1-terra@low","anthropic/claude-fable-5-2"]  # 2026-11-07: successors of the retired 3.5 Flash, GPT-5.5 and Fable 5; 2026-11-24: Fable 5.2 replaces the retired Fable 5.1
-UME   = ["google/gemini-3.8-flash@high","openai/gpt-6.1-terra@low","azure/gpt-6-luna@low"]  # 2026-11-07: successors of the retired 3.5 Flash, GPT-5.5 and Azure GPT-5.4 mini
+PILOT = ["google/gemini-4-hydrogen@high","openai/gpt-6.1-terra@low","anthropic/claude-fable-5-2"]  # 2026-11-07: successors of the retired 3.5 Flash, GPT-5.5 and Fable 5; 2026-11-24: Fable 5.2 replaces the retired Fable 5.1; 2026-11-27: Gemini 4 Hydrogen replaces the retired 3.8 Flash
+UME   = ["google/gemini-4-hydrogen@high","openai/gpt-6.1-terra@low","azure/gpt-6-luna@low"]  # 2026-11-07: successors of the retired 3.5 Flash, GPT-5.5 and Azure GPT-5.4 mini; 2026-11-27: Gemini 4 Hydrogen replaces the retired 3.8 Flash
 
 T1_PROMPT = (
  "Extract the following 12 fields from this Japanese invoice, exactly as printed in the "

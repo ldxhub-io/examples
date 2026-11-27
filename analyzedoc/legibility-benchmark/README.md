@@ -423,6 +423,11 @@ and what it does after that: leave the field blank, or fabricate a plausible val
 > the `pilot` preset uses Claude Fable 5.2 in its place. Fable 5.1's rows stay in the tables and in
 > `results.jsonl` as measured; it can no longer be re-run.
 
+> **Update 2026-11-27:** Gemini 3.8 Flash left the AnalyzeDoc catalog on the date announced on
+> 2026-11-13, in favor of Gemini 4 Hydrogen. `run_benchmark.py` now lists the 44 current variants,
+> and the `pilot` and `ume` presets use `google/gemini-4-hydrogen@high` in its place. Gemini 3.8
+> Flash's rows stay in the tables and in `results.jsonl` as measured; it can no longer be re-run.
+
 ## Results
 
 Frontier = deepest ladder step that keeps ≥90% field accuracy per tier
@@ -557,7 +562,7 @@ python3 run_benchmark.py --models ume --t1-instances A --t1-reps 3 --t2-reps 1 -
 python3 score_results.py && python3 report.py
 ```
 
-**Full matrix** (the 47 current variants, 7,238 jobs):
+**Full matrix** (the 44 current variants, 6,776 jobs):
 
 ```bash
 python3 run_benchmark.py --models all --yes
